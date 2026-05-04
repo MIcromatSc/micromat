@@ -21,7 +21,7 @@ header {
 }
   
 header h1 {
-  font-size: 3em;
+  font-size: 28px;
   font-weight: 600;
 }
 header a h1 {
@@ -38,7 +38,7 @@ header a h1:hover {
 }
 
 header p {
-  font-size: 1.2em;
+  font-size: 22px;
   opacity: 0.9;
 }
 
@@ -200,9 +200,17 @@ textarea::placeholder {
 
   <form id="form">
 
-  <input type="text" name="nome" required>
-  <input type="email" name="email" required>
-  <textarea name="mensagem" required></textarea>
+ <input type="text" name="nome"
+      placeholder="Escreva seu nome aqui"
+      required>
+
+    <input type="email" name="email"
+      placeholder="Digite seu email"
+      required>
+
+    <textarea name="mensagem"
+      placeholder="Escreva sua mensagem..."
+      required></textarea>
 
   <button type="submit">Enviar</button>
 
