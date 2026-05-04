@@ -149,6 +149,17 @@ section {
   color: #444;
   line-height: 1.5;
 }
+  #contato p {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #555;
+}
+  input::placeholder,
+textarea::placeholder {
+  color: #888;
+  font-style: italic;
+}
 </style>
 </head>
 
@@ -181,10 +192,11 @@ section {
 <section id="contato">
 
   <h2>Contato</h2>
-
-  <p>
-    Tem dúvidas ou sugestões? Entre em contato abaixo:
-  </p>
+  
+   <p>
+  <span class="pt">Tem dúvidas ou sugestões? Entre em contato abaixo:</span>
+  <span class="en" style="display:none;">Have questions or suggestions? Get in touch below:</span>
+</p>
 
   <form id="form">
 
@@ -313,6 +325,19 @@ form.addEventListener("submit", async function(e) {
   document.getElementById("msg").style.display = "block";
   form.reset();
 });
+    
+function trocarIdioma() {
+  idioma = (idioma === "pt") ? "en" : "pt";
+
+  document.getElementById("nome").placeholder =
+    (idioma === "pt") ? "Escreva seu nome aqui" : "Enter your name here";
+
+  document.getElementById("email").placeholder =
+    (idioma === "pt") ? "Digite seu email" : "Enter your email";
+
+  document.getElementById("mensagem").placeholder =
+    (idioma === "pt") ? "Escreva sua mensagem..." : "Write your message...";
+}
 </script>
 </body>
 </html>
