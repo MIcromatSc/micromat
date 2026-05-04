@@ -78,10 +78,28 @@ iframe {
 }
 
 footer {
-  text-align: center;
-  padding: 20px;
-  background: #2e7d32;
+  background: #1b5e20;
   color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+}
+
+.footer-links {
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #a5d6a7;
+}
 }
 section {
   padding: 50px 25px;
@@ -125,7 +143,9 @@ section {
 <body>
 
 <header>
-<h1>Projeto de educação matemática:MicroMat</h1>
+<h1> onclick="window.location.href='index.html'" style="cursor:pointer;">
+  MicroMat
+</h1>
 
 <p>
 <span class="pt">Integração entre matemática e microbiologia por meio de atividades experimentais</span>
@@ -165,6 +185,19 @@ section {
 
 <footer>
 <p>Micromat - Universidade de São Paulo</p>
+
+  <div class="footer-links">
+    <a href="index.html">Início</a>
+    <a href="exp0.html">Experimento 0</a>
+    <a href="exp1.html">Experimento 1</a>
+    <a href="exp2.html">Experimento 2</a>
+    <a href="exp3.html">Experimento 3</a>
+    <a href="medicao.html">Medir Área</a>
+    <a href="contato.html">Contato</a>
+  </div>
+
+  <p>Micromat - Universidade de São Paulo</p>
+
 </footer>
 
 <script>
