@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>MicroMat</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f1f8f4;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(135deg, #1b5e20, #66bb6a);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
+button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+nav {
+  background: #1b5e20;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: #66bb6a;
+  transform: scale(1.05);
+}
+
+
+.ativo {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+.card {
+  background: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+h2, h3 {
+  color: #1b5e20;
+}
+
+iframe {
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #2e7d32;
+  color: white;
+}
+section {
+  padding: 50px 25px;
+  max-width: 950px;
+  margin: auto;
+  line-height: 1.6;
+}
+#contato input,
+#contato textarea {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+#contato button {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#contato button:hover {
+  background: #1b5e20;
+  transform: scale(1.05);
+}
+
+.exp-text {
+  font-size: 0.95em;
+  color: #444;
+  line-height: 1.5;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Projeto de educação matemática:MicroMat</h1>
+
+<p>
+<span class="pt">Integração entre matemática e microbiologia por meio de atividades experimentais</span>
+<span class="en" style="display:none;">Integration between mathematics and microbiology through experimental activities</span>
+</p>
+
+<button class="idioma-btn" onclick="trocarIdioma()">EN/PT</button>
+</header>
+
+<nav>
+<a href="index.html">Início</a>
+<a href="exp0.html">Exp 0</a>
+<a href="exp1.html">Exp 1</a>
+<a href="exp2.html">Exp 2</a>
+<a href="exp3.html">Exp 3</a>
+<a href="medicao.html">Medir Área</a>
+<a href="contato.html">Contato</a>
+</nav>
+
+<!-- EXP 0 -->
+<section id="exp0">
+<h2>
+<span class="pt">Experimento 0</span>
+<span class="en" style="display:none;">Experiment 0</span>
+<p>
+ <p class="exp-text">
+  <span class="pt">Texto em português...</span>
+  <span class="en" style="display:none;">Text in English...</span>
+</p>
+</h2>
+
+<h3>
+<span class="pt">Materiais e Equipamentos</span>
+<span class="en" style="display:none;">Materials and Equipment</span>
+</h3>
+
+<div class="card">
+<ul>
+<li><span class="pt">Ponteiras</span><span class="en" style="display:none;">Pipette tips</span></li>
+<li><span class="pt">Estantes</span><span class="en" style="display:none;">Tube racks</span></li>
+<li><span class="pt">Microtubos com água</span><span class="en" style="display:none;">Microtubes with water</span></li>
+<li><span class="pt">Micropipetas</span><span class="en" style="display:none;">Micropipettes</span></li>
+<li><span class="pt">Balança</span><span class="en" style="display:none;">Balance</span></li>
+<li> <span class="pt">Barquinho de pesagem</span> <span class="en" style="display:none;">Weighing boat</span> </li> <li> <span class="pt">Caixa de ponteiras</span> <span class="en" style="display:none;">Tip box</span> </li>
+</ul>
+</div>
+
+<h3>
+<span class="pt">Procedimento</span>
+<span class="en" style="display:none;">Procedure</span>
+</h3>
+
+<div class="card">
+<ol> <li> <span class="pt">Separe um microtubo com água e uma micropipeta P100.</span> <span class="en" style="display:none;">Separate a microtube with water and a P100 micropipette.</span> </li> <li> <span class="pt">Pese o barquinho vazio e, em seguida, tare a balança.</span> <span class="en" style="display:none;">Weigh the empty weighing boat and then tare the balance.</span> </li> <li> <span class="pt">Ajuste a micropipeta para 100 µL.</span> <span class="en" style="display:none;">Set the micropipette to 100 µL.</span> </li> <li> <span class="pt"> Pressione o botão da micropipeta até o primeiro estágio, insira a ponteira no líquido e aspire lentamente soltando o botão. </span> <span class="en" style="display:none;"> Press the micropipette plunger to the first stop, insert the tip into the liquid, and slowly release the plunger to aspirate. </span> </li> <li> <span class="pt">Retire a micropipeta e feche o microtubo.</span> <span class="en" style="display:none;">Remove the micropipette and close the microtube.</span> </li> <li> <span class="pt"> Para dispensar o líquido, pressione o botão até o final e despeje no barquinho de pesagem. </span> <span class="en" style="display:none;"> To dispense the liquid, press the plunger fully and release it into the weighing boat. </span> </li> <li> <span class="pt"> Anote o valor da massa obtida. </span> <span class="en" style="display:none;"> Record the measured mass. </span> </li>
+</ol>
+</div>
+
+<h3>
+<span class="pt">Vídeo do Experimento</span>
+<span class="en" style="display:none;">Experiment Video</span>
+</h3>
+
+<div class="card">
+<iframe width="100%" height="400"
+src="https://www.youtube.com/embed/yL2hx6EGckg"
+allowfullscreen></iframe>
+</div>
+</section>
+
+<footer>
+<p>Micromat - Universidade de São Paulo</p>
+</footer>
+
+<script>
+function mostrar(secao) {
+  let secoes = ["home","exp0","exp1","exp2","exp3","medicao","contato"];
+  secoes.forEach(id => {
+    document.getElementById(id).classList.remove("ativo");
+  });
+  document.getElementById(secao).classList.add("ativo");
+}
+
+let idioma = "pt";
+
+function trocarIdioma() {
+  idioma = (idioma === "pt") ? "en" : "pt";
+
+  document.querySelectorAll(".pt").forEach(el => {
+    el.style.display = (idioma === "pt") ? "inline" : "none";
+  });
+
+  document.querySelectorAll(".en").forEach(el => {
+    el.style.display = (idioma === "en") ? "inline" : "none";
+  });
+}
+</script>
+<script>
+function animarDigitacao(elemento) {
+  const texto = elemento.textContent;
+  elemento.textContent = "";
+  elemento.classList.add("cursor-piscando");
+
+  let i = 0;
+
+  function escrever() {
+    if (i < texto.length) {
+      elemento.textContent += texto.charAt(i);
+      i++;
+      setTimeout(escrever, 40);
+    }
+  }
+
+  escrever();
+}
+
+// detectar quando aparece na tela
+function observar() {
+  const elementos = document.querySelectorAll(".digitando");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.classList.contains("ativo-digitado")) {
+        entry.target.classList.add("ativo-digitado");
+        animarDigitacao(entry.target);
+      }
+    });
+  });
+
+  elementos.forEach(el => observer.observe(el));
+}
+
+window.onload = observar;
+</script>
+<script>
+function enviarMensagem() {
+  let nome = document.querySelector("#contato input[type='text']").value;
+  let email = document.querySelector("#contato input[type='email']").value;
+  let msg = document.querySelector("#contato textarea").value;
+
+  if (!nome || !email || !msg) {
+    alert("Preencha todos os campos!");
+    return;
+  }
+
+  alert("Mensagem enviada com sucesso, " + nome + "!");
+
+  // limpa campos
+  document.querySelector("#contato input[type='text']").value = "";
+  document.querySelector("#contato input[type='email']").value = "";
+  document.querySelector("#contato textarea").value = "";
+}
+</script>
+</body>
+</html>

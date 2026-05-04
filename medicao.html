@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>MicroMat</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f1f8f4;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(135deg, #1b5e20, #66bb6a);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
+button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+nav {
+  background: #1b5e20;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: #66bb6a;
+  transform: scale(1.05);
+}
+
+
+.ativo {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+.card {
+  background: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+h2, h3 {
+  color: #1b5e20;
+}
+
+iframe {
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #2e7d32;
+  color: white;
+}
+section {
+  padding: 50px 25px;
+  max-width: 950px;
+  margin: auto;
+  line-height: 1.6;
+}
+#contato input,
+#contato textarea {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+#contato button {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#contato button:hover {
+  background: #1b5e20;
+  transform: scale(1.05);
+}
+
+.exp-text {
+  font-size: 0.95em;
+  color: #444;
+  line-height: 1.5;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Projeto de educação matemática:MicroMat</h1>
+
+<p>
+<span class="pt">Integração entre matemática e microbiologia por meio de atividades experimentais</span>
+<span class="en" style="display:none;">Integration between mathematics and microbiology through experimental activities</span>
+</p>
+
+<button class="idioma-btn" onclick="trocarIdioma()">EN/PT</button>
+</header>
+
+<nav>
+<a href="index.html">Início</a>
+<a href="exp0.html">Exp 0</a>
+<a href="exp1.html">Exp 1</a>
+<a href="exp2.html">Exp 2</a>
+<a href="exp3.html">Exp 3</a>
+<a href="medicao.html">Medir Área</a>
+<a href="contato.html">Contato</a>
+</nav>
+<!-- MEDIÇÃO -->
+<section id="medicao">
+
+  <h2>
+    <span class="pt">Como medir colônias</span>
+    <span class="en" style="display:none;">How to measure colonies</span>
+  </h2>
+
+  <!-- INTRO -->
+  <div class="card">
+    <p>
+      <span class="pt">
+        Atualmente, com a tecnologia, existem diversas maneiras de medir objetos em fotografias, desde que haja uma escala conhecida. Para isso, é necessário que algum objeto presente na imagem tenha um tamanho conhecido e esteja na mesma distância da câmera que o objeto a ser medido.
+      </span>
+      <span class="en" style="display:none;">
+        Nowadays, technology allows several ways to measure objects in images, as long as a known scale is present. It is necessary that an object with known size is at the same distance from the camera as the object to be measured.
+      </span>
+    </p>
+
+    <p>
+      <span class="pt">
+        Por exemplo, não seria adequado usar o polegar para medir um prédio, pois estão em distâncias diferentes da câmera.
+      </span>
+      <span class="en" style="display:none;">
+        For example, it would not be appropriate to use your thumb to measure a building, since they are at different distances from the camera.
+      </span>
+    </p>
+  </div>
+
+  <!-- METODO 1 -->
+  <h3>
+    <span class="pt">1) Regra de três</span>
+    <span class="en" style="display:none;">1) Proportional reasoning</span>
+  </h3>
+
+  <div class="card">
+    <p>
+      <span class="pt">
+        É possível calcular o comprimento de um objeto em uma foto utilizando outro objeto de tamanho conhecido como referência.
+      </span>
+      <span class="en" style="display:none;">
+        It is possible to calculate the size of an object in an image using another object of known size as reference.
+      </span>
+    </p>
+
+    <p>
+      <span class="pt">
+        No caso das colônias, utiliza-se uma régua posicionada próxima à placa de Petri. Com a imagem ampliada, mede-se um centímetro da régua na foto e o diâmetro da colônia, estabelecendo uma proporção.
+      </span>
+      <span class="en" style="display:none;">
+        In the case of colonies, a ruler is placed next to the Petri dish. By zooming into the image, one measures one centimeter on the ruler and the colony diameter, establishing a proportion.
+      </span>
+    </p>
+
+    <p>
+      <span class="pt">
+        A partir disso, pode-se calcular o diâmetro real da colônia. É importante utilizar a mesma unidade de medida em todos os valores.
+      </span>
+      <span class="en" style="display:none;">
+        From this, the real colony diameter can be calculated. It is important to use the same unit for all measurements.
+      </span>
+    </p>
+  </div>
+
+  <!-- FORMULA -->
+  <div class="card">
+    <p><strong>
+      <span class="pt">Regra de três:</span>
+      <span class="en" style="display:none;">Proportion:</span>
+    </strong></p>
+
+    <p><strong>diâmetro na foto / 1 cm = diâmetro real / valor real</strong></p>
+  </div>
+
+  <!-- METODO 2 -->
+  <h3>
+    <span class="pt">2) ImageJ</span>
+    <span class="en" style="display:none;">2) ImageJ</span>
+  </h3>
+
+  <div class="card">
+    <p>
+      <span class="pt">
+        O ImageJ é um software que permite medir o diâmetro e a área de colônias de forma mais precisa.
+      </span>
+      <span class="en" style="display:none;">
+        ImageJ is a software that allows precise measurement of colony diameter and area.
+      </span>
+    </p>
+
+    <p>
+      <span class="pt">
+        Você pode utilizá-lo para analisar imagens das placas e obter medidas mais confiáveis.
+      </span>
+      <span class="en" style="display:none;">
+        It can be used to analyze plate images and obtain more reliable measurements.
+      </span>
+    </p>
+  </div>
+
+  <!-- VIDEO -->
+  <h3>
+    <span class="pt">Vídeo explicativo</span>
+    <span class="en" style="display:none;">Tutorial video</span>
+  </h3>
+
+  <div class="card">
+    <iframe width="100%" height="400"
+      src="https://www.youtube.com/embed/SEU_LINK_AQUI"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+</section>
+<footer>
+<p>Micromat - Universidade de São Paulo</p>
+</footer>
+
+<script>
+function mostrar(secao) {
+  let secoes = ["home","exp0","exp1","exp2","exp3","medicao","contato"];
+  secoes.forEach(id => {
+    document.getElementById(id).classList.remove("ativo");
+  });
+  document.getElementById(secao).classList.add("ativo");
+}
+
+let idioma = "pt";
+
+function trocarIdioma() {
+  idioma = (idioma === "pt") ? "en" : "pt";
+
+  document.querySelectorAll(".pt").forEach(el => {
+    el.style.display = (idioma === "pt") ? "inline" : "none";
+  });
+
+  document.querySelectorAll(".en").forEach(el => {
+    el.style.display = (idioma === "en") ? "inline" : "none";
+  });
+}
+</script>
+<script>
+function animarDigitacao(elemento) {
+  const texto = elemento.textContent;
+  elemento.textContent = "";
+  elemento.classList.add("cursor-piscando");
+
+  let i = 0;
+
+  function escrever() {
+    if (i < texto.length) {
+      elemento.textContent += texto.charAt(i);
+      i++;
+      setTimeout(escrever, 40);
+    }
+  }
+
+  escrever();
+}
+
+// detectar quando aparece na tela
+function observar() {
+  const elementos = document.querySelectorAll(".digitando");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.classList.contains("ativo-digitado")) {
+        entry.target.classList.add("ativo-digitado");
+        animarDigitacao(entry.target);
+      }
+    });
+  });
+
+  elementos.forEach(el => observer.observe(el));
+}
+
+window.onload = observar;
+</script>
+<script>
+function enviarMensagem() {
+  let nome = document.querySelector("#contato input[type='text']").value;
+  let email = document.querySelector("#contato input[type='email']").value;
+  let msg = document.querySelector("#contato textarea").value;
+
+  if (!nome || !email || !msg) {
+    alert("Preencha todos os campos!");
+    return;
+  }
+
+  alert("Mensagem enviada com sucesso, " + nome + "!");
+
+  // limpa campos
+  document.querySelector("#contato input[type='text']").value = "";
+  document.querySelector("#contato input[type='email']").value = "";
+  document.querySelector("#contato textarea").value = "";
+}
+</script>
+</body>
+</html>

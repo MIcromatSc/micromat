@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>MicroMat</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f1f8f4;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(135deg, #1b5e20, #66bb6a);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
+button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+nav {
+  background: #1b5e20;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: #66bb6a;
+  transform: scale(1.05);
+}
+
+section {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.ativo {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+.card {
+  background: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+h2, h3 {
+  color: #1b5e20;
+}
+
+iframe {
+  border-radius: 10px;
+}
+
+.img-centro {
+  display: block;
+  margin: 30px auto;
+  width: 320px;
+  max-width: 10%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.imagem-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.legenda {
+  font-size: 0.9em;
+  color: #555;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #2e7d32;
+  color: white;
+}
+section {
+  padding: 50px 25px;
+  max-width: 950px;
+  margin: auto;
+  line-height: 1.6;
+}
+#contato input,
+#contato textarea {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+#contato button {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#contato button:hover {
+  background: #1b5e20;
+  transform: scale(1.05);
+}
+
+.exp-text {
+  font-size: 0.95em;
+  color: #444;
+  line-height: 1.5;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Projeto de educação matemática:MicroMat</h1>
+
+<p>
+<span class="pt">Integração entre matemática e microbiologia por meio de atividades experimentais</span>
+<span class="en" style="display:none;">Integration between mathematics and microbiology through experimental activities</span>
+</p>
+
+<button class="idioma-btn" onclick="trocarIdioma()">EN/PT</button>
+</header>
+
+<nav>
+<a href="index.html">Início</a>
+<a href="exp0.html">Exp 0</a>
+<a href="exp1.html">Exp 1</a>
+<a href="exp2.html">Exp 2</a>
+<a href="exp3.html">Exp 3</a>
+<a href="medicao.html">Medir Área</a>
+<a href="contato.html">Contato</a>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="ativo">
+<h2>
+<span class="pt">Sobre o Projeto</span>
+<span class="en" style="display:none;">About the Project</span>
+</h2>
+
+<div class="card">
+
+<span class="pt">O projeto Micromat é uma iniciativa do CEPID B³, patrocinado pela FAPESP e vinculado à Universidade de São Paulo (USP), que transforma microrganismos em uma ferramenta inovadora de aprendizado. Nesse sentido, mais do que simplesmente observar seres microscópicos, o projeto propõe uma experiência de descoberta, na qual os alunos são convidados a compreender a ciência a partir do invisível.</span>
+
+  <span class="en" style="display:none;"></p>The Micromat project is an initiative of CEPID B³, funded by FAPESP and affiliated with the University of São Paulo (USP), which transforms microorganisms into an innovative learning tool. In this sense, rather than simply observing microscopic organisms, the project proposes an experience of discovery in which students are invited to understand science from the invisible world.</p>
+</span>
+</p>
+
+<p>
+  <span class="pt">Dessa forma, por meio dos microrganismos, busca-se introduzir os estudantes a um dos grandes desafios da ciência: a compreensão de escalas extremas. Assim, números extremamente pequenos e extremamente grandes, que muitas vezes parecem abstratos, passam a ganhar significado quando aplicados ao contexto da microbiologia e de outras áreas do conhecimento científico.</span>
+  <span class="en" style="display:none;">Thus, through microorganisms, students are introduced to one of science’s greatest challenges: the understanding of extreme scales. In this way, extremely small and extremely large numbers, which often seem abstract, gain meaning when applied to the context of microbiology and other areas of scientific knowledge.</span>
+</p>
+
+<p>
+  <span class="pt">Nesse contexto, a microbiologia é o campo da biologia dedicado ao estudo dos microrganismos e, por conseguinte, se divide em três grandes áreas: virologia, bacteriologia e micologia. Dentro desse universo, a micologia se destaca como o ramo responsável pelo estudo dos fungos, organismos que desempenham papéis fundamentais em diversos processos naturais e biotecnológicos.</span>
+  <span class="en" style="display:none;">In this context, microbiology is the branch of biology dedicated to the study of microorganisms and, consequently, is divided into three major areas: virology, bacteriology, and mycology. Within this field, mycology stands out as the branch responsible for the study of fungi, organisms that play essential roles in various natural and biotechnological processes.</span>
+</p>
+
+<p>
+  <span class="pt">Entre esses organismos, destacam-se as leveduras, que são fungos unicelulares capazes de se reproduzir de forma assexuada, principalmente por brotamento ou fissão binária. Embora simples em estrutura, essas células possuem grande relevância biológica e industrial, uma vez que permitem a compreensão de processos essenciais da vida microscópica.</span>
+  <span class="en" style="display:none;">Among these organisms, yeasts are particularly noteworthy. They are unicellular fungi capable of reproducing asexually, mainly through budding or binary fission. Although simple in structure, these cells have great biological and industrial relevance, as they allow the understanding of essential processes of microscopic life.</span>
+</p>
+
+<p>
+  <span class="pt">Além disso, um dos exemplos mais importantes é a Saccharomyces cerevisiae (do latim saccharon, açúcar; myces, fungo; cerevisiae, da cerveja), amplamente utilizada na produção de pães, cervejas e vinhos. Paralelamente à sua importância industrial, essa levedura se destaca como um dos organismos modelo mais utilizados na pesquisa científica, principalmente por ser não patogênica e altamente versátil.</span>
+  <span class="en" style="display:none;">In addition, one of the most important examples is Saccharomyces cerevisiae (from Latin saccharon, sugar; myces, fungus; cerevisiae, of beer), widely used in the production of bread, beer, and wine. Alongside its industrial importance, this yeast stands out as one of the most widely used model organisms in scientific research, mainly because it is non-pathogenic and highly versatile.</span>
+</p>
+
+<div class="imagem-container">
+<img src="imagens/saccharomyces.jpeg" style="width: 200px;">
+  <p class="legenda">Saccharomyces cerevisiae</p>
+</div>
+
+<p>
+  <span class="pt">Dessa maneira, o projeto Micromat utiliza a S. cerevisiae como uma ponte entre a microbiologia e a matemática, permitindo que conceitos como exponenciais, logaritmos e geometria deixem de ser apenas abstratos e passem a ser compreendidos de forma aplicada e concreta.</span>
+  <span class="en" style="display:none;">In this way, the Micromat project uses S. cerevisiae as a bridge between microbiology and mathematics, allowing concepts such as exponentials, logarithms, and geometry to move beyond abstraction and be understood in a practical and concrete way.</span>
+</p>
+
+<p>
+  <span class="pt">Por fim, mais do que um conjunto de experimentos, o projeto oferece uma experiência de imersão no pensamento científico. Assim, ele aproxima os alunos da prática laboratorial e, ao mesmo tempo, revela um universo fascinante: o mundo invisível dos microrganismos, no qual pequenas escalas escondem grandes descobertas.</span>
+  <span class="en" style="display:none;">Finally, more than just a set of experiments, the project offers an immersive experience in scientific thinking. Thus, it brings students closer to laboratory practice while simultaneously revealing a fascinating universe: the invisible world of microorganisms, where small scales conceal great discoveries..</span>
+</p>
+
+</div>
+</section>
+
+<footer>
+<p>Micromat - Universidade de São Paulo</p>
+</footer>
+
+<script>
+function mostrar(secao) {
+  let secoes = ["home","exp0","exp1","exp2","exp3","medicao","contato"];
+  secoes.forEach(id => {
+    document.getElementById(id).classList.remove("ativo");
+  });
+  document.getElementById(secao).classList.add("ativo");
+}
+
+let idioma = "pt";
+
+function trocarIdioma() {
+  idioma = (idioma === "pt") ? "en" : "pt";
+
+  document.querySelectorAll(".pt").forEach(el => {
+    el.style.display = (idioma === "pt") ? "inline" : "none";
+  });
+
+  document.querySelectorAll(".en").forEach(el => {
+    el.style.display = (idioma === "en") ? "inline" : "none";
+  });
+}
+</script>
+<script>
+function animarDigitacao(elemento) {
+  const texto = elemento.textContent;
+  elemento.textContent = "";
+  elemento.classList.add("cursor-piscando");
+
+  let i = 0;
+
+  function escrever() {
+    if (i < texto.length) {
+      elemento.textContent += texto.charAt(i);
+      i++;
+      setTimeout(escrever, 40);
+    }
+  }
+
+  escrever();
+}
+
+// detectar quando aparece na tela
+function observar() {
+  const elementos = document.querySelectorAll(".digitando");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.classList.contains("ativo-digitado")) {
+        entry.target.classList.add("ativo-digitado");
+        animarDigitacao(entry.target);
+      }
+    });
+  });
+
+  elementos.forEach(el => observer.observe(el));
+}
+
+window.onload = observar;
+</script>
+<script>
+function enviarMensagem() {
+  let nome = document.querySelector("#contato input[type='text']").value;
+  let email = document.querySelector("#contato input[type='email']").value;
+  let msg = document.querySelector("#contato textarea").value;
+
+  if (!nome || !email || !msg) {
+    alert("Preencha todos os campos!");
+    return;
+  }
+
+  alert("Mensagem enviada com sucesso, " + nome + "!");
+
+  // limpa campos
+  document.querySelector("#contato input[type='text']").value = "";
+  document.querySelector("#contato input[type='email']").value = "";
+  document.querySelector("#contato textarea").value = "";
+}
+</script>
+</body>
+</html>

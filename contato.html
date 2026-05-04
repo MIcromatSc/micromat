@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>MicroMat</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f1f8f4;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(135deg, #1b5e20, #66bb6a);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
+.idioma-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+nav {
+  background: #1b5e20;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: #66bb6a;
+  transform: scale(1.05);
+}
+
+
+.ativo {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+.card {
+  background: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+h2, h3 {
+  color: #1b5e20;
+}
+
+iframe {
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #2e7d32;
+  color: white;
+}
+section {
+  padding: 50px 25px;
+  max-width: 950px;
+  margin: auto;
+  line-height: 1.6;
+}
+#contato input,
+#contato textarea {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+#contato button {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#contato button:hover {
+  background: #1b5e20;
+  transform: scale(1.05);
+}
+
+.exp-text {
+  font-size: 0.95em;
+  color: #444;
+  line-height: 1.5;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Projeto de educação matemática:MicroMat</h1>
+
+<p>
+<span class="pt">Integração entre matemática e microbiologia por meio de atividades experimentais</span>
+<span class="en" style="display:none;">Integration between mathematics and microbiology through experimental activities</span>
+</p>
+
+<button class="idioma-btn" onclick="trocarIdioma()">EN/PT</button>
+</header>
+
+<nav>
+<a href="index.html">Início</a>
+<a href="exp0.html">Exp 0</a>
+<a href="exp1.html">Exp 1</a>
+<a href="exp2.html">Exp 2</a>
+<a href="exp3.html">Exp 3</a>
+<a href="medicao.html">Medir Área</a>
+<a href="contato.html">Contato</a>
+</nav>
+
+<!-- CONTATO -->
+<section id="contato">
+<h2>
+<span class="pt">Contato</span>
+<span class="en" style="display:none;">Contact</span>
+</h2>
+
+<div class="card">
+<input type="text" placeholder="Nome / Name">
+<input type="email" placeholder="Email">
+<textarea placeholder="Mensagem / Message"></textarea>
+<button onclick="enviarMensagem()">Enviar</button>
+  <span class="pt">Enviar</span>
+  <span class="en" style="display:none;">Send</span>
+</button>
+</div>
+</section>
+
+<footer>
+<p>Micromat - Universidade de São Paulo</p>
+</footer>
+
+<script>
+function mostrar(secao) {
+  let secoes = ["home","exp0","exp1","exp2","exp3","medicao","contato"];
+  secoes.forEach(id => {
+    document.getElementById(id).classList.remove("ativo");
+  });
+  document.getElementById(secao).classList.add("ativo");
+}
+
+let idioma = "pt";
+
+function trocarIdioma() {
+  idioma = (idioma === "pt") ? "en" : "pt";
+
+  document.querySelectorAll(".pt").forEach(el => {
+    el.style.display = (idioma === "pt") ? "inline" : "none";
+  });
+
+  document.querySelectorAll(".en").forEach(el => {
+    el.style.display = (idioma === "en") ? "inline" : "none";
+  });
+}
+</script>
+<script>
+function animarDigitacao(elemento) {
+  const texto = elemento.textContent;
+  elemento.textContent = "";
+  elemento.classList.add("cursor-piscando");
+
+  let i = 0;
+
+  function escrever() {
+    if (i < texto.length) {
+      elemento.textContent += texto.charAt(i);
+      i++;
+      setTimeout(escrever, 40);
+    }
+  }
+
+  escrever();
+}
+
+// detectar quando aparece na tela
+function observar() {
+  const elementos = document.querySelectorAll(".digitando");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.classList.contains("ativo-digitado")) {
+        entry.target.classList.add("ativo-digitado");
+        animarDigitacao(entry.target);
+      }
+    });
+  });
+
+  elementos.forEach(el => observer.observe(el));
+}
+
+window.onload = observar;
+</script>
+<script>
+function enviarMensagem() {
+  let nome = document.querySelector("#contato input[type='text']").value;
+  let email = document.querySelector("#contato input[type='email']").value;
+  let msg = document.querySelector("#contato textarea").value;
+
+  if (!nome || !email || !msg) {
+    alert("Preencha todos os campos!");
+    return;
+  }
+
+  alert("Mensagem enviada com sucesso, " + nome + "!");
+
+  // limpa campos
+  document.querySelector("#contato input[type='text']").value = "";
+  document.querySelector("#contato input[type='email']").value = "";
+  document.querySelector("#contato textarea").value = "";
+}
+</script>
+</body>
+</html>

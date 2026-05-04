@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>MicroMat</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f1f8f4;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(135deg, #1b5e20, #66bb6a);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
+button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+nav {
+  background: #1b5e20;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: #66bb6a;
+  transform: scale(1.05);
+}
+
+
+.ativo {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+.card {
+  background: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+h2, h3 {
+  color: #1b5e20;
+}
+
+iframe {
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #2e7d32;
+  color: white;
+}
+section {
+  padding: 50px 25px;
+  max-width: 950px;
+  margin: auto;
+  line-height: 1.6;
+}
+#contato input,
+#contato textarea {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+#contato button {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#contato button:hover {
+  background: #1b5e20;
+  transform: scale(1.05);
+}
+
+.exp-text {
+  font-size: 0.95em;
+  color: #444;
+  line-height: 1.5;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Projeto de educação matemática:MicroMat</h1>
+
+<p>
+<span class="pt">Integração entre matemática e microbiologia por meio de atividades experimentais</span>
+<span class="en" style="display:none;">Integration between mathematics and microbiology through experimental activities</span>
+</p>
+
+<button class="idioma-btn" onclick="trocarIdioma()">EN/PT</button>
+</header>
+
+<nav>
+<a href="index.html">Início</a>
+<a href="exp0.html">Exp 0</a>
+<a href="exp1.html">Exp 1</a>
+<a href="exp2.html">Exp 2</a>
+<a href="exp3.html">Exp 3</a>
+<a href="medicao.html">Medir Área</a>
+<a href="contato.html">Contato</a>
+</nav>
+
+<!-- EXP 1 -->
+<section id="exp1">
+
+  <h2>
+    <span class="pt">Experimento 1</span>
+    <span class="en" style="display:none;">Experiment 1</span>
+  </h2>
+
+  <!-- INTRO -->
+  <p class="exp-text">
+    <span class="pt">
+      Neste experimento será realizada a técnica de diluição seriada e plaqueamento para análise do crescimento de microrganismos.
+    </span>
+    <span class="en" style="display:none;">
+      In this experiment, serial dilution and plating techniques will be performed to analyze microbial growth.
+    </span>
+  </p>
+
+  <!-- MATERIAIS -->
+  <h3>
+    <span class="pt">Materiais e Equipamentos</span>
+    <span class="en" style="display:none;">Materials and Equipment</span>
+  </h3>
+
+  <div class="card">
+    <ul>
+      <li><span class="pt">100 mg de fermento biológico</span><span class="en" style="display:none;">100 mg of biological yeast</span></li>
+      <li><span class="pt">Placas de Petri com meio de cultura YPD</span><span class="en" style="display:none;">Petri dishes with YPD medium</span></li>
+      <li><span class="pt">Microtubos</span><span class="en" style="display:none;">Microtubes</span></li>
+      <li><span class="pt">Caixa de ponteiras</span><span class="en" style="display:none;">Tip box</span></li>
+      <li><span class="pt">Estante para microtubos</span><span class="en" style="display:none;">Microtube rack</span></li>
+      <li><span class="pt">Alças de Drigalski</span><span class="en" style="display:none;">Drigalski spatulas</span></li>
+      <li><span class="pt">Tubo Falcon</span><span class="en" style="display:none;">Falcon tube</span></li>
+      <li><span class="pt">Micropipetas</span><span class="en" style="display:none;">Micropipettes</span></li>
+      <li><span class="pt">Caneta permanente</span><span class="en" style="display:none;">Permanent marker</span></li>
+      <li><span class="pt">Solução salina 0,9%</span><span class="en" style="display:none;">0.9% saline solution</span></li>
+    </ul>
+  </div>
+
+  <!-- PROCEDIMENTO -->
+  <h3>
+    <span class="pt">Procedimento Experimental</span>
+    <span class="en" style="display:none;">Experimental Procedure</span>
+  </h3>
+
+  <div class="card">
+    <ol>
+
+      <li>
+        <span class="pt"><strong>Lave as mãos com sabonete ou detergente.</strong></span>
+        <span class="en" style="display:none;"><strong>Wash your hands with soap or detergent.</strong></span>
+      </li>
+
+      <li>
+        <span class="pt">
+          Cada grupo receberá 7 microtubos (6 contendo 900 µL de solução salina e 1 contendo 0,1 g de fermento biológico), 3 placas de Petri com meio YPD, 1 tubo Falcon com 10 mL de suspensão salina, 3 alças de Drigalski, uma estante, uma micropipeta, uma caixa de ponteiras e uma caneta.
+        </span>
+        <span class="en" style="display:none;">
+          Each group will receive 7 microtubes (6 containing 900 µL of saline solution and 1 containing 0.1 g of biological yeast), 3 Petri dishes with YPD medium, 1 Falcon tube with 10 mL of saline suspension, 3 Drigalski spatulas, a rack, a micropipette, a tip box, and a marker.
+        </span>
+      </li>
+
+      <li>
+        <span class="pt">
+          Identifique as placas de Petri com o número do grupo e as diluições a serem plaqueadas: 10⁻⁴, 10⁻⁵ e 10⁻⁶.
+        </span>
+        <span class="en" style="display:none;">
+          Label the Petri dishes with the group number and the dilutions to be plated: 10⁻⁴, 10⁻⁵, and 10⁻⁶.
+        </span>
+      </li>
+
+      <li>
+        <span class="pt">
+          Identifique os microtubos com as diluições de 10⁻¹ até 10⁻⁶ e organize-os na estante.
+        </span>
+        <span class="en" style="display:none;">
+          Label the microtubes with dilutions from 10⁻¹ to 10⁻⁶ and arrange them in the rack.
+        </span>
+      </li>
+
+      <li>
+        <span class="pt">
+          Transfira o conteúdo do microtubo com fermento para o tubo Falcon e homogenize invertendo-o de 4 a 5 vezes.
+        </span>
+        <span class="en" style="display:none;">
+          Transfer the yeast-containing microtube content to the Falcon tube and homogenize by inverting it 4–5 times.
+        </span>
+      </li>
+
+      <li>
+        <span class="pt">
+          Aspire 100 µL da suspensão e transfira para o primeiro microtubo (10⁻¹). Descarte a ponteira após o uso.
+        </span>
+        <span class="en" style="display:none;">
+          Aspirate 100 µL of the suspension and transfer it to the first microtube (10⁻¹). Discard the tip after use.
+        </span>
+      </li>
+
+      <li>
+        <span class="pt">
+          Para as diluições subsequentes, homogenize o microtubo anterior, utilize nova ponteira e transfira 100 µL para o próximo microtubo.
+        </span>
+        <span class="en" style="display:none;">
+          For subsequent dilutions, homogenize the previous microtube, use a new tip, and transfer 100 µL to the next microtube.
+        </span>
+      </li>
+
+      <li>
+        <span class="pt">
+          Para o plaqueamento, inicie pela diluição 10⁻⁶, transferindo 100 µL para a placa correspondente.
+        </span>
+        <span class="en" style="display:none;">
+          For plating, start with dilution 10⁻⁶, transferring 100 µL to the corresponding plate.
+        </span>
+      </li>
+
+      <li>
+        <span class="pt">
+          Espalhe o líquido utilizando a alça de Drigalski com movimentos circulares suaves.
+        </span>
+        <span class="en" style="display:none;">
+          Spread the liquid using the Drigalski spatula with gentle circular movements.
+        </span>
+      </li>
+
+      <li>
+        <span class="pt">
+          Repita o processo para as diluições 10⁻⁵ e 10⁻⁴.
+        </span>
+        <span class="en" style="display:none;">
+          Repeat the process for dilutions 10⁻⁵ and 10⁻⁴.
+        </span>
+      </li>
+
+      <li>
+        <span class="pt">
+          Incube as placas invertidas a 37°C ou em temperatura ambiente até formação de colônias visíveis.
+        </span>
+        <span class="en" style="display:none;">
+          Incubate the inverted plates at 37°C or room temperature until visible colonies form.
+        </span>
+      </li>
+
+      <li>
+        <span class="pt">
+          Na aula seguinte, conte as colônias com auxílio de uma caneta.
+        </span>
+        <span class="en" style="display:none;">
+          In the next session, count the colonies using a marker.
+        </span>
+      </li>
+
+    </ol>
+  </div>
+
+  <!-- VÍDEO -->
+  <h3>
+    <span class="pt">Vídeo do Experimento</span>
+    <span class="en" style="display:none;">Experiment Video</span>
+  </h3>
+
+  <div class="card">
+    <iframe width="100%" height="400"
+      src="https://www.youtube.com/embed/SEU_LINK_AQUI"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+</section>
+
+<footer>
+<p>Micromat - Universidade de São Paulo</p>
+</footer>
+
+<script>
+function mostrar(secao) {
+  let secoes = ["home","exp0","exp1","exp2","exp3","medicao","contato"];
+  secoes.forEach(id => {
+    document.getElementById(id).classList.remove("ativo");
+  });
+  document.getElementById(secao).classList.add("ativo");
+}
+
+let idioma = "pt";
+
+function trocarIdioma() {
+  idioma = (idioma === "pt") ? "en" : "pt";
+
+  document.querySelectorAll(".pt").forEach(el => {
+    el.style.display = (idioma === "pt") ? "inline" : "none";
+  });
+
+  document.querySelectorAll(".en").forEach(el => {
+    el.style.display = (idioma === "en") ? "inline" : "none";
+  });
+}
+</script>
+<script>
+function animarDigitacao(elemento) {
+  const texto = elemento.textContent;
+  elemento.textContent = "";
+  elemento.classList.add("cursor-piscando");
+
+  let i = 0;
+
+  function escrever() {
+    if (i < texto.length) {
+      elemento.textContent += texto.charAt(i);
+      i++;
+      setTimeout(escrever, 40);
+    }
+  }
+
+  escrever();
+}
+
+// detectar quando aparece na tela
+function observar() {
+  const elementos = document.querySelectorAll(".digitando");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.classList.contains("ativo-digitado")) {
+        entry.target.classList.add("ativo-digitado");
+        animarDigitacao(entry.target);
+      }
+    });
+  });
+
+  elementos.forEach(el => observer.observe(el));
+}
+
+window.onload = observar;
+</script>
+<script>
+function enviarMensagem() {
+  let nome = document.querySelector("#contato input[type='text']").value;
+  let email = document.querySelector("#contato input[type='email']").value;
+  let msg = document.querySelector("#contato textarea").value;
+
+  if (!nome || !email || !msg) {
+    alert("Preencha todos os campos!");
+    return;
+  }
+
+  alert("Mensagem enviada com sucesso, " + nome + "!");
+
+  // limpa campos
+  document.querySelector("#contato input[type='text']").value = "";
+  document.querySelector("#contato input[type='email']").value = "";
+  document.querySelector("#contato textarea").value = "";
+}
+</script>
+</body>
+</html>
