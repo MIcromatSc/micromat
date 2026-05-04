@@ -334,17 +334,44 @@ form.addEventListener("submit", async function(e) {
   form.reset();
 });
     
+<script>
+let idioma = "pt";
+
 function trocarIdioma() {
-  idioma = (idioma === "pt") ? "pt : "en";
+  idioma = (idioma === "pt") ? "en" : "pt";
 
-  document.getElementById("nome").placeholder =
-    (idioma === "pt") ? "Escreva seu nome aqui" : "Enter your name here";
+  // textos PT/EN
+  document.querySelectorAll(".pt").forEach(el => {
+    el.style.display = (idioma === "pt") ? "inline" : "none";
+  });
 
-  document.getElementById("email").placeholder =
-    (idioma === "pt") ? "Digite seu email" : "Enter your email";
+  document.querySelectorAll(".en").forEach(el => {
+    el.style.display = (idioma === "en") ? "inline" : "none";
+  });
 
-  document.getElementById("mensagem").placeholder =
-    (idioma === "pt") ? "Escreva sua mensagem..." : "Write your message...";
+  // 🔥 placeholders (garantido)
+  const nome = document.getElementById("nome");
+  const email = document.getElementById("email");
+  const msg = document.getElementById("mensagem");
+
+  if (nome) {
+    nome.placeholder = (idioma === "pt")
+      ? "Escreva seu nome aqui"
+      : "Enter your name here";
+  }
+
+  if (email) {
+    email.placeholder = (idioma === "pt")
+      ? "Digite seu email"
+      : "Enter your email";
+  }
+
+  if (msg) {
+    msg.placeholder = (idioma === "pt")
+      ? "Escreva sua mensagem..."
+      : "Write your message...";
+  }
+
 }
 </script>
 </body>
