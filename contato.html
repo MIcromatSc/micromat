@@ -144,7 +144,7 @@ section {
 
 <header>
 <h1 onclick="window.location.href='/'" style="cursor:pointer;">
-  Projeto de educção matemática: Micromat
+  Projeto de educação matemática: Micromat
 </h1>
 <p>
 <span class="pt">Integração entre matemática e microbiologia por meio de atividades experimentais</span>
@@ -166,18 +166,25 @@ section {
 
 <!-- CONTATO -->
 <section id="contato">
-<h2>
-<span class="pt">Contato</span>
-<span class="en" style="display:none;">Contact</span>
-</h2>
 
-<div class="card">
-<input type="text" placeholder="Nome / Name">
-<input type="email" placeholder="Email">
-<textarea placeholder="Mensagem / Message"></textarea>
-<button onclick="enviarMensagem()">Enviar</button>  <span class="en" style="display:none;">Send</span>
-</button>
-</div>
+  <h2>Contato</h2>
+
+  <p>
+    Tem dúvidas ou sugestões? Entre em contato abaixo:
+  </p>
+
+  <form action="https://formspree.io/f/mrejppvg" method="POST">
+
+    <input type="text" name="nome" placeholder="Seu nome" required>
+
+    <input type="email" name="email" placeholder="Seu email" required>
+
+    <textarea name="mensagem" placeholder="Escreva sua mensagem..." required></textarea>
+
+    <button type="submit">Enviar</button>
+
+  </form>
+
 </section>
 
 <footer>
