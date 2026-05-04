@@ -20,9 +20,13 @@ header {
   text-align: center;
 }
 
-header h1 {
-  font-size: 3em;
-  margin: 0;
+header a h1 {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+header a h1:hover {
+  opacity: 0.8;
 }
 
 header p {
@@ -143,8 +147,9 @@ section {
 <body>
 
 <header>
-<h1<a href="index.html">" style="cursor:pointer;">
-  Projeto de educação matemática: Micromat
+<h1><a> href="index.html" style="text-decoration:none; color:inherit;">
+  <h1>Projeto de educação matemática: MicroMat</h1>
+</a>
 </h1>
 <p>
 <span class="pt">Integração entre matemática e microbiologia por meio de atividades experimentais</span>
