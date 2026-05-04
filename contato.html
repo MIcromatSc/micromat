@@ -38,7 +38,7 @@ header a h1:hover {
 }
 
 header p {
-  font-size: 1.2em;
+  font-size: 15px;
   opacity: 0.9;
 }
 
@@ -186,17 +186,19 @@ section {
     Tem dúvidas ou sugestões? Entre em contato abaixo:
   </p>
 
-  <form action="https://formspree.io/f/mrejppvg" method="POST">
+  <form id="form">
 
-    <input type="text" name="nome" placeholder="Seu nome" required>
+  <input type="text" name="nome" required>
+  <input type="email" name="email" required>
+  <textarea name="mensagem" required></textarea>
 
-    <input type="email" name="email" placeholder="Seu email" required>
+  <button type="submit">Enviar</button>
 
-    <textarea name="mensagem" placeholder="Escreva sua mensagem..." required></textarea>
+</form>
 
-    <button type="submit">Enviar</button>
-<input type="hidden" name="_next" value="https://google.com">
-  </form>
+<p id="msg" style="display:none; color:green;">
+Mensagem enviada com sucesso!
+</p>  </form>
 
 </section>
 
@@ -293,6 +295,24 @@ function enviarMensagem() {
   document.querySelector("#contato input[type='email']").value = "";
   document.querySelector("#contato textarea").value = "";
 }
+</script>
+  <script>
+const form = document.getElementById("form");
+
+form.addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  await fetch("https://formspree.io/f/mrejppvg", {
+    method: "POST",
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  });
+
+  document.getElementById("msg").style.display = "block";
+  form.reset();
+});
 </script>
 </body>
 </html>
