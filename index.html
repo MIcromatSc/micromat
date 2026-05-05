@@ -170,6 +170,7 @@ Site em desenvolvimento</span>
 <a href="exp2.html">Exp 2</a>
 <a href="exp3.html">Exp 3</a>
 <a href="medicao.html">Medir Área</a>
+  <a href="visitas.html">Visitas</a>
 <a href="contato.html">Contato</a>
 </nav>
 
@@ -214,16 +215,58 @@ Site em desenvolvimento</span>
 <img src="imagens/saccharomyces.jpeg" style="width: 200px;">
   <p class="legenda">Saccharomyces cerevisiae</p>
 </div>
+<div class="texto-apresentacao">
 
-<p>
-  <span class="pt">Dessa maneira, o projeto Micromat utiliza a S. cerevisiae como uma ponte entre a microbiologia e a matemática, permitindo que conceitos como exponenciais, logaritmos e geometria deixem de ser apenas abstratos e passem a ser compreendidos de forma aplicada e concreta.</span>
-  <span class="en" style="display:none;">In this way, the Micromat project uses S. cerevisiae as a bridge between microbiology and mathematics, allowing concepts such as exponentials, logarithms, and geometry to move beyond abstraction and be understood in a practical and concrete way.</span>
-</p>
+  <p>
+    <span class="pt">
+      Dessa forma, o projeto Micromat utiliza a <i>Saccharomyces cerevisiae</i> como uma ponte entre a microbiologia e a matemática, permitindo que conceitos como exponenciais, logaritmos e geometria deixem de ser apenas abstratos e passem a ser compreendidos de maneira aplicada e concreta.
+    </span>
+    <span class="en" style="display:none;">
+      In this way, the Micromat project uses <i>Saccharomyces cerevisiae</i> as a bridge between microbiology and mathematics, allowing concepts such as exponentials, logarithms, and geometry to move beyond abstraction and be understood in an applied and concrete way.
+    </span>
+  </p>
 
-<p>
-  <span class="pt">Por fim, mais do que um conjunto de experimentos, o projeto oferece uma experiência de imersão no pensamento científico. Assim, ele aproxima os alunos da prática laboratorial e, ao mesmo tempo, revela um universo fascinante: o mundo invisível dos microrganismos, no qual pequenas escalas escondem grandes descobertas.</span>
-  <span class="en" style="display:none;">Finally, more than just a set of experiments, the project offers an immersive experience in scientific thinking. Thus, it brings students closer to laboratory practice while simultaneously revealing a fascinating universe: the invisible world of microorganisms, where small scales conceal great discoveries..</span>
-</p>
+  <p>
+    <span class="pt">
+      Mais do que um conjunto de experimentos, o projeto oferece uma experiência de imersão no pensamento científico. Ao aproximar os alunos da prática laboratorial, revela também um universo fascinante: o mundo invisível dos microrganismos, no qual pequenas escalas escondem grandes descobertas.
+    </span>
+    <span class="en" style="display:none;">
+      More than a set of experiments, the project offers an immersive experience in scientific thinking. By bringing students closer to laboratory practice, it also reveals a fascinating universe: the invisible world of microorganisms, where small scales hide great discoveries.
+    </span>
+  </p>
+
+  
+</div>
+  <div class="card">
+
+  <h3>
+    <span class="pt">Visitas às Escolas</span>
+    <span class="en" style="display:none;">School Visits</span>
+  </h3>
+
+  <p>
+    <span class="pt">
+      O projeto Micromat leva a integração entre matemática e microbiologia diretamente às escolas, por meio de atividades experimentais que tornam conceitos abstratos mais concretos e significativos.
+    </span>
+    <span class="en" style="display:none;">
+      The Micromat project brings the integration of mathematics and microbiology directly to schools through experimental activities that make abstract concepts more concrete and meaningful.
+    </span>
+  </p>
+<div class="carrossel">
+
+  <img src="imagens/foto1.jpg" class="slide ativo">
+  <img src="imagens/foto2.jpg" class="slide">
+  <img src="imagens/foto3.jpg" class="slide">
+
+  <button class="prev" onclick="mudarSlide(-1)">❮</button>
+  <button class="next" onclick="mudarSlide(1)">❯</button>
+
+</div>
+  <div style="text-align:center;">
+    <a href="visitas.html">
+      <button>Ver mais</button>
+    </a>
+  </div>
 
 </div>
 </section>
@@ -310,6 +353,24 @@ function enviarMensagem() {
   document.querySelector("#contato input[type='email']").value = "";
   document.querySelector("#contato textarea").value = "";
 }
+</script>
+  <script>
+let slideIndex = 0;
+const slides = document.querySelectorAll(".slide");
+
+function mostrarSlide(index) {
+  slides.forEach(s => s.classList.remove("ativo"));
+
+  slideIndex = (index + slides.length) % slides.length;
+  slides[slideIndex].classList.add("ativo");
+}
+
+function mudarSlide(n) {
+  mostrarSlide(slideIndex + n);
+}
+
+// inicializa
+mostrarSlide(slideIndex);
 </script>
 </body>
 </html>
