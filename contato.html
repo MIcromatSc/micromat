@@ -214,8 +214,6 @@ textarea::placeholder {
 
   <button type="submit">Enviar</button>
 
-</form>
-
 <p id="msg" style="display:none; color:green;">
 Mensagem enviada com sucesso!
 </p>  </form>
@@ -246,19 +244,7 @@ function mostrar(secao) {
   document.getElementById(secao).classList.add("ativo");
 }
 
-let idioma = "pt";
 
-function trocarIdioma() {
-  idioma = (idioma === "pt") ? "en" : "pt";
-
-  document.querySelectorAll(".pt").forEach(el => {
-    el.style.display = (idioma === "pt") ? "inline" : "none";
-  });
-
-  document.querySelectorAll(".en").forEach(el => {
-    el.style.display = (idioma === "en") ? "inline" : "none";
-  });
-}
 </script>
 <script>
 function animarDigitacao(elemento) {
@@ -333,7 +319,7 @@ form.addEventListener("submit", async function(e) {
   document.getElementById("msg").style.display = "block";
   form.reset();
 });
-    
+  </script>
 <script>
 let idioma = "pt";
 
@@ -348,8 +334,7 @@ function trocarIdioma() {
   document.querySelectorAll(".en").forEach(el => {
     el.style.display = (idioma === "en") ? "inline" : "none";
   });
-
-  // 🔥 placeholders (garantido)
+  
   const nome = document.getElementById("nome");
   const email = document.getElementById("email");
   const msg = document.getElementById("mensagem");
