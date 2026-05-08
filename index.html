@@ -357,19 +357,35 @@ function enviarMensagem() {
   document.querySelector("#contato textarea").value = "";
 }
 </script>
-  <script>
-let slideIndex = 0;
+  
+<script>
+let slideAtual = 0;
+
 const slides = document.querySelectorAll(".slide");
 
-function mostrarSlide(index) {
-  slides.forEach(s => s.classList.remove("ativo"));
+function mostrarSlide(index){
 
-  slideIndex = (index + slides.length) % slides.length;
-  slides[slideIndex].classList.add("ativo");
+    slides.forEach(slide => {
+        slide.classList.remove("ativo");
+    });
+
+    if(index >= slides.length){
+        slideAtual = 0;
+    }
+    else if(index < 0){
+        slideAtual = slides.length - 1;
+    }
+    else{
+        slideAtual = index;
+    }
+
+    slides[slideAtual].classList.add("ativo");
 }
 
-function mudarSlide(n) {
-  mostrarSlide(slideIndex + n);
+function mudarSlide(direcao){
+    mostrarSlide(slideAtual + direcao);
+}
+</script>
 }
 
 // inicializa
