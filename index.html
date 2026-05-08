@@ -135,26 +135,42 @@ section {
 
 .prev,
 .next{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.5);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 24px;
-    border-radius: 50%;
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+
+    width: 50px !important;
+    height: 50px !important;
+
+    min-width: 50px !important;
+    max-width: 50px !important;
+
+    padding: 0 !important;
+
+    border: none !important;
+    border-radius: 50% !important;
+
+    background: rgba(0,0,0,0.5) !important;
+    color: white !important;
+
+    font-size: 30px !important;
+    line-height: 1 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    cursor: pointer !important;
+    z-index: 1000 !important;
 }
 
 .prev{
-    left: 10px;
+    left: 15px !important;
 }
 
 .next{
-    right: 10px;
+    right: 15px !important;
 }
-
 
 #contato input,
 #contato textarea {
