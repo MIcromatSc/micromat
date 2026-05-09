@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
 <meta charset="UTF-8">
-<title>MicroMat</title>
+<title>MicroMat - Experimento 0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-
-/* RESET */
 
 *{
   margin:0;
@@ -21,18 +18,17 @@ html{
 }
 
 body{
-  font-family:Arial,sans-serif;
-  background:#f4fbf6;
+  font-family: Arial, sans-serif;
+  background:#f1f8f4;
   color:#333;
-  overflow-x:hidden;
 }
 
 /* HEADER */
 
 header{
-  background:linear-gradient(135deg,#145a1f,#66bb6a);
+  background: linear-gradient(135deg,#1b5e20,#66bb6a);
   color:white;
-  padding:100px 20px 80px;
+  padding:70px 20px;
   text-align:center;
   position:relative;
   overflow:hidden;
@@ -41,84 +37,78 @@ header{
 header::before{
   content:"";
   position:absolute;
-  width:600px;
-  height:600px;
-  background:rgba(255,255,255,0.05);
+  width:300px;
+  height:300px;
+  background:rgba(255,255,255,0.08);
   border-radius:50%;
-  top:-300px;
-  right:-150px;
+  top:-100px;
+  left:-80px;
 }
 
 header::after{
   content:"";
   position:absolute;
-  width:400px;
-  height:400px;
-  background:rgba(255,255,255,0.04);
+  width:250px;
+  height:250px;
+  background:rgba(255,255,255,0.08);
   border-radius:50%;
-  bottom:-200px;
-  left:-120px;
+  bottom:-120px;
+  right:-70px;
 }
 
 header h1{
-  font-size:3.2em;
-  margin-bottom:20px;
+  font-size:3em;
+  margin-bottom:15px;
   position:relative;
   z-index:2;
-  animation:fadeDown 1s ease;
 }
 
 header p{
-  font-size:1.2em;
+  font-size:1.15em;
   opacity:0.95;
-  line-height:1.8;
-  max-width:850px;
-  margin:auto;
   position:relative;
   z-index:2;
-  animation:fadeUp 1.2s ease;
 }
-
-/* BOTÃO IDIOMA */
 
 .idioma-btn{
   position:absolute;
   top:20px;
   right:20px;
-  border:none;
   background:white;
-  color:#145a1f;
-  padding:12px 20px;
-  border-radius:40px;
-  font-weight:bold;
+  color:#1b5e20;
+  border:none;
+  padding:10px 18px;
+  border-radius:30px;
   cursor:pointer;
+  font-weight:bold;
   transition:0.3s;
-  z-index:10;
-  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+  z-index:3;
 }
 
 .idioma-btn:hover{
-  transform:scale(1.08);
+  transform:scale(1.05);
+  background:#e8f5e9;
 }
 
 /* NAV */
 
 nav{
-  background:#145a1f;
+  background:#1b5e20;
   padding:18px;
   text-align:center;
   position:sticky;
   top:0;
-  z-index:999;
+  z-index:1000;
+  box-shadow:0 2px 10px rgba(0,0,0,0.15);
 }
 
 nav a{
   color:white;
+  text-decoration:none;
   margin:0 8px;
   font-weight:bold;
-  text-decoration:none;
-  padding:10px 15px;
-  border-radius:12px;
+  padding:10px 14px;
+  border-radius:10px;
   transition:0.3s;
   display:inline-block;
 }
@@ -131,166 +121,134 @@ nav a:hover{
 /* SECTION */
 
 section{
-  padding:70px 25px;
   max-width:1100px;
   margin:auto;
-  line-height:1.9;
+  padding:60px 25px;
 }
 
-/* TITULOS */
+/* TITLES */
 
 h2{
-  text-align:center;
-  color:#145a1f;
+  color:#1b5e20;
   font-size:2.6em;
-  margin-bottom:35px;
-  position:relative;
-}
-
-h2::after{
-  content:"";
-  width:90px;
-  height:5px;
-  background:#66bb6a;
-  display:block;
-  margin:15px auto 0;
-  border-radius:10px;
+  margin-bottom:25px;
+  text-align:center;
 }
 
 h3{
   color:#1b5e20;
-  margin-top:40px;
-}
-
-/* PARÁGRAFOS */
-
-p{
+  margin-top:50px;
   margin-bottom:20px;
-  font-size:1.05em;
+  font-size:1.7em;
+  border-left:6px solid #43a047;
+  padding-left:14px;
 }
 
-/* CARDS */
+/* INTRO */
+
+.exp-text{
+  background:white;
+  padding:35px;
+  border-radius:22px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+  line-height:1.9;
+  font-size:1.05em;
+  margin-bottom:40px;
+  border-top:6px solid #43a047;
+  transition:0.4s;
+}
+
+.exp-text:hover{
+  transform:translateY(-5px);
+}
+
+/* CARD */
+
 .card{
   background:white;
-  padding:25px;
-  border-radius:15px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  padding:30px;
   margin:25px 0;
+  border-radius:22px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.08);
+  transition:0.4s;
 }
-  .exp-text{
-  font-size:1em;
-  color:#444;
-  line-height:1.8;
-  text-align:justify;
-}
-  .card li{
-  margin-bottom:16px;
-  line-height:1.7;
-}
-.card::before{
-  content:"";
-  position:absolute;
-  width:180px;
-  height:180px;
-  background:rgba(102,187,106,0.08);
-  border-radius:50%;
-  top:-60px;
-  right:-60px;
-}
-section{
-  padding:50px 25px;
-  max-width:950px;
-  margin:auto;
-  line-height:1.7;
-}
+
 .card:hover{
   transform:translateY(-6px);
-  box-shadow:0 18px 40px rgba(0,0,0,0.12);
+  box-shadow:0 12px 28px rgba(0,0,0,0.12);
 }
 
-/* LISTAS */
+/* LISTS */
 
-ul,
+ul{
+  padding-left:25px;
+}
+
+ul li{
+  margin:14px 0;
+  line-height:1.7;
+}
+
 ol{
   padding-left:25px;
 }
 
-li{
-  margin-bottom:14px;
+ol li{
+  margin-bottom:20px;
   line-height:1.8;
 }
 
-/* IFRAME */
+/* VIDEO */
 
-iframe{
-  border:none;
+.video-box{
+  overflow:hidden;
   border-radius:22px;
-  box-shadow:0 8px 25px rgba(0,0,0,0.15);
+  box-shadow:0 10px 24px rgba(0,0,0,0.15);
 }
 
-/* TEXTO EXP */
-
-.exp-text{
-  font-size:1.05em;
-  color:#444;
-  line-height:1.9;
-  margin-top:20px;
+.video-box iframe{
+  width:100%;
+  height:500px;
+  border:none;
 }
 
 /* FOOTER */
 
 footer{
-  background:#145a1f;
+  background:#1b5e20;
   color:white;
   text-align:center;
-  padding:45px 20px;
-  margin-top:70px;
+  padding:40px 20px;
+  margin-top:60px;
 }
 
 .footer-links{
-  margin-top:18px;
+  margin-top:15px;
 }
 
 .footer-links a{
   color:white;
-  margin:0 10px;
   text-decoration:none;
-  font-size:14px;
+  margin:0 10px;
   transition:0.3s;
+  font-size:14px;
 }
 
 .footer-links a:hover{
   color:#a5d6a7;
 }
 
-/* ANIMAÇÕES */
+/* ANIMAÇÃO */
 
-@keyframes fadeDown{
-
-  from{
-    opacity:0;
-    transform:translateY(-50px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-
+.animar{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
 }
 
-@keyframes fadeUp{
-
-  from{
-    opacity:0;
-    transform:translateY(50px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-
+.animar.ativo{
+  opacity:1;
+  transform:translateY(0);
 }
 
 /* RESPONSIVO */
@@ -298,51 +256,39 @@ footer{
 @media(max-width:768px){
 
   header h1{
-    font-size:2.2em;
-  }
-
-  header p{
-    font-size:1em;
+    font-size:2.1em;
   }
 
   nav a{
+    display:inline-block;
     margin:5px;
-    padding:10px 12px;
-    font-size:14px;
   }
 
   h2{
     font-size:2em;
   }
 
-  h3{
-    font-size:1.5em;
+  .video-box iframe{
+    height:300px;
   }
 
-  .card{
-    padding:25px;
-  }
-
-  iframe{
-    height:250px;
+  .card,
+  .exp-text{
+    padding:22px;
   }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
 <header>
 
-<h1>
-Projeto de educação matemática:MicroMat
-</h1>
+<h1>Projeto de educação matemática: MicroMat</h1>
 
 <p>
-
 <span class="pt">
 Integração entre matemática e microbiologia por meio de atividades experimentais
 </span>
@@ -350,17 +296,13 @@ Integração entre matemática e microbiologia por meio de atividades experiment
 <span class="en" style="display:none;">
 Integration between mathematics and microbiology through experimental activities
 </span>
-
 </p>
 
-<button class="idioma-btn" onclick="trocarIdioma()">
-EN/PT
-</button>
+<button class="idioma-btn" onclick="trocarIdioma()">EN/PT</button>
 
 </header>
 
 <nav>
-
 <a href="index.html">Início</a>
 <a href="exp0.html">Exp 0</a>
 <a href="exp1.html">Exp 1</a>
@@ -369,200 +311,100 @@ EN/PT
 <a href="medicao.html">Medir Área</a>
 <a href="visitas.html">Visitas</a>
 <a href="contato.html">Contato</a>
-
 </nav>
-
-<!-- EXP 0 -->
 
 <section id="exp0">
 
-<h2>
-
-<span class="pt">
-Experimento 0
-</span>
-
-<span class="en" style="display:none;">
-Experiment 0
-</span>
-
+<h2 class="animar">
+<span class="pt">Experimento 0</span>
+<span class="en" style="display:none;">Experiment 0</span>
 </h2>
 
-<p class="exp-text">
+<!-- INTRO -->
+
+<div class="exp-text animar">
 
 <span class="pt">
-O Experimento 0 tem como objetivo introduzir o uso da micropipeta, uma ferramenta essencial em práticas laboratoriais. Nessa etapa, os alunos aprendem a realizar medições precisas de pequenos volumes, desenvolvendo habilidades fundamentais para a execução de experimentos científicos.
+Neste experimento introdutório, os alunos terão o primeiro contato com técnicas básicas de microbiologia e biossegurança em laboratório. A atividade busca apresentar os principais materiais utilizados nos experimentos seguintes, além de desenvolver habilidades relacionadas à manipulação de micropipetas, identificação de materiais e compreensão inicial de conceitos quantitativos presentes na prática experimental.
 </span>
 
 <span class="en" style="display:none;">
-Experiment 0 aims to introduce the use of the micropipette, an essential tool in laboratory practices. In this stage, students learn to handle and measure small volumes with precision, developing fundamental skills for scientific experiments.
+In this introductory experiment, students will have their first contact with basic microbiology and laboratory biosafety techniques. The activity aims to introduce the main materials used in subsequent experiments, as well as develop skills related to micropipette handling, material identification, and an initial understanding of quantitative concepts present in experimental practice.
 </span>
 
-</p>
+</div>
 
-<h3>
+<!-- MATERIAIS -->
 
-<span class="pt">
-Materiais e Equipamentos
-</span>
-
-<span class="en" style="display:none;">
-Materials and Equipment
-</span>
-
+<h3 class="animar">
+<span class="pt">Materiais e Equipamentos</span>
+<span class="en" style="display:none;">Materials and Equipment</span>
 </h3>
 
-<div class="card">
+<div class="card animar">
 
 <ul>
 
-<li>
-<span class="pt">Ponteiras</span>
-<span class="en" style="display:none;">Pipette tips</span>
-</li>
+<li><span class="pt">Micropipetas</span><span class="en" style="display:none;">Micropipettes</span></li>
 
-<li>
-<span class="pt">Estantes</span>
-<span class="en" style="display:none;">Tube racks</span>
-</li>
+<li><span class="pt">Ponteiras</span><span class="en" style="display:none;">Pipette tips</span></li>
 
-<li>
-<span class="pt">Microtubos com água</span>
-<span class="en" style="display:none;">Microtubes with water</span>
-</li>
+<li><span class="pt">Microtubos</span><span class="en" style="display:none;">Microtubes</span></li>
 
-<li>
-<span class="pt">Micropipetas</span>
-<span class="en" style="display:none;">Micropipettes</span>
-</li>
+<li><span class="pt">Placas de Petri</span><span class="en" style="display:none;">Petri dishes</span></li>
 
-<li>
-<span class="pt">Balança</span>
-<span class="en" style="display:none;">Balance</span>
-</li>
+<li><span class="pt">Caneta permanente</span><span class="en" style="display:none;">Permanent marker</span></li>
 
-<li>
-<span class="pt">Barquinho de pesagem</span>
-<span class="en" style="display:none;">Weighing boat</span>
-</li>
+<li><span class="pt">Estante para microtubos</span><span class="en" style="display:none;">Microtube rack</span></li>
 
-<li>
-<span class="pt">Caixa de ponteiras</span>
-<span class="en" style="display:none;">Tip box</span>
-</li>
+<li><span class="pt">Solução salina</span><span class="en" style="display:none;">Saline solution</span></li>
 
 </ul>
 
 </div>
 
-<h3>
+<!-- PROCEDIMENTO -->
 
-<span class="pt">
-Procedimento
-</span>
-
-<span class="en" style="display:none;">
-Procedure
-</span>
-
+<h3 class="animar">
+<span class="pt">Procedimento Experimental</span>
+<span class="en" style="display:none;">Experimental Procedure</span>
 </h3>
 
-<div class="card">
+<div class="card animar">
 
 <ol>
 
-<li>
-<span class="pt">
-Separe um microtubo com água e uma micropipeta P100.
-</span>
+<li><span class="pt">Lave as mãos antes de iniciar as atividades laboratoriais.</span><span class="en" style="display:none;">Wash your hands before starting laboratory activities.</span></li>
 
-<span class="en" style="display:none;">
-Separate a microtube with water and a P100 micropipette.
-</span>
-</li>
+<li><span class="pt">Observe os materiais disponíveis e familiarize-se com os equipamentos.</span><span class="en" style="display:none;">Observe the available materials and become familiar with the equipment.</span></li>
 
-<li>
-<span class="pt">
-Pese o barquinho vazio e, em seguida, tare a balança.
-</span>
+<li><span class="pt">Aprenda a ajustar corretamente os volumes das micropipetas.</span><span class="en" style="display:none;">Learn how to correctly adjust micropipette volumes.</span></li>
 
-<span class="en" style="display:none;">
-Weigh the empty weighing boat and then tare the balance.
-</span>
-</li>
+<li><span class="pt">Pratique a aspiração e dispensação de líquidos utilizando ponteiras descartáveis.</span><span class="en" style="display:none;">Practice aspirating and dispensing liquids using disposable tips.</span></li>
 
-<li>
-<span class="pt">
-Ajuste a micropipeta para 100 µL.
-</span>
+<li><span class="pt">Identifique os microtubos utilizando caneta permanente.</span><span class="en" style="display:none;">Label the microtubes using a permanent marker.</span></li>
 
-<span class="en" style="display:none;">
-Set the micropipette to 100 µL.
-</span>
-</li>
+<li><span class="pt">Organize os materiais na bancada de maneira adequada.</span><span class="en" style="display:none;">Organize the materials properly on the laboratory bench.</span></li>
 
-<li>
-<span class="pt">
-Pressione o botão da micropipeta até o primeiro estágio, insira a ponteira no líquido e aspire lentamente soltando o botão.
-</span>
+<li><span class="pt">Descarte corretamente as ponteiras após o uso.</span><span class="en" style="display:none;">Properly discard the tips after use.</span></li>
 
-<span class="en" style="display:none;">
-Press the micropipette plunger to the first stop, insert the tip into the liquid, and slowly release the plunger to aspirate.
-</span>
-</li>
-
-<li>
-<span class="pt">
-Retire a micropipeta e feche o microtubo.
-</span>
-
-<span class="en" style="display:none;">
-Remove the micropipette and close the microtube.
-</span>
-</li>
-
-<li>
-<span class="pt">
-Para dispensar o líquido, pressione o botão até o final e despeje no barquinho de pesagem.
-</span>
-
-<span class="en" style="display:none;">
-To dispense the liquid, press the plunger fully and release it into the weighing boat.
-</span>
-</li>
-
-<li>
-<span class="pt">
-Anote o valor da massa obtida.
-</span>
-
-<span class="en" style="display:none;">
-Record the measured mass.
-</span>
-</li>
+<li><span class="pt">Discuta os cuidados necessários para evitar contaminações durante os experimentos.</span><span class="en" style="display:none;">Discuss the precautions needed to avoid contamination during experiments.</span></li>
 
 </ol>
 
 </div>
 
-<h3>
+<!-- VIDEO -->
 
-<span class="pt">
-Vídeo do Experimento
-</span>
-
-<span class="en" style="display:none;">
-Experiment Video
-</span>
-
+<h3 class="animar">
+<span class="pt">Vídeo do Experimento</span>
+<span class="en" style="display:none;">Experiment Video</span>
 </h3>
 
-<div class="card">
+<div class="video-box animar">
 
-<iframe 
-width="100%" 
-height="420"
-src="https://www.youtube.com/embed/yL2hx6EGckg"
+<iframe
+src="https://www.youtube.com/embed/NXv4jbkGiig"
 allowfullscreen>
 </iframe>
 
@@ -572,12 +414,9 @@ allowfullscreen>
 
 <footer>
 
-<p>
-Micromat - Universidade de São Paulo
-</p>
+<p>Micromat - Universidade de São Paulo</p>
 
 <div class="footer-links">
-
 <a href="index.html">Início</a>
 <a href="exp0.html">Experimento 0</a>
 <a href="exp1.html">Experimento 1</a>
@@ -586,32 +425,49 @@ Micromat - Universidade de São Paulo
 <a href="medicao.html">Medir Área</a>
 <a href="visitas.html">Visitas</a>
 <a href="contato.html">Contato</a>
-
 </div>
 
 </footer>
 
 <script>
 
+/* IDIOMA */
+
 let idioma = "pt";
 
 function trocarIdioma(){
 
-  idioma = idioma === "pt" ? "en" : "pt";
+  idioma = (idioma === "pt") ? "en" : "pt";
 
-  document.querySelectorAll(".pt").forEach(el => {
-
-    el.style.display = idioma === "pt" ? "inline" : "none";
-
+  document.querySelectorAll(".pt").forEach(el=>{
+    el.style.display = (idioma === "pt") ? "inline" : "none";
   });
 
-  document.querySelectorAll(".en").forEach(el => {
-
-    el.style.display = idioma === "en" ? "inline" : "none";
-
+  document.querySelectorAll(".en").forEach(el=>{
+    el.style.display = (idioma === "en") ? "inline" : "none";
   });
 
 }
+
+/* ANIMAÇÃO */
+
+const elementos = document.querySelectorAll(".animar");
+
+const observer = new IntersectionObserver((entries)=>{
+
+  entries.forEach(entry=>{
+
+    if(entry.isIntersecting){
+      entry.target.classList.add("ativo");
+    }
+
+  });
+
+});
+
+elementos.forEach(el=>{
+  observer.observe(el);
+});
 
 </script>
 
