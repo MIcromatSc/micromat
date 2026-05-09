@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 <meta charset="UTF-8">
-<title>MicroMat - Medição</title>
+<title>MicroMat - Visitas</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+
+/* RESET */
 
 *{
   margin:0;
@@ -69,6 +72,13 @@ header p{
   position:relative;
   z-index:2;
 }
+
+header a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* BOTÃO */
 
 .idioma-btn{
   position:absolute;
@@ -144,7 +154,7 @@ h3{
   padding-left:14px;
 }
 
-/* TEXT */
+/* INTRO */
 
 .exp-text{
   background:white;
@@ -180,39 +190,60 @@ h3{
 
 .card p{
   line-height:1.9;
-  margin-bottom:18px;
 }
 
-/* IMAGE */
+/* CARROSSEL */
 
-.img-box{
-  text-align:center;
-}
-
-.img-box img{
-  width:100%;
-  max-width:520px;
-  border-radius:18px;
-  transition:0.4s;
-  box-shadow:0 8px 20px rgba(0,0,0,0.15);
-}
-
-.img-box img:hover{
-  transform:scale(1.03);
-}
-
-/* VIDEO */
-
-.video-box{
+.carrossel{
+  position:relative;
+  max-width:800px;
+  margin:auto;
   overflow:hidden;
   border-radius:22px;
   box-shadow:0 10px 24px rgba(0,0,0,0.15);
 }
 
-.video-box iframe{
+.slide{
   width:100%;
-  height:500px;
+  display:none;
+  animation:fade 0.6s ease;
+}
+
+.slide.ativo{
+  display:block;
+}
+
+.prev,
+.next{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:55px;
+  height:55px;
   border:none;
+  border-radius:50%;
+  background:rgba(0,0,0,0.45);
+  color:white;
+  font-size:28px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:0.3s;
+}
+
+.prev:hover,
+.next:hover{
+  background:#1b5e20;
+  transform:translateY(-50%) scale(1.08);
+}
+
+.prev{
+  left:15px;
+}
+
+.next{
+  right:15px;
 }
 
 /* FOOTER */
@@ -254,6 +285,20 @@ footer{
   transform:translateY(0);
 }
 
+@keyframes fade{
+
+  from{
+    opacity:0;
+    transform:scale(1.03);
+  }
+
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+
+}
+
 /* RESPONSIVO */
 
 @media(max-width:768px){
@@ -271,13 +316,16 @@ footer{
     font-size:2em;
   }
 
-  .video-box iframe{
-    height:300px;
-  }
-
   .card,
   .exp-text{
     padding:22px;
+  }
+
+  .prev,
+  .next{
+    width:45px;
+    height:45px;
+    font-size:22px;
   }
 
 }
@@ -289,9 +337,12 @@ footer{
 
 <header>
 
+<a href="index.html">
 <h1>Projeto de educação matemática: MicroMat</h1>
+</a>
 
 <p>
+
 <span class="pt">
 Integração entre matemática e microbiologia por meio de atividades experimentais
 </span>
@@ -299,6 +350,7 @@ Integração entre matemática e microbiologia por meio de atividades experiment
 <span class="en" style="display:none;">
 Integration between mathematics and microbiology through experimental activities
 </span>
+
 </p>
 
 <button class="idioma-btn" onclick="trocarIdioma()">EN/PT</button>
@@ -316,11 +368,18 @@ Integration between mathematics and microbiology through experimental activities
 <a href="contato.html">Contato</a>
 </nav>
 
-<section id="medicao">
+<section>
 
 <h2 class="animar">
-<span class="pt">Como medir colônias</span>
-<span class="en" style="display:none;">How to Measure Colonies</span>
+
+<span class="pt">
+Visitas às Escolas
+</span>
+
+<span class="en" style="display:none;">
+School Visits
+</span>
+
 </h2>
 
 <!-- INTRO -->
@@ -328,115 +387,108 @@ Integration between mathematics and microbiology through experimental activities
 <div class="exp-text animar">
 
 <span class="pt">
-Atualmente, existem diferentes formas de medir objetos em fotografias utilizando referências de escala conhecidas. Para isso, é necessário que um objeto presente na imagem possua dimensões conhecidas e esteja aproximadamente na mesma distância da câmera que o objeto a ser medido. Dessa forma, é possível estabelecer proporções e calcular medidas reais com maior precisão.
+O projeto MicroMat leva a integração entre matemática e microbiologia diretamente ao ambiente escolar, proporcionando aos estudantes experiências práticas que aproximam conceitos abstratos da realidade experimental. As atividades estimulam a investigação científica, a curiosidade e a aplicação da matemática em situações reais.
 </span>
 
 <span class="en" style="display:none;">
-Nowadays, there are different ways to measure objects in photographs using known scale references. For this, an object in the image must have known dimensions and be approximately at the same distance from the camera as the object being measured. This allows proportional relationships to be established and real measurements to be calculated more accurately.
+The MicroMat project brings the integration between mathematics and microbiology directly into the school environment, providing students with practical experiences that connect abstract concepts to experimental reality. The activities encourage scientific investigation, curiosity, and the application of mathematics in real situations.
 </span>
 
 </div>
 
-<!-- MÉTODO 1 -->
+<!-- PRIMEIRO CARROSSEL -->
 
 <h3 class="animar">
-<span class="pt">1) Regra de três</span>
-<span class="en" style="display:none;">1) Proportional Reasoning</span>
+
+<span class="pt">
+Atividades nas Escolas
+</span>
+
+<span class="en" style="display:none;">
+Activities in Schools
+</span>
+
 </h3>
 
 <div class="card animar">
 
-<p>
-<span class="pt">
-É possível calcular o tamanho de uma colônia utilizando outro objeto de dimensão conhecida como referência. No caso das placas de Petri, normalmente utiliza-se uma régua posicionada próxima à placa durante a fotografia.
-</span>
+<div class="carrossel">
 
-<span class="en" style="display:none;">
-It is possible to calculate the size of a colony using another object with known dimensions as reference. In the case of Petri dishes, a ruler positioned next to the plate during photography is commonly used.
-</span>
-</p>
+<img src="imagens/carrossel1.jpeg" class="slide ativo">
 
-<p>
-<span class="pt">
-Após ampliar a imagem, mede-se visualmente um trecho conhecido da régua e compara-se com o diâmetro da colônia. A partir dessa proporção, pode-se calcular o valor real do diâmetro.
-</span>
+<img src="imagens/carrossel2.jpeg" class="slide">
 
-<span class="en" style="display:none;">
-After zooming into the image, a known section of the ruler is visually measured and compared with the colony diameter. From this proportion, the real diameter value can be calculated.
-</span>
-</p>
+<img src="imagens/carrossel3.jpeg" class="slide">
 
-<p>
-<span class="pt">
-É importante utilizar a mesma unidade de medida em todos os valores para evitar erros nos cálculos.
-</span>
+<img src="imagens/carrossel4.jpeg" class="slide">
 
-<span class="en" style="display:none;">
-It is important to use the same measurement unit for all values to avoid calculation errors.
-</span>
-</p>
+<img src="imagens/carrossel5.jpeg" class="slide">
+
+<button class="prev" onclick="mudarSlide(-1)">
+❮
+</button>
+
+<button class="next" onclick="mudarSlide(1)">
+❯
+</button>
 
 </div>
 
-<!-- IMAGEM -->
-
-<div class="card img-box animar">
-
-<p><strong>
-<span class="pt">Exemplo de proporção:</span>
-<span class="en" style="display:none;">Proportion example:</span>
-</strong></p>
-
-<a href="imagens/medidas.png" target="_blank">
-<img src="imagens/medidas.png" alt="Medidas">
-</a>
-
 </div>
 
-<!-- MÉTODO 2 -->
-
-<h3 class="animar">
-<span class="pt">2) ImageJ</span>
-<span class="en" style="display:none;">2) ImageJ</span>
-</h3>
+<!-- TEXTO -->
 
 <div class="card animar">
 
 <p>
+
 <span class="pt">
-O ImageJ é um software amplamente utilizado para análise de imagens científicas. Com ele, é possível medir diâmetros, áreas e outras características de colônias de forma mais precisa.
+Durante as visitas, os alunos participam de atividades experimentais envolvendo crescimento microbiano, diluições, medições e análise de dados. Dessa forma, conceitos matemáticos passam a ser compreendidos de maneira mais concreta e interdisciplinar.
 </span>
 
 <span class="en" style="display:none;">
-ImageJ is a software widely used for scientific image analysis. It allows the measurement of diameters, areas, and other colony characteristics with greater precision.
-</span>
-</p>
-
-<p>
-<span class="pt">
-O programa utiliza a escala da imagem para converter medidas em pixels para unidades reais, permitindo análises quantitativas mais confiáveis.
+During the visits, students participate in experimental activities involving microbial growth, dilutions, measurements, and data analysis. In this way, mathematical concepts become understood in a more concrete and interdisciplinary manner.
 </span>
 
-<span class="en" style="display:none;">
-The software uses the image scale to convert pixel measurements into real units, allowing more reliable quantitative analyses.
-</span>
 </p>
 
 </div>
 
-<!-- VIDEO -->
+<!-- SEGUNDO CARROSSEL -->
 
 <h3 class="animar">
-<span class="pt">Vídeo explicativo</span>
-<span class="en" style="display:none;">Tutorial Video</span>
+
+<span class="pt">
+Sequência Experimental
+</span>
+
+<span class="en" style="display:none;">
+Experimental Sequence
+</span>
+
 </h3>
 
-<div class="video-box animar">
+<div class="card animar">
 
-<iframe
-src="https://www.youtube.com/embed/PuoJqg07Yp4"
-allowfullscreen>
-</iframe>
+<div class="carrossel">
+
+<img src="imagens/sequencia.jpeg" class="slide2 ativo2">
+
+<img src="imagens/sequencia1.jpeg" class="slide2">
+
+<img src="imagens/sequencia2.jpeg" class="slide2">
+
+<img src="imagens/sequencia3.jpeg" class="slide2">
+
+<button class="prev" onclick="mudarSlide2(-1)">
+❮
+</button>
+
+<button class="next" onclick="mudarSlide2(1)">
+❯
+</button>
+
+</div>
 
 </div>
 
@@ -467,17 +519,91 @@ let idioma = "pt";
 
 function trocarIdioma(){
 
-  idioma = (idioma === "pt") ? "en" : "pt";
+  idioma = idioma === "pt" ? "en" : "pt";
 
   document.querySelectorAll(".pt").forEach(el=>{
-    el.style.display = (idioma === "pt") ? "inline" : "none";
+
+    el.style.display = idioma === "pt" ? "inline" : "none";
+
   });
 
   document.querySelectorAll(".en").forEach(el=>{
-    el.style.display = (idioma === "en") ? "inline" : "none";
+
+    el.style.display = idioma === "en" ? "inline" : "none";
+
   });
 
 }
+
+/* PRIMEIRO CARROSSEL */
+
+let slideIndex = 0;
+
+const slides = document.querySelectorAll(".slide");
+
+function mostrarSlide(index){
+
+  slides.forEach(slide=>{
+
+    slide.classList.remove("ativo");
+
+  });
+
+  slideIndex = (index + slides.length) % slides.length;
+
+  slides[slideIndex].classList.add("ativo");
+
+}
+
+function mudarSlide(n){
+
+  mostrarSlide(slideIndex + n);
+
+}
+
+setInterval(()=>{
+
+  mudarSlide(1);
+
+},4500);
+
+/* SEGUNDO CARROSSEL */
+
+let slideAtual2 = 0;
+
+const slides2 = document.querySelectorAll(".slide2");
+
+function mostrarSlide2(index){
+
+  slides2.forEach(slide=>{
+
+    slide.classList.remove("ativo2");
+
+    slide.style.display = "none";
+
+  });
+
+  slideAtual2 = (index + slides2.length) % slides2.length;
+
+  slides2[slideAtual2].classList.add("ativo2");
+
+  slides2[slideAtual2].style.display = "block";
+
+}
+
+mostrarSlide2(0);
+
+function mudarSlide2(n){
+
+  mostrarSlide2(slideAtual2 + n);
+
+}
+
+setInterval(()=>{
+
+  mudarSlide2(1);
+
+},5000);
 
 /* ANIMAÇÃO */
 
@@ -488,7 +614,9 @@ const observer = new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{
 
     if(entry.isIntersecting){
+
       entry.target.classList.add("ativo");
+
     }
 
   });
@@ -496,7 +624,9 @@ const observer = new IntersectionObserver((entries)=>{
 });
 
 elementos.forEach(el=>{
+
   observer.observe(el);
+
 });
 
 </script>
