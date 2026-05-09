@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
 <meta charset="UTF-8">
-<title>MicroMat - Visitas</title>
+<title>MicroMat - Medição</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-
-/* RESET */
 
 *{
   margin:0;
@@ -21,18 +18,17 @@ html{
 }
 
 body{
-  font-family:Arial,sans-serif;
-  background:#f4fbf6;
+  font-family: Arial, sans-serif;
+  background:#f1f8f4;
   color:#333;
-  overflow-x:hidden;
 }
 
 /* HEADER */
 
 header{
-  background:linear-gradient(135deg,#145a1f,#66bb6a);
+  background: linear-gradient(135deg,#1b5e20,#66bb6a);
   color:white;
-  padding:100px 20px 80px;
+  padding:70px 20px;
   text-align:center;
   position:relative;
   overflow:hidden;
@@ -41,92 +37,78 @@ header{
 header::before{
   content:"";
   position:absolute;
-  width:600px;
-  height:600px;
-  background:rgba(255,255,255,0.05);
+  width:300px;
+  height:300px;
+  background:rgba(255,255,255,0.08);
   border-radius:50%;
-  top:-300px;
-  right:-150px;
+  top:-100px;
+  left:-80px;
 }
 
 header::after{
   content:"";
   position:absolute;
-  width:400px;
-  height:400px;
-  background:rgba(255,255,255,0.04);
+  width:250px;
+  height:250px;
+  background:rgba(255,255,255,0.08);
   border-radius:50%;
-  bottom:-200px;
-  left:-120px;
-}
-
-header a{
-  text-decoration:none;
-  color:inherit;
+  bottom:-120px;
+  right:-70px;
 }
 
 header h1{
   font-size:3em;
-  margin-bottom:20px;
+  margin-bottom:15px;
   position:relative;
   z-index:2;
-  animation:fadeDown 1s ease;
-}
-
-header h1:hover{
-  opacity:0.9;
 }
 
 header p{
-  font-size:1.2em;
-  line-height:1.8;
-  max-width:850px;
-  margin:auto;
+  font-size:1.15em;
+  opacity:0.95;
   position:relative;
   z-index:2;
-  animation:fadeUp 1.2s ease;
 }
-
-/* BOTÃO IDIOMA */
 
 .idioma-btn{
   position:absolute;
   top:20px;
   right:20px;
-  border:none;
   background:white;
-  color:#145a1f;
-  padding:12px 20px;
-  border-radius:40px;
-  font-weight:bold;
+  color:#1b5e20;
+  border:none;
+  padding:10px 18px;
+  border-radius:30px;
   cursor:pointer;
+  font-weight:bold;
   transition:0.3s;
-  z-index:10;
-  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+  z-index:3;
 }
 
 .idioma-btn:hover{
-  transform:scale(1.08);
+  transform:scale(1.05);
+  background:#e8f5e9;
 }
 
 /* NAV */
 
 nav{
-  background:#145a1f;
+  background:#1b5e20;
   padding:18px;
   text-align:center;
   position:sticky;
   top:0;
-  z-index:999;
+  z-index:1000;
+  box-shadow:0 2px 10px rgba(0,0,0,0.15);
 }
 
 nav a{
   color:white;
+  text-decoration:none;
   margin:0 8px;
   font-weight:bold;
-  text-decoration:none;
-  padding:10px 15px;
-  border-radius:12px;
+  padding:10px 14px;
+  border-radius:10px;
   transition:0.3s;
   display:inline-block;
 }
@@ -136,204 +118,140 @@ nav a:hover{
   transform:translateY(-2px);
 }
 
-/* CONTEÚDO */
+/* SECTION */
 
 section{
-  padding:70px 25px;
   max-width:1100px;
   margin:auto;
-  line-height:1.9;
+  padding:60px 25px;
 }
 
-/* TITULOS */
+/* TITLES */
 
 h2{
-  text-align:center;
-  color:#145a1f;
+  color:#1b5e20;
   font-size:2.6em;
-  margin-bottom:45px;
-  position:relative;
-}
-
-h2::after{
-  content:"";
-  width:90px;
-  height:5px;
-  background:#66bb6a;
-  display:block;
-  margin:15px auto 0;
-  border-radius:10px;
-}
-
-/* PARÁGRAFOS */
-
-p{
   margin-bottom:25px;
+  text-align:center;
+}
+
+h3{
+  color:#1b5e20;
+  margin-top:50px;
+  margin-bottom:20px;
+  font-size:1.7em;
+  border-left:6px solid #43a047;
+  padding-left:14px;
+}
+
+/* TEXT */
+
+.exp-text{
+  background:white;
+  padding:35px;
+  border-radius:22px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+  line-height:1.9;
   font-size:1.05em;
+  margin-bottom:40px;
+  border-top:6px solid #43a047;
+  transition:0.4s;
 }
 
-/* PRIMEIRO CARROSSEL */
+.exp-text:hover{
+  transform:translateY(-5px);
+}
 
-.carrossel{
-  position:relative;
-  max-width:700px;
-  margin:50px auto;
+/* CARD */
+
+.card{
+  background:white;
+  padding:30px;
+  margin:25px 0;
+  border-radius:22px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.08);
+  transition:0.4s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 12px 28px rgba(0,0,0,0.12);
+}
+
+.card p{
+  line-height:1.9;
+  margin-bottom:18px;
+}
+
+/* IMAGE */
+
+.img-box{
+  text-align:center;
+}
+
+.img-box img{
+  width:100%;
+  max-width:520px;
+  border-radius:18px;
+  transition:0.4s;
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.img-box img:hover{
+  transform:scale(1.03);
+}
+
+/* VIDEO */
+
+.video-box{
   overflow:hidden;
-  border-radius:25px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+  border-radius:22px;
+  box-shadow:0 10px 24px rgba(0,0,0,0.15);
 }
 
-.slide{
-  display:none;
+.video-box iframe{
   width:100%;
-  border-radius:25px;
-  animation:fade 0.6s ease;
-}
-
-.slide.ativo{
-  display:block;
-}
-
-/* SEGUNDO CARROSSEL */
-
-.carrossel2{
-  position:relative;
-  width:100%;
-  max-width:700px;
-  margin:70px auto;
-  overflow:hidden;
-  border-radius:25px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.15);
-}
-
-.slide2{
-  width:100%;
-  display:none;
-  border-radius:25px;
-  animation:fade 0.6s ease;
-}
-
-.slide2.ativo2{
-  display:block;
-}
-
-/* BOTÕES */
-
-.prev,
-.next,
-.prev2,
-.next2{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  width:58px;
-  height:58px;
+  height:500px;
   border:none;
-  border-radius:50%;
-  background:rgba(0,0,0,0.45);
-  color:white;
-  font-size:30px;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:100;
-  transition:0.3s;
-  backdrop-filter:blur(5px);
-}
-
-.prev:hover,
-.next:hover,
-.prev2:hover,
-.next2:hover{
-  background:#145a1f;
-  transform:translateY(-50%) scale(1.1);
-}
-
-.prev{
-  left:18px;
-}
-
-.next{
-  right:18px;
-}
-
-.prev2{
-  left:18px;
-}
-
-.next2{
-  right:18px;
 }
 
 /* FOOTER */
 
 footer{
-  background:#145a1f;
+  background:#1b5e20;
   color:white;
   text-align:center;
-  padding:45px 20px;
-  margin-top:70px;
+  padding:40px 20px;
+  margin-top:60px;
 }
 
 .footer-links{
-  margin-top:18px;
+  margin-top:15px;
 }
 
 .footer-links a{
   color:white;
-  margin:0 10px;
   text-decoration:none;
-  font-size:14px;
+  margin:0 10px;
   transition:0.3s;
+  font-size:14px;
 }
 
 .footer-links a:hover{
   color:#a5d6a7;
 }
 
-/* ANIMAÇÕES */
+/* ANIMAÇÃO */
 
-@keyframes fade{
-
-  from{
-    opacity:0;
-    transform:scale(1.03);
-  }
-
-  to{
-    opacity:1;
-    transform:scale(1);
-  }
-
+.animar{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
 }
 
-@keyframes fadeDown{
-
-  from{
-    opacity:0;
-    transform:translateY(-50px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-
-}
-
-@keyframes fadeUp{
-
-  from{
-    opacity:0;
-    transform:translateY(50px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-
+.animar.ativo{
+  opacity:1;
+  transform:translateY(0);
 }
 
 /* RESPONSIVO */
@@ -341,50 +259,39 @@ footer{
 @media(max-width:768px){
 
   header h1{
-    font-size:2em;
-  }
-
-  header p{
-    font-size:1em;
+    font-size:2.1em;
   }
 
   nav a{
+    display:inline-block;
     margin:5px;
-    padding:10px 12px;
-    font-size:14px;
   }
 
   h2{
     font-size:2em;
   }
 
-  .prev,
-  .next,
-  .prev2,
-  .next2{
-    width:45px;
-    height:45px;
-    font-size:24px;
+  .video-box iframe{
+    height:300px;
+  }
+
+  .card,
+  .exp-text{
+    padding:22px;
   }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
-<!-- HEADER -->
-
 <header>
 
-<a href="index.html">
-  <h1>Projeto de Educação Matemática: MicroMat</h1>
-</a>
+<h1>Projeto de educação matemática: MicroMat</h1>
 
 <p>
-
 <span class="pt">
 Integração entre matemática e microbiologia por meio de atividades experimentais
 </span>
@@ -392,19 +299,13 @@ Integração entre matemática e microbiologia por meio de atividades experiment
 <span class="en" style="display:none;">
 Integration between mathematics and microbiology through experimental activities
 </span>
-
 </p>
 
-<button class="idioma-btn" onclick="trocarIdioma()">
-EN/PT
-</button>
+<button class="idioma-btn" onclick="trocarIdioma()">EN/PT</button>
 
 </header>
 
-<!-- MENU -->
-
 <nav>
-
 <a href="index.html">Início</a>
 <a href="exp0.html">Exp 0</a>
 <a href="exp1.html">Exp 1</a>
@@ -413,107 +314,139 @@ EN/PT
 <a href="medicao.html">Medir Área</a>
 <a href="visitas.html">Visitas</a>
 <a href="contato.html">Contato</a>
-
 </nav>
 
-<!-- CONTEÚDO -->
+<section id="medicao">
 
-<section>
-
-<h2>
-
-<span class="pt">
-Visitas às Escolas
-</span>
-
-<span class="en" style="display:none;">
-School Visits
-</span>
-
+<h2 class="animar">
+<span class="pt">Como medir colônias</span>
+<span class="en" style="display:none;">How to Measure Colonies</span>
 </h2>
 
-<p>
+<!-- INTRO -->
+
+<div class="exp-text animar">
 
 <span class="pt">
-O projeto Micromat leva a integração entre matemática e microbiologia diretamente ao ambiente escolar, proporcionando aos estudantes uma experiência prática que aproxima conceitos abstratos da realidade experimental.
+Atualmente, existem diferentes formas de medir objetos em fotografias utilizando referências de escala conhecidas. Para isso, é necessário que um objeto presente na imagem possua dimensões conhecidas e esteja aproximadamente na mesma distância da câmera que o objeto a ser medido. Dessa forma, é possível estabelecer proporções e calcular medidas reais com maior precisão.
 </span>
 
 <span class="en" style="display:none;">
-The Micromat project brings the integration of mathematics and microbiology directly into the school environment, providing students with a practical experience that connects abstract concepts to experimental reality.
+Nowadays, there are different ways to measure objects in photographs using known scale references. For this, an object in the image must have known dimensions and be approximately at the same distance from the camera as the object being measured. This allows proportional relationships to be established and real measurements to be calculated more accurately.
 </span>
-
-</p>
-
-<!-- PRIMEIRO CARROSSEL -->
-
-<div class="carrossel">
-
-<img src="imagens/carrossel1.jpeg" class="slide ativo">
-
-<img src="imagens/carrossel2.jpeg" class="slide">
-
-<img src="imagens/carrossel3.jpeg" class="slide">
-
-<img src="imagens/carrossel4.jpeg" class="slide">
-
-<img src="imagens/carrossel5.jpeg" class="slide">
-
-<button class="prev" onclick="mudarSlide(-1)">
-❮
-</button>
-
-<button class="next" onclick="mudarSlide(1)">
-❯
-</button>
 
 </div>
 
-<p>
+<!-- MÉTODO 1 -->
 
+<h3 class="animar">
+<span class="pt">1) Regra de três</span>
+<span class="en" style="display:none;">1) Proportional Reasoning</span>
+</h3>
+
+<div class="card animar">
+
+<p>
 <span class="pt">
-Por meio de atividades experimentais, os alunos exploram conceitos matemáticos de forma aplicada, desenvolvendo o pensamento científico e a curiosidade investigativa.
+É possível calcular o tamanho de uma colônia utilizando outro objeto de dimensão conhecida como referência. No caso das placas de Petri, normalmente utiliza-se uma régua posicionada próxima à placa durante a fotografia.
 </span>
 
 <span class="en" style="display:none;">
-Through experimental activities, students explore mathematical concepts in an applied way, developing scientific thinking and investigative curiosity.
+It is possible to calculate the size of a colony using another object with known dimensions as reference. In the case of Petri dishes, a ruler positioned next to the plate during photography is commonly used.
 </span>
-
 </p>
 
-<!-- SEGUNDO CARROSSEL -->
+<p>
+<span class="pt">
+Após ampliar a imagem, mede-se visualmente um trecho conhecido da régua e compara-se com o diâmetro da colônia. A partir dessa proporção, pode-se calcular o valor real do diâmetro.
+</span>
 
-<div class="carrossel2">
+<span class="en" style="display:none;">
+After zooming into the image, a known section of the ruler is visually measured and compared with the colony diameter. From this proportion, the real diameter value can be calculated.
+</span>
+</p>
 
-<img src="imagens/sequencia.jpeg" class="slide2 ativo2">
+<p>
+<span class="pt">
+É importante utilizar a mesma unidade de medida em todos os valores para evitar erros nos cálculos.
+</span>
 
-<img src="imagens/sequencia1.jpeg" class="slide2">
+<span class="en" style="display:none;">
+It is important to use the same measurement unit for all values to avoid calculation errors.
+</span>
+</p>
 
-<img src="imagens/sequencia2.jpeg" class="slide2">
+</div>
 
-<img src="imagens/sequencia3.jpeg" class="slide2">
+<!-- IMAGEM -->
 
-<button class="prev2" onclick="mudarSlide2(-1)">
-❮
-</button>
+<div class="card img-box animar">
 
-<button class="next2" onclick="mudarSlide2(1)">
-❯
-</button>
+<p><strong>
+<span class="pt">Exemplo de proporção:</span>
+<span class="en" style="display:none;">Proportion example:</span>
+</strong></p>
+
+<a href="imagens/medidas.png" target="_blank">
+<img src="imagens/medidas.png" alt="Medidas">
+</a>
+
+</div>
+
+<!-- MÉTODO 2 -->
+
+<h3 class="animar">
+<span class="pt">2) ImageJ</span>
+<span class="en" style="display:none;">2) ImageJ</span>
+</h3>
+
+<div class="card animar">
+
+<p>
+<span class="pt">
+O ImageJ é um software amplamente utilizado para análise de imagens científicas. Com ele, é possível medir diâmetros, áreas e outras características de colônias de forma mais precisa.
+</span>
+
+<span class="en" style="display:none;">
+ImageJ is a software widely used for scientific image analysis. It allows the measurement of diameters, areas, and other colony characteristics with greater precision.
+</span>
+</p>
+
+<p>
+<span class="pt">
+O programa utiliza a escala da imagem para converter medidas em pixels para unidades reais, permitindo análises quantitativas mais confiáveis.
+</span>
+
+<span class="en" style="display:none;">
+The software uses the image scale to convert pixel measurements into real units, allowing more reliable quantitative analyses.
+</span>
+</p>
+
+</div>
+
+<!-- VIDEO -->
+
+<h3 class="animar">
+<span class="pt">Vídeo explicativo</span>
+<span class="en" style="display:none;">Tutorial Video</span>
+</h3>
+
+<div class="video-box animar">
+
+<iframe
+src="https://www.youtube.com/embed/PuoJqg07Yp4"
+allowfullscreen>
+</iframe>
 
 </div>
 
 </section>
 
-<!-- FOOTER -->
-
 <footer>
 
-<p>
-Micromat - Universidade de São Paulo
-</p>
+<p>Micromat - Universidade de São Paulo</p>
 
 <div class="footer-links">
-
 <a href="index.html">Início</a>
 <a href="exp0.html">Experimento 0</a>
 <a href="exp1.html">Experimento 1</a>
@@ -522,48 +455,11 @@ Micromat - Universidade de São Paulo
 <a href="medicao.html">Medir Área</a>
 <a href="visitas.html">Visitas</a>
 <a href="contato.html">Contato</a>
-
 </div>
 
 </footer>
 
-<!-- SCRIPT -->
-
 <script>
-
-/* PRIMEIRO CARROSSEL */
-
-let slideIndex = 0;
-
-const slides = document.querySelectorAll(".slide");
-
-function mostrarSlide(index){
-
-  slides.forEach(s => {
-
-    s.classList.remove("ativo");
-
-  });
-
-  slideIndex = (index + slides.length) % slides.length;
-
-  slides[slideIndex].classList.add("ativo");
-
-}
-
-function mudarSlide(n){
-
-  mostrarSlide(slideIndex + n);
-
-}
-
-/* AUTO PLAY */
-
-setInterval(() => {
-
-  mudarSlide(1);
-
-},4500);
 
 /* IDIOMA */
 
@@ -571,68 +467,37 @@ let idioma = "pt";
 
 function trocarIdioma(){
 
-  idioma = idioma === "pt" ? "en" : "pt";
+  idioma = (idioma === "pt") ? "en" : "pt";
 
-  document.querySelectorAll(".pt").forEach(el => {
-
-    el.style.display = idioma === "pt" ? "inline" : "none";
-
+  document.querySelectorAll(".pt").forEach(el=>{
+    el.style.display = (idioma === "pt") ? "inline" : "none";
   });
 
-  document.querySelectorAll(".en").forEach(el => {
-
-    el.style.display = idioma === "en" ? "inline" : "none";
-
+  document.querySelectorAll(".en").forEach(el=>{
+    el.style.display = (idioma === "en") ? "inline" : "none";
   });
 
 }
 
-/* SEGUNDO CARROSSEL */
+/* ANIMAÇÃO */
 
-let slideAtual2 = 0;
+const elementos = document.querySelectorAll(".animar");
 
-const slides2 = document.querySelectorAll(".slide2");
+const observer = new IntersectionObserver((entries)=>{
 
-function mostrarSlide2(index){
+  entries.forEach(entry=>{
 
-  slides2.forEach(slide => {
-
-    slide.classList.remove("ativo2");
+    if(entry.isIntersecting){
+      entry.target.classList.add("ativo");
+    }
 
   });
 
-  if(index >= slides2.length){
+});
 
-    slideAtual2 = 0;
-  }
-
-  else if(index < 0){
-
-    slideAtual2 = slides2.length - 1;
-  }
-
-  else{
-
-    slideAtual2 = index;
-  }
-
-  slides2[slideAtual2].classList.add("ativo2");
-
-}
-
-function mudarSlide2(direcao){
-
-  mostrarSlide2(slideAtual2 + direcao);
-
-}
-
-/* AUTO PLAY SEGUNDO */
-
-setInterval(() => {
-
-  mudarSlide2(1);
-
-},5000);
+elementos.forEach(el=>{
+  observer.observe(el);
+});
 
 </script>
 
