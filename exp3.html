@@ -5,7 +5,8 @@
 <title>MicroMat - Experimento 3</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
+/* SUBSTITUA TODO O <style> DO EXP3 POR ESSE */
+
 body{
   margin:0;
   font-family:Arial,sans-serif;
@@ -22,22 +23,14 @@ header{
   position:relative;
 }
 
-header a{
-  text-decoration:none;
-  color:inherit;
-}
-
 header h1{
+  font-size:3em;
   margin:0;
-  font-size:28px;
-}
-
-header h1:hover{
-  opacity:0.8;
 }
 
 header p{
-  font-size:18px;
+  font-size:1.2em;
+  opacity:0.9;
 }
 
 .idioma-btn{
@@ -77,9 +70,10 @@ nav a{
 
 nav a:hover{
   background:#66bb6a;
+  transform:scale(1.05);
 }
 
-/* CONTEÚDO */
+/* SECTION */
 section{
   padding:50px 25px;
   max-width:950px;
@@ -87,9 +81,10 @@ section{
   line-height:1.7;
 }
 
+/* TITULOS */
 h2{
-  text-align:center;
   color:#1b5e20;
+  text-align:center;
   margin-bottom:20px;
 }
 
@@ -98,6 +93,7 @@ h3{
   margin-top:40px;
 }
 
+/* TEXTO INTRO */
 .exp-text{
   font-size:1em;
   color:#444;
@@ -109,9 +105,9 @@ h3{
 .card{
   background:white;
   padding:25px;
+  margin:25px 0;
   border-radius:15px;
   box-shadow:0 4px 12px rgba(0,0,0,0.08);
-  margin:25px 0;
 }
 
 .card ul,
@@ -122,6 +118,11 @@ h3{
 .card li{
   margin-bottom:16px;
   line-height:1.7;
+}
+
+/* IFRAME */
+iframe{
+  border-radius:10px;
 }
 
 /* FOOTER */
@@ -148,11 +149,11 @@ footer{
 @media(max-width:768px){
 
   header h1{
-    font-size:22px;
+    font-size:2em;
   }
 
   header p{
-    font-size:15px;
+    font-size:1em;
   }
 
   nav a{
@@ -164,9 +165,7 @@ footer{
     padding:18px;
   }
 
-}
-</style>
-</head>
+}</head>
 
 <body>
 
