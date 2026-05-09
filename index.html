@@ -342,7 +342,78 @@ footer{
   }
 
 }
+/* CARROSSEL HOME */
 
+.carrossel-home{
+  position:relative;
+  width:100%;
+  max-width:760px;
+  margin:35px auto 10px;
+  overflow:hidden;
+  border-radius:24px;
+  box-shadow:0 10px 28px rgba(0,0,0,0.16);
+}
+
+.slide-home{
+  width:100%;
+  display:none;
+  animation:fade 0.7s ease;
+}
+
+.slide-home.ativo-home{
+  display:block;
+}
+
+.slide-home:hover{
+  transform:scale(1.02);
+  transition:0.5s;
+}
+
+.prev-home,
+.next-home{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:55px;
+  height:55px;
+  border:none;
+  border-radius:50%;
+  background:rgba(0,0,0,0.45);
+  color:white;
+  font-size:28px;
+  cursor:pointer;
+  transition:0.3s;
+  z-index:20;
+  backdrop-filter:blur(5px);
+}
+
+.prev-home:hover,
+.next-home:hover{
+  background:#1b5e20;
+  transform:translateY(-50%) scale(1.08);
+}
+
+.prev-home{
+  left:18px;
+}
+
+.next-home{
+  right:18px;
+}
+
+@keyframes fade{
+
+  from{
+    opacity:0;
+    transform:scale(1.03);
+  }
+
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+
+}
 </style>
 </head>
 
@@ -573,8 +644,28 @@ The Micromat project also carries out school visits, bringing experimental activ
 
 </p>
 
-<div class="visita-box">
-<img src="imagens/carrossel1.jpeg" alt="Visitas às escolas">
+<!-- CARROSSEL -->
+
+<div class="carrossel-home">
+
+<img src="imagens/home1.jpeg" class="slide-home ativo-home">
+
+<img src="imagens/home2.jpeg" class="slide-home">
+
+<img src="imagens/home3.jpeg" class="slide-home">
+
+<img src="imagens/home4.jpeg" class="slide-home">
+
+<img src="imagens/home5.jpeg" class="slide-home">
+
+<button class="prev-home" onclick="mudarSlideHome(-1)">
+❮
+</button>
+
+<button class="next-home" onclick="mudarSlideHome(1)">
+❯
+</button>
+
 </div>
 
 <a href="visitas.html" class="btn">
@@ -590,9 +681,8 @@ See visits
 </a>
 
 </div>
-
 </section>
-
+  
 <!-- FOOTER -->
 
 <footer>
@@ -665,6 +755,42 @@ elementos.forEach(el=>{
 });
 
 </script>
+<script>
 
+/* CARROSSEL HOME */
+
+let slideHome = 0;
+
+const slidesHome = document.querySelectorAll(".slide-home");
+
+function mostrarSlideHome(index){
+
+  slidesHome.forEach(slide => {
+
+    slide.classList.remove("ativo-home");
+
+  });
+
+  slideHome = (index + slidesHome.length) % slidesHome.length;
+
+  slidesHome[slideHome].classList.add("ativo-home");
+
+}
+
+function mudarSlideHome(n){
+
+  mostrarSlideHome(slideHome + n);
+
+}
+
+/* AUTO PLAY */
+
+setInterval(() => {
+
+  mudarSlideHome(1);
+
+},4500);
+
+</script>
 </body>
 </html>
