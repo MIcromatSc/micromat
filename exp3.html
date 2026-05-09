@@ -5,168 +5,127 @@
 <title>MicroMat - Experimento 3</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
- <style> */
-
-body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#f1f8f4;
-  color:#333;
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f1f8f4;
+  color: #333;
 }
 
 /* HEADER */
-header{
-  background:linear-gradient(135deg,#1b5e20,#66bb6a);
-  color:white;
-  padding:60px 20px;
-  text-align:center;
-  position:relative;
+header {
+  background: linear-gradient(135deg, #1b5e20, #66bb6a);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
 }
 
-header h1{
-  font-size:3em;
-  margin:0;
+header a {
+  text-decoration: none;
+  color: inherit;
 }
 
-header p{
-  font-size:1.2em;
-  opacity:0.9;
+header h1 {
+  margin: 0;
+  font-size: 28px;
 }
 
-.idioma-btn{
-  position:absolute;
-  top:10px;
-  right:20px;
-  background:white;
-  color:#1b5e20;
-  border:none;
-  padding:10px 15px;
-  border-radius:8px;
-  font-weight:bold;
-  cursor:pointer;
-  transition:0.3s;
+header h1:hover {
+  opacity: 0.8;
 }
 
-.idioma-btn:hover{
-  transform:scale(1.05);
+header p {
+  font-size: 18px;
+}
+
+.idioma-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
 }
 
 /* NAV */
-nav{
-  background:#1b5e20;
-  padding:15px;
-  text-align:center;
+nav {
+  background: #1b5e20;
+  padding: 15px;
+  text-align: center;
 }
 
-nav a{
-  color:white;
-  margin:0 10px;
-  font-weight:bold;
-  text-decoration:none;
-  padding:8px 12px;
-  border-radius:8px;
-  transition:0.3s;
+nav a {
+  color: white;
+  margin: 0 10px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.3s;
 }
 
-nav a:hover{
-  background:#66bb6a;
-  transform:scale(1.05);
+nav a:hover {
+  background: #66bb6a;
 }
 
-/* SECTION */
-section{
-  padding:50px 25px;
-  max-width:950px;
-  margin:auto;
-  line-height:1.7;
+/* CONTEÚDO */
+section {
+  padding: 50px 25px;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.6;
 }
 
-/* TITULOS */
-h2{
-  color:#1b5e20;
-  text-align:center;
-  margin-bottom:20px;
+h2, h3 {
+  text-align: center;
+  color: #1b5e20;
 }
 
-h3{
-  color:#1b5e20;
-  margin-top:40px;
+.exp-text {
+  font-size: 1em;
+  color: #444;
+  line-height: 1.8;
+  text-align: justify;
 }
 
-/* TEXTO INTRO */
-.exp-text{
-  font-size:1em;
-  color:#444;
-  line-height:1.8;
-  text-align:justify;
-}
-
-/* CARDS */
-.card{
-  background:white;
-  padding:25px;
-  margin:25px 0;
-  border-radius:15px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+.card {
+  background: white;
+  padding: 25px;
+  margin: 25px 0;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
 .card ul,
-.card ol{
-  padding-left:22px;
+.card ol {
+  padding-left: 20px;
 }
 
-.card li{
-  margin-bottom:16px;
-  line-height:1.7;
-}
-
-/* IFRAME */
-iframe{
-  border-radius:10px;
+.card li {
+  margin-bottom: 15px;
 }
 
 /* FOOTER */
-footer{
-  background:#1b5e20;
-  color:white;
-  text-align:center;
-  padding:30px 20px;
-  margin-top:40px;
+footer {
+  background: #1b5e20;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
 }
 
-.footer-links a{
-  color:white;
-  margin:0 10px;
-  text-decoration:none;
-  font-size:14px;
+.footer-links a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 14px;
 }
 
-.footer-links a:hover{
-  color:#a5d6a7;
+.footer-links a:hover {
+  color: #a5d6a7;
 }
-
-/* RESPONSIVO */
-@media(max-width:768px){
-
-  header h1{
-    font-size:2em;
-  }
-
-  header p{
-    font-size:1em;
-  }
-
-  nav a{
-    display:inline-block;
-    margin:5px;
-  }
-
-  .card{
-    padding:18px;
-  }
-
-}</head>
 </style>
+</head>
+
 <body>
 
 <!-- HEADER -->
@@ -214,11 +173,11 @@ Integration between mathematics and microbiology through experimental activities
 <p class="exp-text">
 
 <span class="pt">
-Neste experimento será realizado o acompanhamento temporal do crescimento de colônias de leveduras por meio de registros fotográficos e medições sucessivas.
+Neste experimento será realizado o acompanhamento temporal do crescimento de colônias de leveduras por meio de registros fotográficos e medições sucessivas. A atividade busca relacionar conceitos matemáticos, como análise gráfica, medidas e interpretação de dados, ao desenvolvimento biológico das colônias ao longo do tempo.
 </span>
 
 <span class="en" style="display:none;">
-In this experiment, the temporal growth of yeast colonies will be monitored through photographic records and successive measurements.
+In this experiment, the temporal growth of yeast colonies will be monitored through photographic records and successive measurements. The activity aims to connect mathematical concepts such as graph analysis, measurements, and data interpretation with the biological development of colonies over time.
 </span>
 
 </p>
@@ -411,7 +370,7 @@ Record photograph times and corresponding diameters in a data table.
 
 let idioma = "pt";
 
-function trocarIdioma(){
+function trocarIdioma() {
 
   idioma = (idioma === "pt") ? "en" : "pt";
 
