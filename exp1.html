@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
 <meta charset="UTF-8">
-<title>MicroMat</title>
+<title>MicroMat - Experimento 1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-
-/* RESET */
 
 *{
   margin:0;
@@ -21,18 +18,17 @@ html{
 }
 
 body{
-  font-family:Arial,sans-serif;
-  background:#f4fbf6;
+  font-family: Arial, sans-serif;
+  background:#f1f8f4;
   color:#333;
-  overflow-x:hidden;
 }
 
 /* HEADER */
 
 header{
-  background:linear-gradient(135deg,#145a1f,#66bb6a);
+  background: linear-gradient(135deg,#1b5e20,#66bb6a);
   color:white;
-  padding:100px 20px 80px;
+  padding:70px 20px;
   text-align:center;
   position:relative;
   overflow:hidden;
@@ -41,84 +37,78 @@ header{
 header::before{
   content:"";
   position:absolute;
-  width:600px;
-  height:600px;
-  background:rgba(255,255,255,0.05);
+  width:300px;
+  height:300px;
+  background:rgba(255,255,255,0.08);
   border-radius:50%;
-  top:-300px;
-  right:-150px;
+  top:-100px;
+  left:-80px;
 }
 
 header::after{
   content:"";
   position:absolute;
-  width:400px;
-  height:400px;
-  background:rgba(255,255,255,0.04);
+  width:250px;
+  height:250px;
+  background:rgba(255,255,255,0.08);
   border-radius:50%;
-  bottom:-200px;
-  left:-120px;
+  bottom:-120px;
+  right:-70px;
 }
 
 header h1{
-  font-size:3.2em;
-  margin-bottom:20px;
+  font-size:3em;
+  margin-bottom:15px;
   position:relative;
   z-index:2;
-  animation:fadeDown 1s ease;
 }
 
 header p{
-  font-size:1.2em;
+  font-size:1.15em;
   opacity:0.95;
-  line-height:1.8;
-  max-width:850px;
-  margin:auto;
   position:relative;
   z-index:2;
-  animation:fadeUp 1.2s ease;
 }
-
-/* BOTÃO IDIOMA */
 
 .idioma-btn{
   position:absolute;
   top:20px;
   right:20px;
-  border:none;
   background:white;
-  color:#145a1f;
-  padding:12px 20px;
-  border-radius:40px;
-  font-weight:bold;
+  color:#1b5e20;
+  border:none;
+  padding:10px 18px;
+  border-radius:30px;
   cursor:pointer;
+  font-weight:bold;
   transition:0.3s;
-  z-index:10;
-  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+  z-index:3;
 }
 
 .idioma-btn:hover{
-  transform:scale(1.08);
+  transform:scale(1.05);
+  background:#e8f5e9;
 }
 
 /* NAV */
 
 nav{
-  background:#145a1f;
+  background:#1b5e20;
   padding:18px;
   text-align:center;
   position:sticky;
   top:0;
-  z-index:999;
+  z-index:1000;
+  box-shadow:0 2px 10px rgba(0,0,0,0.15);
 }
 
 nav a{
   color:white;
+  text-decoration:none;
   margin:0 8px;
   font-weight:bold;
-  text-decoration:none;
-  padding:10px 15px;
-  border-radius:12px;
+  padding:10px 14px;
+  border-radius:10px;
   transition:0.3s;
   display:inline-block;
 }
@@ -131,187 +121,134 @@ nav a:hover{
 /* SECTION */
 
 section{
-  padding:70px 25px;
   max-width:1100px;
   margin:auto;
-  line-height:1.9;
+  padding:60px 25px;
 }
 
-/* TITULOS */
+/* TITLES */
 
 h2{
-  text-align:center;
-  color:#145a1f;
+  color:#1b5e20;
   font-size:2.6em;
-  margin-bottom:35px;
-  position:relative;
-}
-
-h2::after{
-  content:"";
-  width:90px;
-  height:5px;
-  background:#66bb6a;
-  display:block;
-  margin:15px auto 0;
-  border-radius:10px;
-}
-
-h3{
-  color:#145a1f;
   margin-bottom:25px;
-  font-size:1.8em;
-}
-
-/* TEXTO */
-
-p{
-  margin-bottom:20px;
-  font-size:1.05em;
-}
-
-/* CARD */
-.card{
-  background:white;
-  padding:25px;
-  border-radius:15px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.08);
-  margin:25px 0;
-}
-
-.card li{
-  margin-bottom:16px;
-  line-height:1.7;
-}
-
-.exp-text{
-  font-size:1em;
-  color:#444;
-  line-height:1.8;
-  text-align:justify;
+  text-align:center;
 }
 
 h3{
   color:#1b5e20;
-  margin-top:40px;
+  margin-top:50px;
+  margin-bottom:20px;
+  font-size:1.7em;
+  border-left:6px solid #43a047;
+  padding-left:14px;
 }
 
-section{
-  padding:50px 25px;
-  max-width:950px;
-  margin:auto;
-  line-height:1.7;
-}
-.card{
+/* INTRO */
+
+.exp-text{
   background:white;
   padding:35px;
-  margin:35px 0;
-  border-radius:28px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  border-radius:22px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+  line-height:1.9;
+  font-size:1.05em;
+  margin-bottom:40px;
+  border-top:6px solid #43a047;
   transition:0.4s;
-  position:relative;
-  overflow:hidden;
 }
 
-.card::before{
-  content:"";
-  position:absolute;
-  width:180px;
-  height:180px;
-  background:rgba(102,187,106,0.08);
-  border-radius:50%;
-  top:-60px;
-  right:-60px;
+.exp-text:hover{
+  transform:translateY(-5px);
+}
+
+/* CARD */
+
+.card{
+  background:white;
+  padding:30px;
+  margin:25px 0;
+  border-radius:22px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.08);
+  transition:0.4s;
 }
 
 .card:hover{
   transform:translateY(-6px);
-  box-shadow:0 18px 40px rgba(0,0,0,0.12);
+  box-shadow:0 12px 28px rgba(0,0,0,0.12);
 }
 
-/* LISTAS */
+/* LISTS */
 
-ul,
+ul{
+  padding-left:25px;
+}
+
+ul li{
+  margin:14px 0;
+  line-height:1.7;
+}
+
 ol{
   padding-left:25px;
 }
 
-li{
-  margin-bottom:16px;
+ol li{
+  margin-bottom:20px;
   line-height:1.8;
 }
 
-
 /* VIDEO */
 
-.video-container{
-  margin:40px auto;
-  text-align:center;
+.video-box{
+  overflow:hidden;
+  border-radius:22px;
+  box-shadow:0 10px 24px rgba(0,0,0,0.15);
 }
 
-.video-container iframe{
+.video-box iframe{
   width:100%;
-  max-width:850px;
-  height:480px;
+  height:500px;
   border:none;
-  border-radius:25px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.18);
 }
 
 /* FOOTER */
 
 footer{
-  background:#145a1f;
+  background:#1b5e20;
   color:white;
   text-align:center;
-  padding:45px 20px;
-  margin-top:70px;
+  padding:40px 20px;
+  margin-top:60px;
 }
 
 .footer-links{
-  margin-top:18px;
+  margin-top:15px;
 }
 
 .footer-links a{
   color:white;
-  margin:0 10px;
   text-decoration:none;
-  font-size:14px;
+  margin:0 10px;
   transition:0.3s;
+  font-size:14px;
 }
 
 .footer-links a:hover{
   color:#a5d6a7;
 }
 
-/* ANIMAÇÕES */
+/* ANIMAÇÃO */
 
-@keyframes fadeDown{
-
-  from{
-    opacity:0;
-    transform:translateY(-50px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-
+.animar{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
 }
 
-@keyframes fadeUp{
-
-  from{
-    opacity:0;
-    transform:translateY(50px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-
+.animar.ativo{
+  opacity:1;
+  transform:translateY(0);
 }
 
 /* RESPONSIVO */
@@ -319,33 +256,25 @@ footer{
 @media(max-width:768px){
 
   header h1{
-    font-size:2.2em;
-  }
-
-  header p{
-    font-size:1em;
+    font-size:2.1em;
   }
 
   nav a{
+    display:inline-block;
     margin:5px;
-    padding:10px 12px;
-    font-size:14px;
   }
 
   h2{
     font-size:2em;
   }
 
-  h3{
-    font-size:1.5em;
+  .video-box iframe{
+    height:300px;
   }
 
-  .card{
-    padding:25px;
-  }
-
-  .video-container iframe{
-    height:250px;
+  .card,
+  .exp-text{
+    padding:22px;
   }
 
 }
@@ -357,12 +286,9 @@ footer{
 
 <header>
 
-<h1>
-Projeto de educação matemática:MicroMat
-</h1>
+<h1>Projeto de educação matemática: MicroMat</h1>
 
 <p>
-
 <span class="pt">
 Integração entre matemática e microbiologia por meio de atividades experimentais
 </span>
@@ -370,17 +296,13 @@ Integração entre matemática e microbiologia por meio de atividades experiment
 <span class="en" style="display:none;">
 Integration between mathematics and microbiology through experimental activities
 </span>
-
 </p>
 
-<button class="idioma-btn" onclick="trocarIdioma()">
-EN/PT
-</button>
+<button class="idioma-btn" onclick="trocarIdioma()">EN/PT</button>
 
 </header>
 
 <nav>
-
 <a href="index.html">Início</a>
 <a href="exp0.html">Exp 0</a>
 <a href="exp1.html">Exp 1</a>
@@ -389,57 +311,37 @@ EN/PT
 <a href="medicao.html">Medir Área</a>
 <a href="visitas.html">Visitas</a>
 <a href="contato.html">Contato</a>
-
 </nav>
-
-<!-- EXP 1 -->
 
 <section id="exp1">
 
-<h2>
-
-<span class="pt">
-Experimento 1
-</span>
-
-<span class="en" style="display:none;">
-Experiment 1
-</span>
-
+<h2 class="animar">
+<span class="pt">Experimento 1</span>
+<span class="en" style="display:none;">Experiment 1</span>
 </h2>
 
-<p class="exp-text">
+<!-- INTRO -->
+
+<div class="exp-text animar">
 
 <span class="pt">
-O objetivo deste experimento é calcular a concentração de células contidas em 1 (um) grama
-de fermento biológico. Para isso, os alunos produzirão uma suspensão de leveduras, a qual
-será diluída sequencialmente, e, ao final, semeadas em placas de Petri. As colônias que
-surgirem após a incubação das placas na temperatura apropriada serão contadas. A partir
-desse valor, é possível calcular a concentração de células na suspensão de leveduras e no
-pacote de fermento biológico.
+Neste experimento, os alunos irão determinar a concentração de células presentes em fermento biológico utilizando técnicas de microbiologia e cálculos matemáticos. A atividade envolve a preparação de suspensões celulares, diluições seriadas e contagem de colônias em placas de Petri. A partir dos resultados obtidos, será possível calcular a concentração celular tanto na suspensão quanto no fermento biológico original, integrando conceitos de potência, proporção, volume e análise quantitativa.
 </span>
 
 <span class="en" style="display:none;">
-The experiment aims to determine the cell concentration in 1 gram of baking yeast using the plate count method. Students will prepare a yeast suspension, perform serial dilutions, and inoculate the samples into Petri dishes. Following incubation, counting the resulting colonies will allow for the calculation of the original cell density in both the suspension and the yeast package.
+In this experiment, students will determine the concentration of cells present in biological yeast using microbiological techniques and mathematical calculations. The activity involves preparing cell suspensions, performing serial dilutions, and counting colonies on Petri dishes. From the obtained results, it will be possible to calculate the cell concentration both in the suspension and in the original biological yeast, integrating concepts of powers, proportions, volume, and quantitative analysis.
 </span>
 
-</p>
+</div>
 
 <!-- MATERIAIS -->
 
-<h3>
-
-<span class="pt">
-Materiais e Equipamentos
-</span>
-
-<span class="en" style="display:none;">
-Materials and Equipment
-</span>
-
+<h3 class="animar">
+<span class="pt">Materiais e Equipamentos</span>
+<span class="en" style="display:none;">Materials and Equipment</span>
 </h3>
 
-<div class="card">
+<div class="card animar">
 
 <ul>
 
@@ -469,136 +371,38 @@ Materials and Equipment
 
 <!-- PROCEDIMENTO -->
 
-<h3>
-
-<span class="pt">
-Procedimento Experimental
-</span>
-
-<span class="en" style="display:none;">
-Experimental Procedure
-</span>
-
+<h3 class="animar">
+<span class="pt">Procedimento Experimental</span>
+<span class="en" style="display:none;">Experimental Procedure</span>
 </h3>
 
-<div class="card">
+<div class="card animar">
 
 <ol>
 
-<li>
-<span class="pt"><strong>Lave as mãos com sabonete ou detergente.</strong></span>
-<span class="en" style="display:none;"><strong>Wash your hands with soap or detergent.</strong></span>
-</li>
+<li><span class="pt"><strong>Lave as mãos com sabonete ou detergente.</strong></span><span class="en" style="display:none;"><strong>Wash your hands with soap or detergent.</strong></span></li>
 
-<li>
-<span class="pt">
-Cada grupo receberá 7 microtubos (6 contendo 900 µL de solução salina e 1 contendo 0,1 g de fermento biológico), 3 placas de Petri com meio YPD, 1 tubo Falcon com 10 mL de suspensão salina, 3 alças de Drigalski, uma estante, uma micropipeta, uma caixa de ponteiras e uma caneta.
-</span>
+<li><span class="pt">Cada grupo receberá 7 microtubos (6 contendo 900 µL de solução salina e 1 contendo 0,1 g de fermento biológico), 3 placas de Petri com meio YPD, 1 tubo Falcon com 10 mL de suspensão salina, 3 alças de Drigalski, uma estante, uma micropipeta, uma caixa de ponteiras e uma caneta.</span><span class="en" style="display:none;">Each group will receive 7 microtubes (6 containing 900 µL of saline solution and 1 containing 0.1 g of biological yeast), 3 Petri dishes with YPD medium, 1 Falcon tube with 10 mL of saline suspension, 3 Drigalski spatulas, a rack, a micropipette, a tip box, and a marker.</span></li>
 
-<span class="en" style="display:none;">
-Each group will receive 7 microtubes (6 containing 900 µL of saline solution and 1 containing 0.1 g of biological yeast), 3 Petri dishes with YPD medium, 1 Falcon tube with 10 mL of saline suspension, 3 Drigalski spatulas, a rack, a micropipette, a tip box, and a marker.
-</span>
-</li>
+<li><span class="pt">Identifique as placas de Petri com o número do grupo e as diluições a serem plaqueadas: 10⁻⁴, 10⁻⁵ e 10⁻⁶.</span><span class="en" style="display:none;">Label the Petri dishes with the group number and the dilutions to be plated: 10⁻⁴, 10⁻⁵, and 10⁻⁶.</span></li>
 
-<li>
-<span class="pt">
-Identifique as placas de Petri com o número do grupo e as diluições a serem plaqueadas: 10⁻⁴, 10⁻⁵ e 10⁻⁶.
-</span>
+<li><span class="pt">Identifique os microtubos com as diluições de 10⁻¹ até 10⁻⁶ e organize-os na estante.</span><span class="en" style="display:none;">Label the microtubes with dilutions from 10⁻¹ to 10⁻⁶ and arrange them in the rack.</span></li>
 
-<span class="en" style="display:none;">
-Label the Petri dishes with the group number and the dilutions to be plated: 10⁻⁴, 10⁻⁵, and 10⁻⁶.
-</span>
-</li>
+<li><span class="pt">Transfira o conteúdo do microtubo com fermento para o tubo Falcon e homogenize invertendo-o de 4 a 5 vezes.</span><span class="en" style="display:none;">Transfer the yeast-containing microtube content to the Falcon tube and homogenize by inverting it 4–5 times.</span></li>
 
-<li>
-<span class="pt">
-Identifique os microtubos com as diluições de 10⁻¹ até 10⁻⁶ e organize-os na estante.
-</span>
+<li><span class="pt">Aspire 100 µL da suspensão e transfira para o primeiro microtubo (10⁻¹). Descarte a ponteira após o uso.</span><span class="en" style="display:none;">Aspirate 100 µL of the suspension and transfer it to the first microtube (10⁻¹). Discard the tip after use.</span></li>
 
-<span class="en" style="display:none;">
-Label the microtubes with dilutions from 10⁻¹ to 10⁻⁶ and arrange them in the rack.
-</span>
-</li>
+<li><span class="pt">Para as diluições subsequentes, homogenize o microtubo anterior, utilize nova ponteira e transfira 100 µL para o próximo microtubo.</span><span class="en" style="display:none;">For subsequent dilutions, homogenize the previous microtube, use a new tip, and transfer 100 µL to the next microtube.</span></li>
 
-<li>
-<span class="pt">
-Transfira o conteúdo do microtubo com fermento para o tubo Falcon e homogenize invertendo-o de 4 a 5 vezes.
-</span>
+<li><span class="pt">Para o plaqueamento, inicie pela diluição 10⁻⁶, transferindo 100 µL para a placa correspondente.</span><span class="en" style="display:none;">For plating, start with dilution 10⁻⁶, transferring 100 µL to the corresponding plate.</span></li>
 
-<span class="en" style="display:none;">
-Transfer the yeast-containing microtube content to the Falcon tube and homogenize by inverting it 4–5 times.
-</span>
-</li>
+<li><span class="pt">Espalhe o líquido utilizando a alça de Drigalski com movimentos circulares suaves.</span><span class="en" style="display:none;">Spread the liquid using the Drigalski spatula with gentle circular movements.</span></li>
 
-<li>
-<span class="pt">
-Aspire 100 µL da suspensão e transfira para o primeiro microtubo (10⁻¹). Descarte a ponteira após o uso.
-</span>
+<li><span class="pt">Repita o processo para as diluições 10⁻⁵ e 10⁻⁴.</span><span class="en" style="display:none;">Repeat the process for dilutions 10⁻⁵ and 10⁻⁴.</span></li>
 
-<span class="en" style="display:none;">
-Aspirate 100 µL of the suspension and transfer it to the first microtube (10⁻¹). Discard the tip after use.
-</span>
-</li>
+<li><span class="pt">Incube as placas invertidas a 37°C ou em temperatura ambiente até formação de colônias visíveis.</span><span class="en" style="display:none;">Incubate the inverted plates at 37°C or room temperature until visible colonies form.</span></li>
 
-<li>
-<span class="pt">
-Para as diluições subsequentes, homogenize o microtubo anterior, utilize nova ponteira e transfira 100 µL para o próximo microtubo.
-</span>
-
-<span class="en" style="display:none;">
-For subsequent dilutions, homogenize the previous microtube, use a new tip, and transfer 100 µL to the next microtube.
-</span>
-</li>
-
-<li>
-<span class="pt">
-Para o plaqueamento, inicie pela diluição 10⁻⁶, transferindo 100 µL para a placa correspondente.
-</span>
-
-<span class="en" style="display:none;">
-For plating, start with dilution 10⁻⁶, transferring 100 µL to the corresponding plate.
-</span>
-</li>
-
-<li>
-<span class="pt">
-Espalhe o líquido utilizando a alça de Drigalski com movimentos circulares suaves.
-</span>
-
-<span class="en" style="display:none;">
-Spread the liquid using the Drigalski spatula with gentle circular movements.
-</span>
-</li>
-
-<li>
-<span class="pt">
-Repita o processo para as diluições 10⁻⁵ e 10⁻⁴.
-</span>
-
-<span class="en" style="display:none;">
-Repeat the process for dilutions 10⁻⁵ and 10⁻⁴.
-</span>
-</li>
-
-<li>
-<span class="pt">
-Incube as placas invertidas a 37°C ou em temperatura ambiente até formação de colônias visíveis.
-</span>
-
-<span class="en" style="display:none;">
-Incubate the inverted plates at 37°C or room temperature until visible colonies form.
-</span>
-</li>
-
-<li>
-<span class="pt">
-Na aula seguinte, conte as colônias com auxílio de uma caneta.
-</span>
-
-<span class="en" style="display:none;">
-In the next session, count the colonies using a marker.
-</span>
-</li>
+<li><span class="pt">Na aula seguinte, conte as colônias com auxílio de uma caneta.</span><span class="en" style="display:none;">In the next session, count the colonies using a marker.</span></li>
 
 </ol>
 
@@ -606,23 +410,15 @@ In the next session, count the colonies using a marker.
 
 <!-- VIDEO -->
 
-<h3>
-
-<span class="pt">
-Vídeo do Experimento
-</span>
-
-<span class="en" style="display:none;">
-Experiment Video
-</span>
-
+<h3 class="animar">
+<span class="pt">Vídeo do Experimento</span>
+<span class="en" style="display:none;">Experiment Video</span>
 </h3>
 
-<div class="video-container">
+<div class="video-box animar">
 
 <iframe
 src="https://www.youtube.com/embed/NXv4jbkGiig"
-title="YouTube video"
 allowfullscreen>
 </iframe>
 
@@ -632,12 +428,9 @@ allowfullscreen>
 
 <footer>
 
-<p>
-Micromat - Universidade de São Paulo
-</p>
+<p>Micromat - Universidade de São Paulo</p>
 
 <div class="footer-links">
-
 <a href="index.html">Início</a>
 <a href="exp0.html">Experimento 0</a>
 <a href="exp1.html">Experimento 1</a>
@@ -646,32 +439,49 @@ Micromat - Universidade de São Paulo
 <a href="medicao.html">Medir Área</a>
 <a href="visitas.html">Visitas</a>
 <a href="contato.html">Contato</a>
-
 </div>
 
 </footer>
 
 <script>
 
+/* IDIOMA */
+
 let idioma = "pt";
 
 function trocarIdioma(){
 
-  idioma = idioma === "pt" ? "en" : "pt";
+  idioma = (idioma === "pt") ? "en" : "pt";
 
-  document.querySelectorAll(".pt").forEach(el => {
-
-    el.style.display = idioma === "pt" ? "inline" : "none";
-
+  document.querySelectorAll(".pt").forEach(el=>{
+    el.style.display = (idioma === "pt") ? "inline" : "none";
   });
 
-  document.querySelectorAll(".en").forEach(el => {
-
-    el.style.display = idioma === "en" ? "inline" : "none";
-
+  document.querySelectorAll(".en").forEach(el=>{
+    el.style.display = (idioma === "en") ? "inline" : "none";
   });
 
 }
+
+/* ANIMAÇÃO */
+
+const elementos = document.querySelectorAll(".animar");
+
+const observer = new IntersectionObserver((entries)=>{
+
+  entries.forEach(entry=>{
+
+    if(entry.isIntersecting){
+      entry.target.classList.add("ativo");
+    }
+
+  });
+
+});
+
+elementos.forEach(el=>{
+  observer.observe(el);
+});
 
 </script>
 
