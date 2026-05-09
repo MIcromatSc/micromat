@@ -6,134 +6,287 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body {
-  margin: 0;
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
   font-family: Arial, sans-serif;
-  background: #f1f8f4;
-  color: #333;
+  background:#f1f8f4;
+  color:#333;
 }
 
 /* HEADER */
-header {
-  background: linear-gradient(135deg, #1b5e20, #66bb6a);
-  color: white;
-  padding: 60px 20px;
-  text-align: center;
-  position: relative;
+
+header{
+  background: linear-gradient(135deg,#1b5e20,#66bb6a);
+  color:white;
+  padding:70px 20px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
 }
 
-header a {
-  text-decoration: none;
-  color: inherit;
+header::before{
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  background:rgba(255,255,255,0.08);
+  border-radius:50%;
+  top:-100px;
+  left:-80px;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 28px;
+header::after{
+  content:"";
+  position:absolute;
+  width:250px;
+  height:250px;
+  background:rgba(255,255,255,0.08);
+  border-radius:50%;
+  bottom:-120px;
+  right:-70px;
 }
 
-header h1:hover {
-  opacity: 0.8;
+header h1{
+  font-size:3em;
+  margin-bottom:15px;
+  position:relative;
+  z-index:2;
 }
 
-header p {
-  font-size: 18px;
+header p{
+  font-size:1.15em;
+  opacity:0.95;
+  position:relative;
+  z-index:2;
 }
 
-.idioma-btn {
-  position: absolute;
-  top: 10px;
-  right: 20px;
+.idioma-btn{
+  position:absolute;
+  top:20px;
+  right:20px;
+  background:white;
+  color:#1b5e20;
+  border:none;
+  padding:10px 18px;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.3s;
+  z-index:3;
+}
+
+.idioma-btn:hover{
+  transform:scale(1.05);
+  background:#e8f5e9;
 }
 
 /* NAV */
-nav {
-  background: #1b5e20;
-  padding: 15px;
-  text-align: center;
+
+nav{
+  background:#1b5e20;
+  padding:18px;
+  text-align:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 2px 10px rgba(0,0,0,0.15);
 }
 
-nav a {
-  color: white;
-  margin: 0 10px;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: 0.3s;
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 8px;
+  font-weight:bold;
+  padding:10px 14px;
+  border-radius:10px;
+  transition:0.3s;
+  display:inline-block;
 }
 
-nav a:hover {
-  background: #66bb6a;
+nav a:hover{
+  background:#66bb6a;
+  transform:translateY(-2px);
 }
 
-/* CONTEÚDO */
-section {
-  padding: 50px 25px;
-  max-width: 900px;
-  margin: auto;
-  line-height: 1.6;
+/* SECTION */
+
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:60px 25px;
 }
 
-h2, h3 {
-  text-align: center;
-  color: #1b5e20;
+/* TITLES */
+
+h2{
+  color:#1b5e20;
+  font-size:2.6em;
+  margin-bottom:25px;
+  text-align:center;
 }
 
-.exp-text {
-  font-size: 1em;
-  color: #444;
-  line-height: 1.8;
-  text-align: justify;
+h3{
+  color:#1b5e20;
+  margin-top:50px;
+  margin-bottom:20px;
+  font-size:1.7em;
+  border-left:6px solid #43a047;
+  padding-left:14px;
 }
 
-.card {
-  background: white;
-  padding: 25px;
-  margin: 25px 0;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+/* INTRO */
+
+.exp-text{
+  background:white;
+  padding:35px;
+  border-radius:22px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+  line-height:1.9;
+  font-size:1.05em;
+  margin-bottom:40px;
+  border-top:6px solid #43a047;
+  transition:0.4s;
 }
 
-.card ul,
-.card ol {
-  padding-left: 20px;
+.exp-text:hover{
+  transform:translateY(-5px);
 }
 
-.card li {
-  margin-bottom: 15px;
+/* CARD */
+
+.card{
+  background:white;
+  padding:30px;
+  margin:25px 0;
+  border-radius:22px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.08);
+  transition:0.4s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* LISTS */
+
+ul{
+  padding-left:25px;
+}
+
+ul li{
+  margin:14px 0;
+  line-height:1.7;
+}
+
+ol{
+  padding-left:25px;
+}
+
+ol li{
+  margin-bottom:20px;
+  line-height:1.8;
+}
+
+/* VIDEO */
+
+.video-box{
+  overflow:hidden;
+  border-radius:22px;
+  box-shadow:0 10px 24px rgba(0,0,0,0.15);
+}
+
+.video-box iframe{
+  width:100%;
+  height:500px;
+  border:none;
 }
 
 /* FOOTER */
-footer {
-  background: #1b5e20;
-  color: white;
-  text-align: center;
-  padding: 30px 20px;
-  margin-top: 40px;
+
+footer{
+  background:#1b5e20;
+  color:white;
+  text-align:center;
+  padding:40px 20px;
+  margin-top:60px;
 }
 
-.footer-links a {
-  color: white;
-  margin: 0 10px;
-  text-decoration: none;
-  font-size: 14px;
+.footer-links{
+  margin-top:15px;
 }
 
-.footer-links a:hover {
-  color: #a5d6a7;
+.footer-links a{
+  color:white;
+  text-decoration:none;
+  margin:0 10px;
+  transition:0.3s;
+  font-size:14px;
 }
+
+.footer-links a:hover{
+  color:#a5d6a7;
+}
+
+/* ANIMAÇÃO */
+
+.animar{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
+}
+
+.animar.ativo{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+  header h1{
+    font-size:2.1em;
+  }
+
+  nav a{
+    display:inline-block;
+    margin:5px;
+  }
+
+  h2{
+    font-size:2em;
+  }
+
+  .video-box iframe{
+    height:300px;
+  }
+
+  .card,
+  .exp-text{
+    padding:22px;
+  }
+
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
 
-<a href="index.html">
-<h1>Projeto de Educação Matemática: MicroMat</h1>
-</a>
+<h1>Projeto de educação matemática: MicroMat</h1>
 
 <p>
 <span class="pt">
@@ -149,7 +302,6 @@ Integration between mathematics and microbiology through experimental activities
 
 </header>
 
-<!-- MENU -->
 <nav>
 <a href="index.html">Início</a>
 <a href="exp0.html">Exp 0</a>
@@ -161,185 +313,90 @@ Integration between mathematics and microbiology through experimental activities
 <a href="contato.html">Contato</a>
 </nav>
 
-<!-- CONTEÚDO -->
 <section id="exp3">
 
-<h2>
+<h2 class="animar">
+
 <span class="pt">Experimento 3</span>
 <span class="en" style="display:none;">Experiment 3</span>
+
 </h2>
 
 <!-- INTRO -->
-<p class="exp-text">
+
+<div class="exp-text animar">
 
 <span class="pt">
-Neste experimento será realizado o acompanhamento temporal do crescimento de colônias de leveduras por meio de registros fotográficos e medições sucessivas. A atividade busca relacionar conceitos matemáticos, como análise gráfica, medidas e interpretação de dados, ao desenvolvimento biológico das colônias ao longo do tempo.
+Neste experimento será realizado o acompanhamento temporal do crescimento de colônias de leveduras por meio de registros fotográficos e medições sucessivas. Os estudantes irão analisar a evolução do tamanho das colônias ao longo do tempo, relacionando conceitos matemáticos como taxa de crescimento, gráficos e análise de dados com a prática microbiológica.
 </span>
 
 <span class="en" style="display:none;">
-In this experiment, the temporal growth of yeast colonies will be monitored through photographic records and successive measurements. The activity aims to connect mathematical concepts such as graph analysis, measurements, and data interpretation with the biological development of colonies over time.
+In this experiment, the temporal growth of yeast colonies will be monitored through photographic records and successive measurements. Students will analyze colony size evolution over time, relating mathematical concepts such as growth rate, graphs, and data analysis to microbiological practice.
 </span>
 
-</p>
+</div>
 
 <!-- MATERIAIS -->
-<h3>
+
+<h3 class="animar">
+
 <span class="pt">Materiais e Equipamentos</span>
 <span class="en" style="display:none;">Materials and Equipment</span>
+
 </h3>
 
-<div class="card">
+<div class="card animar">
 
 <ul>
 
-<li>
-<span class="pt">Placa de Petri semeada com leveduras</span>
-<span class="en" style="display:none;">Petri dish seeded with yeast</span>
-</li>
+<li><span class="pt">Placa de Petri semeada com leveduras</span><span class="en" style="display:none;">Petri dish seeded with yeast</span></li>
 
-<li>
-<span class="pt">Parafilm</span>
-<span class="en" style="display:none;">Parafilm</span>
-</li>
+<li><span class="pt">Parafilm</span><span class="en" style="display:none;">Parafilm</span></li>
 
-<li>
-<span class="pt">Pedaço circular de EVA</span>
-<span class="en" style="display:none;">Circular EVA piece</span>
-</li>
+<li><span class="pt">Pedaço circular de EVA</span><span class="en" style="display:none;">Circular EVA piece</span></li>
 
-<li>
-<span class="pt">Caneta permanente</span>
-<span class="en" style="display:none;">Permanent marker</span>
-</li>
+<li><span class="pt">Caneta permanente</span><span class="en" style="display:none;">Permanent marker</span></li>
 
-<li>
-<span class="pt">Régua</span>
-<span class="en" style="display:none;">Ruler</span>
-</li>
+<li><span class="pt">Régua</span><span class="en" style="display:none;">Ruler</span></li>
 
 </ul>
 
 </div>
 
 <!-- PROCEDIMENTO -->
-<h3>
+
+<h3 class="animar">
+
 <span class="pt">Procedimento Experimental</span>
 <span class="en" style="display:none;">Experimental Procedure</span>
+
 </h3>
 
-<div class="card">
+<div class="card animar">
 
 <ol>
 
-<li>
-<span class="pt">
-Cada aluno receberá uma placa de Petri selada contendo células de leveduras, uma chapa circular de EVA e uma tabela de registro.
-</span>
+<li><span class="pt">Cada aluno receberá uma placa de Petri selada contendo células de leveduras, uma chapa circular de EVA e uma tabela de registro.</span><span class="en" style="display:none;">Each student will receive a sealed Petri dish containing yeast cells, a circular EVA sheet, and a data table.</span></li>
 
-<span class="en" style="display:none;">
-Each student will receive a sealed Petri dish containing yeast cells, a circular EVA sheet, and a data table.
-</span>
-</li>
+<li><span class="pt">Coloque a placa na mochila e transporte-a com cuidado, evitando abertura acidental.</span><span class="en" style="display:none;">Place the plate in your backpack and transport it carefully, avoiding accidental opening.</span></li>
 
-<li>
-<span class="pt">
-Coloque a placa na mochila e transporte-a com cuidado, evitando abertura acidental.
-</span>
+<li><span class="pt">Assim que surgirem colônias visíveis, fotografe a placa ao lado de uma régua.</span><span class="en" style="display:none;">As soon as visible colonies appear, photograph the plate next to a ruler.</span></li>
 
-<span class="en" style="display:none;">
-Place the plate in your backpack and transport it carefully, avoiding accidental opening.
-</span>
-</li>
+<li><span class="pt">Posicione a placa sempre na mesma orientação e utilize o EVA como fundo para melhor contraste.</span><span class="en" style="display:none;">Always position the plate in the same orientation and use the EVA sheet as background for better contrast.</span></li>
 
-<li>
-<span class="pt">
-Assim que surgirem colônias visíveis, fotografe a placa ao lado de uma régua.
-</span>
+<li><span class="pt">Salve as fotografias em uma pasta específica no celular.</span><span class="en" style="display:none;">Save all photographs in a dedicated folder on your phone.</span></li>
 
-<span class="en" style="display:none;">
-As soon as visible colonies appear, photograph the plate next to a ruler.
-</span>
-</li>
+<li><span class="pt">Fotografe a placa a cada 1–2 horas ou quando possível.</span><span class="en" style="display:none;">Photograph the plate every 1–2 hours whenever possible.</span></li>
 
-<li>
-<span class="pt">
-Posicione a placa sempre na mesma orientação e utilize o EVA como fundo para melhor contraste.
-</span>
+<li><span class="pt">Recomenda-se obter entre 7 e 10 fotografias para cada colônia.</span><span class="en" style="display:none;">It is recommended to obtain 7 to 10 photographs for each colony.</span></li>
 
-<span class="en" style="display:none;">
-Always position the plate in the same orientation and use the EVA sheet as background for better contrast.
-</span>
-</li>
+<li><span class="pt">Selecione duas colônias bem isoladas e aproximadamente circulares.</span><span class="en" style="display:none;">Select two well-isolated and approximately circular colonies.</span></li>
 
-<li>
-<span class="pt">
-Salve as fotografias em uma pasta específica no celular.
-</span>
+<li><span class="pt">Localize as mesmas colônias em todas as imagens e circule-as utilizando o editor de fotos do celular.</span><span class="en" style="display:none;">Locate the same colonies in all images and circle them using your phone photo editor.</span></li>
 
-<span class="en" style="display:none;">
-Save all photographs in a dedicated folder on your phone.
-</span>
-</li>
+<li><span class="pt">Meça o diâmetro das colônias em cada fotografia utilizando o método descrito na seção de cálculo da área.</span><span class="en" style="display:none;">Measure colony diameters in each photograph using the method described in the colony area calculation section.</span></li>
 
-<li>
-<span class="pt">
-Fotografe a placa a cada 1–2 horas ou quando possível.
-</span>
-
-<span class="en" style="display:none;">
-Photograph the plate every 1–2 hours whenever possible.
-</span>
-</li>
-
-<li>
-<span class="pt">
-Recomenda-se obter entre 7 e 10 fotografias para cada colônia.
-</span>
-
-<span class="en" style="display:none;">
-It is recommended to obtain 7 to 10 photographs for each colony.
-</span>
-</li>
-
-<li>
-<span class="pt">
-Selecione duas colônias bem isoladas e aproximadamente circulares.
-</span>
-
-<span class="en" style="display:none;">
-Select two well-isolated and approximately circular colonies.
-</span>
-</li>
-
-<li>
-<span class="pt">
-Localize as mesmas colônias em todas as imagens e circule-as utilizando o editor de fotos do celular.
-</span>
-
-<span class="en" style="display:none;">
-Locate the same colonies in all images and circle them using your phone photo editor.
-</span>
-</li>
-
-<li>
-<span class="pt">
-Meça o diâmetro das colônias em cada fotografia utilizando o método descrito na seção de cálculo da área.
-</span>
-
-<span class="en" style="display:none;">
-Measure colony diameters in each photograph using the method described in the colony area calculation section.
-</span>
-</li>
-
-<li>
-<span class="pt">
-Registre em tabela os horários das fotografias e os diâmetros correspondentes.
-</span>
-
-<span class="en" style="display:none;">
-Record photograph times and corresponding diameters in a data table.
-</span>
-</li>
+<li><span class="pt">Registre em tabela os horários das fotografias e os diâmetros correspondentes.</span><span class="en" style="display:none;">Record photograph times and corresponding diameters in a data table.</span></li>
 
 </ol>
 
@@ -347,7 +404,6 @@ Record photograph times and corresponding diameters in a data table.
 
 </section>
 
-<!-- FOOTER -->
 <footer>
 
 <p>Micromat - Universidade de São Paulo</p>
@@ -365,24 +421,28 @@ Record photograph times and corresponding diameters in a data table.
 
 </footer>
 
-<!-- SCRIPT -->
 <script>
+
+/* IDIOMA */
 
 let idioma = "pt";
 
-function trocarIdioma() {
+function trocarIdioma(){
 
   idioma = (idioma === "pt") ? "en" : "pt";
 
-  document.querySelectorAll(".pt").forEach(el => {
+  document.querySelectorAll(".pt").forEach(el=>{
     el.style.display = (idioma === "pt") ? "inline" : "none";
   });
 
-  document.querySelectorAll(".en").forEach(el => {
+  document.querySelectorAll(".en").forEach(el=>{
     el.style.display = (idioma === "en") ? "inline" : "none";
   });
 
 }
+
+/* ANIMAÇÃO */
+
 const elementos = document.querySelectorAll(".animar");
 
 const observer = new IntersectionObserver((entries)=>{
@@ -400,6 +460,7 @@ const observer = new IntersectionObserver((entries)=>{
 elementos.forEach(el=>{
   observer.observe(el);
 });
+
 </script>
 
 </body>
