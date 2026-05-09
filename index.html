@@ -3,429 +3,369 @@
 
 <head>
 <meta charset="UTF-8">
+<title>MicroMat - Início</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>MicroMat</title>
-
-<link rel="stylesheet" href="css/style.css">
 
 <style>
 
 /* RESET */
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 html{
-    scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial,sans-serif;
-    background:#f4fbf6;
-    color:#333;
-    overflow-x:hidden;
+  font-family:Arial,sans-serif;
+  background:#f1f8f4;
+  color:#333;
 }
 
 /* HEADER */
 
 header{
-    background:linear-gradient(135deg,#145a1f,#66bb6a);
-    color:white;
-    padding:120px 20px 90px;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
+  background:linear-gradient(135deg,#1b5e20,#66bb6a);
+  color:white;
+  padding:90px 20px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
 }
 
 header::before{
-    content:"";
-    position:absolute;
-    width:700px;
-    height:700px;
-    background:rgba(255,255,255,0.05);
-    border-radius:50%;
-    top:-350px;
-    right:-200px;
+  content:"";
+  position:absolute;
+  width:320px;
+  height:320px;
+  background:rgba(255,255,255,0.08);
+  border-radius:50%;
+  top:-120px;
+  left:-90px;
 }
 
 header::after{
-    content:"";
-    position:absolute;
-    width:500px;
-    height:500px;
-    background:rgba(255,255,255,0.04);
-    border-radius:50%;
-    bottom:-250px;
-    left:-150px;
+  content:"";
+  position:absolute;
+  width:260px;
+  height:260px;
+  background:rgba(255,255,255,0.08);
+  border-radius:50%;
+  bottom:-120px;
+  right:-70px;
 }
 
 header h1{
-    font-size:3.4em;
-    margin-bottom:25px;
-    position:relative;
-    z-index:2;
-    animation:fadeDown 1s ease;
+  font-size:3em;
+  margin-bottom:18px;
+  position:relative;
+  z-index:2;
+  animation:fadeDown 1s ease;
 }
 
 header p{
-    max-width:850px;
-    margin:auto;
-    font-size:1.2em;
-    line-height:1.8;
-    position:relative;
-    z-index:2;
-    animation:fadeUp 1.3s ease;
+  font-size:1.15em;
+  opacity:0.95;
+  max-width:900px;
+  margin:auto;
+  line-height:1.8;
+  position:relative;
+  z-index:2;
+  animation:fadeUp 1.2s ease;
 }
 
-/* BOTÃO IDIOMA */
+header a{
+  text-decoration:none;
+  color:inherit;
+}
 
 .idioma-btn{
-    position:absolute;
-    top:20px;
-    right:20px;
-    border:none;
-    background:white;
-    color:#1b5e20;
-    padding:12px 22px;
-    border-radius:40px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.3s;
-    z-index:10;
-    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+  position:absolute;
+  top:20px;
+  right:20px;
+  background:white;
+  color:#1b5e20;
+  border:none;
+  padding:10px 18px;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.3s;
+  z-index:5;
 }
 
 .idioma-btn:hover{
-    transform:scale(1.08);
+  transform:scale(1.05);
+  background:#e8f5e9;
 }
 
-/* NAVBAR */
+/* NAV */
 
 nav{
-    background:#145a1f;
-    padding:18px;
-    text-align:center;
-    position:sticky;
-    top:0;
-    z-index:999;
-    backdrop-filter:blur(10px);
+  background:#1b5e20;
+  padding:18px;
+  text-align:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 2px 10px rgba(0,0,0,0.15);
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 8px;
-    padding:12px 18px;
-    border-radius:12px;
-    font-weight:bold;
-    transition:0.3s;
-    display:inline-block;
+  color:white;
+  text-decoration:none;
+  margin:0 8px;
+  font-weight:bold;
+  padding:10px 14px;
+  border-radius:10px;
+  transition:0.3s;
+  display:inline-block;
 }
 
 nav a:hover{
-    background:#66bb6a;
-    transform:translateY(-2px);
+  background:#66bb6a;
+  transform:translateY(-2px);
 }
 
 /* SECTION */
 
 section{
-    max-width:1200px;
-    margin:auto;
-    padding:70px 25px;
+  max-width:1100px;
+  margin:auto;
+  padding:60px 25px;
 }
 
-/* TITULOS */
+/* TITLES */
 
 h2{
-    text-align:center;
-    color:#145a1f;
-    font-size:2.7em;
-    margin-bottom:45px;
-    position:relative;
-}
-
-h2::after{
-    content:"";
-    width:90px;
-    height:5px;
-    background:#66bb6a;
-    display:block;
-    margin:15px auto 0;
-    border-radius:10px;
+  color:#1b5e20;
+  font-size:2.5em;
+  margin-bottom:25px;
+  text-align:center;
 }
 
 h3{
-    color:#145a1f;
-    margin-bottom:20px;
-    font-size:1.8em;
+  color:#1b5e20;
+  margin-top:50px;
+  margin-bottom:20px;
+  font-size:1.7em;
+  border-left:6px solid #43a047;
+  padding-left:14px;
 }
 
-/* CARDS */
+/* TEXT */
+
+.exp-text{
+  background:white;
+  padding:35px;
+  border-radius:22px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+  line-height:1.9;
+  font-size:1.05em;
+  margin-bottom:40px;
+  border-top:6px solid #43a047;
+  transition:0.4s;
+}
+
+.exp-text:hover{
+  transform:translateY(-5px);
+}
+
+/* CARD */
 
 .card{
-    background:white;
-    border-radius:28px;
-    padding:40px;
-    margin-bottom:45px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
-    transition:0.4s;
-    position:relative;
-    overflow:hidden;
-}
-
-.card::before{
-    content:"";
-    position:absolute;
-    width:200px;
-    height:200px;
-    background:rgba(102,187,106,0.08);
-    border-radius:50%;
-    top:-70px;
-    right:-70px;
+  background:white;
+  padding:30px;
+  margin:25px 0;
+  border-radius:22px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.08);
+  transition:0.4s;
 }
 
 .card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 18px 40px rgba(0,0,0,0.12);
+  transform:translateY(-6px);
+  box-shadow:0 12px 28px rgba(0,0,0,0.12);
 }
 
-/* PARÁGRAFOS */
-
-p{
-    line-height:2;
-    margin-bottom:22px;
-    font-size:1.05em;
-    position:relative;
-    z-index:2;
+.card p{
+  line-height:1.9;
+  margin-bottom:18px;
 }
 
-/* IMAGEM */
+/* GRID */
 
-.imagem-container{
-    text-align:center;
-    margin:60px 0;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+  margin-top:30px;
 }
 
-.imagem-container img{
-    width:260px;
-    border-radius:25px;
-    box-shadow:0 15px 35px rgba(0,0,0,0.18);
-    transition:0.5s;
+.grid .card{
+  text-align:center;
 }
 
-.imagem-container img:hover{
-    transform:scale(1.05) rotate(1deg);
+.grid .card h3{
+  border:none;
+  padding:0;
+  margin-top:0;
 }
 
-.legenda{
-    margin-top:15px;
-    color:#666;
-    font-size:0.95em;
+/* BOTÕES */
+
+.btn{
+  display:inline-block;
+  margin-top:15px;
+  background:#2e7d32;
+  color:white;
+  text-decoration:none;
+  padding:12px 22px;
+  border-radius:12px;
+  transition:0.3s;
+  font-weight:bold;
 }
 
-/* CARROSSEL */
-
-.carrossel{
-    position:relative;
-    width:100%;
-    max-width:900px;
-    margin:45px auto;
-    overflow:hidden;
-    border-radius:25px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.18);
+.btn:hover{
+  background:#1b5e20;
+  transform:scale(1.05);
 }
 
-.slide{
-    width:100%;
-    display:none;
-    border-radius:25px;
-    animation:fade 0.6s ease;
+/* VISITAS */
+
+.visita-box{
+  overflow:hidden;
+  border-radius:22px;
+  margin-top:25px;
+  box-shadow:0 10px 24px rgba(0,0,0,0.15);
 }
 
-.slide.ativo-slide{
-    display:block;
+.visita-box img{
+  width:100%;
+  display:block;
+  transition:0.5s;
 }
 
-/* BOTÕES CARROSSEL */
-
-.prev,
-.next{
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    width:60px;
-    height:60px;
-    border:none;
-    border-radius:50%;
-    background:rgba(0,0,0,0.45);
-    color:white;
-    font-size:32px;
-    cursor:pointer;
-    transition:0.3s;
-    z-index:10;
-    backdrop-filter:blur(5px);
-}
-
-.prev:hover,
-.next:hover{
-    background:#145a1f;
-    transform:translateY(-50%) scale(1.12);
-}
-
-.prev{
-    left:18px;
-}
-
-.next{
-    right:18px;
-}
-
-/* BOTÃO */
-
-.botao-vermais{
-    background:linear-gradient(135deg,#2e7d32,#66bb6a);
-    color:white;
-    border:none;
-    padding:16px 34px;
-    border-radius:40px;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.3s;
-    box-shadow:0 8px 20px rgba(0,0,0,0.15);
-}
-
-.botao-vermais:hover{
-    transform:scale(1.08);
-    box-shadow:0 12px 28px rgba(0,0,0,0.2);
+.visita-box img:hover{
+  transform:scale(1.04);
 }
 
 /* FOOTER */
 
-footer {
-  background: #1b5e20;
-  color: white;
-  text-align: center;
-  padding: 30px 20px;
-  margin-top: 40px;
+footer{
+  background:#1b5e20;
+  color:white;
+  text-align:center;
+  padding:40px 20px;
+  margin-top:60px;
 }
 
-.footer-links a {
-  color: white;
-  margin: 0 10px;
-  text-decoration: none;
-  font-size: 14px;
+.footer-links{
+  margin-top:15px;
 }
 
-.footer-links a:hover {
-  color: #a5d6a7;
+.footer-links a{
+  color:white;
+  text-decoration:none;
+  margin:0 10px;
+  transition:0.3s;
+  font-size:14px;
 }
-footer p{
-    margin:0;
+
+.footer-links a:hover{
+  color:#a5d6a7;
 }
 
-/* ANIMAÇÕES */
+/* ANIMAÇÃO */
 
-@keyframes fade{
+.animar{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
+}
 
-    from{
-        opacity:0;
-        transform:scale(1.03);
-    }
-
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
+.animar.ativo{
+  opacity:1;
+  transform:translateY(0);
 }
 
 @keyframes fadeDown{
 
-    from{
-        opacity:0;
-        transform:translateY(-50px);
-    }
+  from{
+    opacity:0;
+    transform:translateY(-40px);
+  }
 
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
 }
 
 @keyframes fadeUp{
 
-    from{
-        opacity:0;
-        transform:translateY(50px);
-    }
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
 
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
 }
 
 /* RESPONSIVO */
 
-@media(max-width:900px){
+@media(max-width:768px){
 
-    header h1{
-        font-size:2.3em;
-    }
+  header h1{
+    font-size:2.1em;
+  }
 
-    header p{
-        font-size:1em;
-    }
+  nav a{
+    margin:5px;
+  }
 
-    nav a{
-        margin:5px;
-        padding:10px 14px;
-        font-size:14px;
-    }
+  h2{
+    font-size:2em;
+  }
 
-    .card{
-        padding:28px;
-    }
-
-    h2{
-        font-size:2em;
-    }
-
-    .prev,
-    .next{
-        width:48px;
-        height:48px;
-        font-size:24px;
-    }
+  .exp-text,
+  .card{
+    padding:22px;
+  }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
 
-<h1>
-Projeto de educação matemática: MicroMat
-</h1>
+<a href="index.html">
+<h1>Projeto de Educação Matemática: MicroMat</h1>
+</a>
 
 <p>
+
 <span class="pt">
-Integração entre matemática e microbiologia por meio de atividades experimentais 
-Site em desenvolvimento
+Integração entre matemática e microbiologia por meio de atividades experimentais
 </span>
 
 <span class="en" style="display:none;">
 Integration between mathematics and microbiology through experimental activities
 </span>
+
 </p>
 
 <button class="idioma-btn" onclick="trocarIdioma()">
@@ -433,6 +373,8 @@ EN/PT
 </button>
 
 </header>
+
+<!-- NAV -->
 
 <nav>
 
@@ -447,91 +389,165 @@ EN/PT
 
 </nav>
 
+<!-- CONTEÚDO -->
+
 <section>
 
-<h2>
+<h2 class="animar">
 
 <span class="pt">
-Sobre o Projeto
+Bem-vindo ao MicroMat
 </span>
 
 <span class="en" style="display:none;">
-About the Project
+Welcome to MicroMat
 </span>
 
 </h2>
 
-<div class="card">
+<!-- INTRO -->
+
+<div class="exp-text animar">
 
 <p>
+
 <span class="pt">
-O projeto Micromat é uma iniciativa do CEPID B³, patrocinado pela FAPESP e vinculado à Universidade de São Paulo (USP), que utiliza microrganismos como ferramenta para o ensino de matemática e ciência. A proposta é aproximar os alunos de conceitos abstratos por meio da observação do mundo microscópico.
+O projeto Micromat é uma iniciativa voltada à integração entre matemática e microbiologia por meio de atividades experimentais investigativas. O projeto busca aproximar os estudantes do pensamento científico, permitindo a compreensão de conceitos matemáticos a partir da observação, medição e análise de fenômenos biológicos reais.
 </span>
 
 <span class="en" style="display:none;">
-The Micromat project is an initiative of CEPID B³, funded by FAPESP and affiliated with the University of São Paulo (USP), which uses microorganisms as a tool for teaching mathematics and science.
+The Micromat project is an initiative focused on integrating mathematics and microbiology through investigative experimental activities. The project aims to bring students closer to scientific thinking, allowing the understanding of mathematical concepts through observation, measurement, and analysis of real biological phenomena.
 </span>
+
 </p>
 
 <p>
+
 <span class="pt">
-Nesse contexto, a microbiologia — área dedicada ao estudo dos microrganismos — permite explorar grandezas em escalas extremas, tornando números muito pequenos e muito grandes mais compreensíveis e significativos.
+Ao longo dos experimentos, os alunos desenvolvem habilidades relacionadas à coleta de dados, interpretação gráfica, proporcionalidade, geometria, estatística e análise quantitativa, conectando a matemática ao contexto laboratorial.
 </span>
 
 <span class="en" style="display:none;">
-In this context, microbiology allows the exploration of extreme scales.
-</span>
-</p>
-
-<p>
-<span class="pt">
-Entre os organismos estudados, destacam-se as leveduras, fungos unicelulares de grande relevância científica e industrial. Um exemplo central é a <i>Saccharomyces cerevisiae</i>, amplamente utilizada na produção de alimentos e como organismo modelo em pesquisa.
+Throughout the experiments, students develop skills related to data collection, graphical interpretation, proportionality, geometry, statistics, and quantitative analysis, connecting mathematics to the laboratory context.
 </span>
 
-<span class="en" style="display:none;">
-Among the studied organisms, yeasts stand out as unicellular fungi.
-</span>
 </p>
 
 </div>
 
-<div class="imagem-container">
+<!-- EXPERIMENTOS -->
 
-<img src="imagens/saccharomyces.jpeg">
+<h3 class="animar">
 
-<p class="legenda">
-Saccharomyces cerevisiae
-</p>
-
-</div>
-
-<div class="card">
-
-<p>
 <span class="pt">
-Dessa forma, o projeto Micromat utiliza a <i>Saccharomyces cerevisiae</i> como uma ponte entre a microbiologia e a matemática, permitindo que conceitos como exponenciais, logaritmos e geometria deixem de ser apenas abstratos e passem a ser compreendidos de maneira aplicada e concreta.
+Experimentos
 </span>
 
 <span class="en" style="display:none;">
-The Micromat project uses Saccharomyces cerevisiae as a bridge between microbiology and mathematics.
+Experiments
 </span>
-</p>
+
+</h3>
+
+<div class="grid">
+
+<div class="card animar">
+
+<h3>Exp 0</h3>
 
 <p>
+
 <span class="pt">
-Mais do que um conjunto de experimentos, o projeto oferece uma experiência de imersão no pensamento científico. Ao aproximar os alunos da prática laboratorial, revela também um universo fascinante: o mundo invisível dos microrganismos, no qual pequenas escalas escondem grandes descobertas.
+Introdução aos conceitos iniciais utilizados no projeto.
 </span>
 
 <span class="en" style="display:none;">
-More than a set of experiments, the project offers an immersive experience in scientific thinking.
+Introduction to the initial concepts used in the project.
 </span>
+
 </p>
+
+<a href="exp0.html" class="btn">
+<span class="pt">Acessar</span>
+<span class="en" style="display:none;">Access</span>
+</a>
 
 </div>
 
-<div class="card">
+<div class="card animar">
 
-<h3>
+<h3>Exp 1</h3>
+
+<p>
+
+<span class="pt">
+Observação e estudo do crescimento microbiano.
+</span>
+
+<span class="en" style="display:none;">
+Observation and study of microbial growth.
+</span>
+
+</p>
+
+<a href="exp1.html" class="btn">
+<span class="pt">Acessar</span>
+<span class="en" style="display:none;">Access</span>
+</a>
+
+</div>
+
+<div class="card animar">
+
+<h3>Exp 2</h3>
+
+<p>
+
+<span class="pt">
+Diluições seriadas, cálculos e concentração celular.
+</span>
+
+<span class="en" style="display:none;">
+Serial dilutions, calculations, and cell concentration.
+</span>
+
+</p>
+
+<a href="exp2.html" class="btn">
+<span class="pt">Acessar</span>
+<span class="en" style="display:none;">Access</span>
+</a>
+
+</div>
+
+<div class="card animar">
+
+<h3>Exp 3</h3>
+
+<p>
+
+<span class="pt">
+Acompanhamento temporal do crescimento de colônias.
+</span>
+
+<span class="en" style="display:none;">
+Temporal monitoring of colony growth.
+</span>
+
+</p>
+
+<a href="exp3.html" class="btn">
+<span class="pt">Acessar</span>
+<span class="en" style="display:none;">Access</span>
+</a>
+
+</div>
+
+</div>
+
+<!-- VISITAS -->
+
+<h3 class="animar">
 
 <span class="pt">
 Visitas às Escolas
@@ -543,72 +559,62 @@ School Visits
 
 </h3>
 
+<div class="card animar">
+
 <p>
 
 <span class="pt">
-O projeto Micromat leva a integração entre matemática e microbiologia diretamente às escolas, por meio de atividades experimentais que tornam conceitos abstratos mais concretos e significativos.
+O projeto Micromat também realiza visitas às escolas, levando atividades experimentais que integram matemática e microbiologia diretamente ao ambiente escolar. Essas experiências aproximam os estudantes da universidade e incentivam a curiosidade científica por meio de práticas investigativas.
 </span>
 
 <span class="en" style="display:none;">
-The Micromat project brings the integration of mathematics and microbiology directly to schools.
+The Micromat project also carries out school visits, bringing experimental activities that integrate mathematics and microbiology directly into the school environment. These experiences bring students closer to the university and encourage scientific curiosity through investigative practices.
 </span>
 
 </p>
 
-<div class="carrossel">
-
-<img src="imagens/home1.jpeg" class="slide ativo-slide">
-
-<img src="imagens/home2.jpeg" class="slide">
-
-<img src="imagens/home3.jpeg" class="slide">
-
-<img src="imagens/home4.jpeg" class="slide">
-
-<img src="imagens/home5.jpeg" class="slide">
-
-<button class="prev" onclick="mudarSlide(-1)">
-❮
-</button>
-
-<button class="next" onclick="mudarSlide(1)">
-❯
-</button>
-
+<div class="visita-box">
+<img src="imagens/carrossel1.jpeg" alt="Visitas às escolas">
 </div>
 
-<div style="text-align:center; margin-top:35px;">
+<a href="visitas.html" class="btn">
 
-<a href="visitas.html">
+<span class="pt">
+Ver visitas
+</span>
 
-<button class="botao-vermais">
-Ver mais
-</button>
+<span class="en" style="display:none;">
+See visits
+</span>
 
 </a>
 
 </div>
 
-</div>
-
 </section>
 
-<footer>
-<p>Micromat - Universidade de São Paulo</p>
+<!-- FOOTER -->
 
-  <div class="footer-links">
-    <a href="index.html">Início</a>
-    <a href="exp0.html">Experimento 0</a>
-    <a href="exp1.html">Experimento 1</a>
-    <a href="exp2.html">Experimento 2</a>
-    <a href="exp3.html">Experimento 3</a>
-    <a href="medicao.html">Medir Área</a>
-    <a href="visitas.html">Visitas</a>
-    <a href="contato.html">Contato</a>
-  </div>
+<footer>
+
+<p>
+Micromat - Universidade de São Paulo
+</p>
+
+<div class="footer-links">
+
+<a href="index.html">Início</a>
+<a href="exp0.html">Experimento 0</a>
+<a href="exp1.html">Experimento 1</a>
+<a href="exp2.html">Experimento 2</a>
+<a href="exp3.html">Experimento 3</a>
+<a href="medicao.html">Medir Área</a>
+<a href="visitas.html">Visitas</a>
+<a href="contato.html">Contato</a>
+
+</div>
 
 </footer>
-
 
 <script>
 
@@ -618,67 +624,45 @@ let idioma = "pt";
 
 function trocarIdioma(){
 
-    idioma = idioma === "pt" ? "en" : "pt";
+  idioma = idioma === "pt" ? "en" : "pt";
 
-    document.querySelectorAll(".pt").forEach(el=>{
+  document.querySelectorAll(".pt").forEach(el => {
 
-        el.style.display = idioma === "pt" ? "inline" : "none";
+    el.style.display = idioma === "pt" ? "inline" : "none";
 
-    });
+  });
 
-    document.querySelectorAll(".en").forEach(el=>{
+  document.querySelectorAll(".en").forEach(el => {
 
-        el.style.display = idioma === "en" ? "inline" : "none";
+    el.style.display = idioma === "en" ? "inline" : "none";
 
-    });
-
-}
-
-/* CARROSSEL */
-
-let slideAtual = 0;
-
-const slides = document.querySelectorAll(".slide");
-
-function mostrarSlide(index){
-
-    slides.forEach(slide=>{
-
-        slide.classList.remove("ativo-slide");
-
-    });
-
-    if(index >= slides.length){
-
-        slideAtual = 0;
-    }
-
-    else if(index < 0){
-
-        slideAtual = slides.length - 1;
-    }
-
-    else{
-
-        slideAtual = index;
-    }
-
-    slides[slideAtual].classList.add("ativo-slide");
-}
-
-function mudarSlide(direcao){
-
-    mostrarSlide(slideAtual + direcao);
+  });
 
 }
 
-/* AUTO PLAY */
+/* ANIMAÇÃO */
 
-setInterval(()=>{
+const elementos = document.querySelectorAll(".animar");
 
-    mudarSlide(1);
+const observer = new IntersectionObserver((entries)=>{
 
-},4500);
+  entries.forEach(entry=>{
+
+    if(entry.isIntersecting){
+
+      entry.target.classList.add("ativo");
+
+    }
+
+  });
+
+});
+
+elementos.forEach(el=>{
+
+  observer.observe(el);
+
+});
 
 </script>
 
