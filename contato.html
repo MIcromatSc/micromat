@@ -1,365 +1,566 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 <meta charset="UTF-8">
-<title>MicroMat</title>
+<title>MicroMat - Contato</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f1f8f4;
-  color: #333;
+
+/* RESET */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-header {
-  background: linear-gradient(135deg, #1b5e20, #66bb6a);
-  color: white;
-  padding: 60px 20px;
-  text-align: center;
-}
-  
-header h1 {
-  font-size: 28px;
-  font-weight: 600;
-}
-header a h1 {
-  cursor: pointer;
-  transition: 0.3s;
-  
-}
-header a {
-  text-decoration: none;
-  color: inherit;
-}
-header a h1:hover {
-  opacity: 0.8;
+html{
+  scroll-behavior:smooth;
 }
 
-header p {
-  font-size: 22px;
-  opacity: 0.9;
+body{
+  font-family:Arial,sans-serif;
+  background:#f1f8f4;
+  color:#333;
 }
 
-.idioma-btn {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-}
-nav {
-  background: #1b5e20;
-  padding: 15px;
-  text-align: center;
+/* HEADER */
+
+header{
+  background:linear-gradient(135deg,#1b5e20,#66bb6a);
+  color:white;
+  padding:70px 20px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
 }
 
-nav a {
-  color: white;
-  margin: 0 10px;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: 0.3s;
+header::before{
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  background:rgba(255,255,255,0.08);
+  border-radius:50%;
+  top:-100px;
+  left:-80px;
 }
 
-nav a:hover {
-  background: #66bb6a;
-  transform: scale(1.05);
+header::after{
+  content:"";
+  position:absolute;
+  width:250px;
+  height:250px;
+  background:rgba(255,255,255,0.08);
+  border-radius:50%;
+  bottom:-120px;
+  right:-70px;
 }
 
-
-.ativo {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
-.card {
-  background: white;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 10px;
+header a{
+  text-decoration:none;
+  color:inherit;
 }
 
-h2, h3 {
-  color: #1b5e20;
+header h1{
+  font-size:3em;
+  margin-bottom:15px;
+  position:relative;
+  z-index:2;
+  transition:0.3s;
 }
 
-iframe {
-  border-radius: 10px;
+header h1:hover{
+  opacity:0.9;
 }
 
-footer {
-  background: #1b5e20;
-  color: white;
-  text-align: center;
-  padding: 30px 20px;
-  margin-top: 40px;
+header p{
+  font-size:1.15em;
+  opacity:0.95;
+  position:relative;
+  z-index:2;
 }
 
-.footer-links {
-  margin-bottom: 15px;
+/* BOTÃO */
+
+.idioma-btn{
+  position:absolute;
+  top:20px;
+  right:20px;
+  background:white;
+  color:#1b5e20;
+  border:none;
+  padding:10px 18px;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.3s;
+  z-index:3;
 }
 
-.footer-links a {
-  color: white;
-  margin: 0 10px;
-  text-decoration: none;
-  font-size: 14px;
-  transition: 0.3s;
+.idioma-btn:hover{
+  transform:scale(1.05);
+  background:#e8f5e9;
 }
 
-.footer-links a:hover {
-  color: #a5d6a7;
-}
-}
-section {
-  padding: 50px 25px;
-  max-width: 950px;
-  margin: auto;
-  line-height: 1.6;
-}
-#contato input,
-#contato textarea {
-  display: block;
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  margin-bottom: 15px;
-  font-size: 14px;
-}
-#contato button {
-  background: #2e7d32;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
+/* NAV */
+
+nav{
+  background:#1b5e20;
+  padding:18px;
+  text-align:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 2px 10px rgba(0,0,0,0.15);
 }
 
-#contato button:hover {
-  background: #1b5e20;
-  transform: scale(1.05);
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 8px;
+  font-weight:bold;
+  padding:10px 14px;
+  border-radius:10px;
+  transition:0.3s;
+  display:inline-block;
 }
 
-.exp-text {
-  font-size: 0.95em;
-  color: #444;
-  line-height: 1.5;
+nav a:hover{
+  background:#66bb6a;
+  transform:translateY(-2px);
 }
-  #contato p {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 16px;
-  color: #555;
+
+/* SECTION */
+
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:60px 25px;
 }
-  input::placeholder,
-textarea::placeholder {
-  color: #888;
-  font-style: italic;
+
+/* TITULOS */
+
+h2{
+  color:#1b5e20;
+  font-size:2.6em;
+  margin-bottom:25px;
+  text-align:center;
 }
+
+h3{
+  color:#1b5e20;
+  margin-top:50px;
+  margin-bottom:20px;
+  font-size:1.7em;
+  border-left:6px solid #43a047;
+  padding-left:14px;
+}
+
+/* INTRO */
+
+.exp-text{
+  background:white;
+  padding:35px;
+  border-radius:22px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+  line-height:1.9;
+  font-size:1.05em;
+  margin-bottom:40px;
+  border-top:6px solid #43a047;
+  transition:0.4s;
+}
+
+.exp-text:hover{
+  transform:translateY(-5px);
+}
+
+/* CARD */
+
+.card{
+  background:white;
+  padding:35px;
+  margin:25px 0;
+  border-radius:22px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.08);
+  transition:0.4s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* FORM */
+
+form{
+  margin-top:10px;
+}
+
+input,
+textarea{
+  width:100%;
+  padding:16px;
+  margin-bottom:20px;
+  border:none;
+  border-radius:14px;
+  background:#f5f7f6;
+  font-size:1em;
+  transition:0.3s;
+  outline:none;
+  border:2px solid transparent;
+}
+
+input:focus,
+textarea:focus{
+  border-color:#43a047;
+  background:white;
+  box-shadow:0 0 10px rgba(67,160,71,0.15);
+}
+
+textarea{
+  min-height:180px;
+  resize:vertical;
+}
+
+input::placeholder,
+textarea::placeholder{
+  color:#888;
+  font-style:italic;
+}
+
+/* BOTÃO ENVIAR */
+
+.form-btn{
+  background:linear-gradient(135deg,#2e7d32,#43a047);
+  color:white;
+  border:none;
+  padding:15px 28px;
+  border-radius:14px;
+  cursor:pointer;
+  font-size:1em;
+  font-weight:bold;
+  transition:0.3s;
+  box-shadow:0 6px 18px rgba(46,125,50,0.25);
+}
+
+.form-btn:hover{
+  transform:translateY(-3px) scale(1.03);
+  box-shadow:0 10px 22px rgba(46,125,50,0.35);
+}
+
+/* MENSAGEM */
+
+#msg{
+  margin-top:20px;
+  padding:15px;
+  background:#e8f5e9;
+  color:#1b5e20;
+  border-radius:12px;
+  font-weight:bold;
+  text-align:center;
+  display:none;
+}
+
+/* FOOTER */
+
+footer{
+  background:#1b5e20;
+  color:white;
+  text-align:center;
+  padding:40px 20px;
+  margin-top:60px;
+}
+
+.footer-links{
+  margin-top:15px;
+}
+
+.footer-links a{
+  color:white;
+  text-decoration:none;
+  margin:0 10px;
+  transition:0.3s;
+  font-size:14px;
+}
+
+.footer-links a:hover{
+  color:#a5d6a7;
+}
+
+/* ANIMAÇÃO */
+
+.animar{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
+}
+
+.animar.ativo{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+  header h1{
+    font-size:2.1em;
+  }
+
+  nav a{
+    display:inline-block;
+    margin:5px;
+  }
+
+  h2{
+    font-size:2em;
+  }
+
+  .card,
+  .exp-text{
+    padding:22px;
+  }
+
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
-<h1><a href="index.html" style="text-decoration:none; color:inherit;">
-  <h1>Projeto de educação matemática: MicroMat
+
+<a href="index.html">
+<h1>Projeto de educação matemática: MicroMat</h1>
 </a>
-</h1>
+
 <p>
-<span class="pt">Integração entre matemática e microbiologia por meio de atividades experimentais</span>
-<span class="en" style="display:none;">Integration between mathematics and microbiology through experimental activities</span>
+
+<span class="pt">
+Integração entre matemática e microbiologia por meio de atividades experimentais
+</span>
+
+<span class="en" style="display:none;">
+Integration between mathematics and microbiology through experimental activities
+</span>
+
 </p>
 
-<button class="idioma-btn" onclick="trocarIdioma()">EN/PT</button>
+<button class="idioma-btn" onclick="trocarIdioma()">
+EN/PT
+</button>
+
 </header>
 
+<!-- NAV -->
+
 <nav>
+
 <a href="index.html">Início</a>
 <a href="exp0.html">Exp 0</a>
 <a href="exp1.html">Exp 1</a>
 <a href="exp2.html">Exp 2</a>
 <a href="exp3.html">Exp 3</a>
 <a href="medicao.html">Medir Área</a>
-  <a href="visitas.html">Visitas</a>
+<a href="visitas.html">Visitas</a>
 <a href="contato.html">Contato</a>
+
 </nav>
 
-<!-- CONTATO -->
+<!-- CONTEÚDO -->
+
 <section id="contato">
 
-  <h2>Contato</h2>
-  
-   <p>
-  <span class="pt">Tem dúvidas ou sugestões? Entre em contato abaixo:</span>
-  <span class="en" style="display:none;">Have questions or suggestions? Get in touch below:</span>
+<h2 class="animar">
+
+<span class="pt">Contato</span>
+<span class="en" style="display:none;">Contact</span>
+
+</h2>
+
+<div class="exp-text animar">
+
+<span class="pt">
+Tem dúvidas, sugestões ou deseja saber mais sobre o projeto MicroMat? Entre em contato conosco pelo formulário abaixo. Sua mensagem é muito importante para nós.
+</span>
+
+<span class="en" style="display:none;">
+Do you have questions, suggestions, or want to know more about the MicroMat project? Contact us using the form below. Your message is very important to us.
+</span>
+
+</div>
+
+<div class="card animar">
+
+<form id="form">
+
+<input 
+type="text"
+id="nome"
+name="nome"
+placeholder="Escreva seu nome aqui"
+required
+>
+
+<input
+type="email"
+id="email"
+name="email"
+placeholder="Digite seu email"
+required
+>
+
+<textarea
+id="mensagem"
+name="mensagem"
+placeholder="Escreva sua mensagem..."
+required
+></textarea>
+
+<button type="submit" class="form-btn">
+
+<span class="pt">Enviar Mensagem</span>
+<span class="en" style="display:none;">Send Message</span>
+
+</button>
+
+<p id="msg">
+
+<span class="pt">Mensagem enviada com sucesso!</span>
+<span class="en" style="display:none;">Message sent successfully!</span>
+
 </p>
 
-  <form id="form">
+</form>
 
- <input type="text" name="nome"
-      placeholder="Escreva seu nome aqui"
-      required>
-
-    <input type="email" name="email"
-      placeholder="Digite seu email"
-      required>
-
-    <textarea name="mensagem"
-      placeholder="Escreva sua mensagem..."
-      required></textarea>
-
-  <button type="submit">Enviar</button>
-
-<p id="msg" style="display:none; color:green;">
-Mensagem enviada com sucesso!
-</p>  </form>
+</div>
 
 </section>
 
+<!-- FOOTER -->
+
 <footer>
+
 <p>Micromat - Universidade de São Paulo</p>
 
-  <div class="footer-links">
-    <a href="index.html">Início</a>
-    <a href="exp0.html">Experimento 0</a>
-    <a href="exp1.html">Experimento 1</a>
-    <a href="exp2.html">Experimento 2</a>
-    <a href="exp3.html">Experimento 3</a>
-    <a href="medicao.html">Medir Área</a>
-    <a href="visitas.html">Visitas</a>
-    <a href="contato.html">Contato</a>
-  </div>
+<div class="footer-links">
+
+<a href="index.html">Início</a>
+<a href="exp0.html">Experimento 0</a>
+<a href="exp1.html">Experimento 1</a>
+<a href="exp2.html">Experimento 2</a>
+<a href="exp3.html">Experimento 3</a>
+<a href="medicao.html">Medir Área</a>
+<a href="visitas.html">Visitas</a>
+<a href="contato.html">Contato</a>
+
+</div>
 
 </footer>
 
+<!-- SCRIPT -->
+
 <script>
-function mostrar(secao) {
-  let secoes = ["home","exp0","exp1","exp2","exp3","medicao","contato"];
-  secoes.forEach(id => {
-    document.getElementById(id).classList.remove("ativo");
-  });
-  document.getElementById(secao).classList.add("ativo");
-}
 
+/* IDIOMA */
 
-</script>
-<script>
-function animarDigitacao(elemento) {
-  const texto = elemento.textContent;
-  elemento.textContent = "";
-  elemento.classList.add("cursor-piscando");
+let idioma = "pt";
 
-  let i = 0;
+function trocarIdioma(){
 
-  function escrever() {
-    if (i < texto.length) {
-      elemento.textContent += texto.charAt(i);
-      i++;
-      setTimeout(escrever, 40);
-    }
-  }
+  idioma = (idioma === "pt") ? "en" : "pt";
 
-  escrever();
-}
+  document.querySelectorAll(".pt").forEach(el=>{
 
-// detectar quando aparece na tela
-function observar() {
-  const elementos = document.querySelectorAll(".digitando");
+    el.style.display = (idioma === "pt") ? "inline" : "none";
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !entry.target.classList.contains("ativo-digitado")) {
-        entry.target.classList.add("ativo-digitado");
-        animarDigitacao(entry.target);
-      }
-    });
   });
 
-  elementos.forEach(el => observer.observe(el));
-}
+  document.querySelectorAll(".en").forEach(el=>{
 
-window.onload = observar;
-</script>
-<script>
-function enviarMensagem() {
-  let nome = document.querySelector("#contato input[type='text']").value;
-  let email = document.querySelector("#contato input[type='email']").value;
-  let msg = document.querySelector("#contato textarea").value;
+    el.style.display = (idioma === "en") ? "inline" : "none";
 
-  if (!nome || !email || !msg) {
-    alert("Preencha todos os campos!");
-    return;
+  });
+
+  const nome = document.getElementById("nome");
+  const email = document.getElementById("email");
+  const mensagem = document.getElementById("mensagem");
+
+  if(idioma === "pt"){
+
+    nome.placeholder = "Escreva seu nome aqui";
+    email.placeholder = "Digite seu email";
+    mensagem.placeholder = "Escreva sua mensagem...";
+
   }
 
-  alert("Mensagem enviada com sucesso, " + nome + "!");
+  else{
 
-  // limpa campos
-  document.querySelector("#contato input[type='text']").value = "";
-  document.querySelector("#contato input[type='email']").value = "";
-  document.querySelector("#contato textarea").value = "";
+    nome.placeholder = "Enter your name here";
+    email.placeholder = "Enter your email";
+    mensagem.placeholder = "Write your message...";
+
+  }
+
 }
-</script>
-  <script>
+
+/* FORM */
+
 const form = document.getElementById("form");
 
-form.addEventListener("submit", async function(e) {
+form.addEventListener("submit", async function(e){
+
   e.preventDefault();
 
   const data = new FormData(form);
 
-  await fetch("https://formspree.io/f/mrejppvg", {
-    method: "POST",
-    body: data,
-    headers: { 'Accept': 'application/json' }
+  await fetch("https://formspree.io/f/mrejppvg",{
+
+    method:"POST",
+    body:data,
+    headers:{
+      'Accept':'application/json'
+    }
+
   });
 
   document.getElementById("msg").style.display = "block";
+
   form.reset();
+
 });
-  </script>
-<script>
-let idioma = "pt";
 
-function trocarIdioma() {
-  idioma = (idioma === "pt") ? "en" : "pt";
+/* ANIMAÇÃO */
 
-  // textos PT/EN
-  document.querySelectorAll(".pt").forEach(el => {
-    el.style.display = (idioma === "pt") ? "inline" : "none";
+const elementos = document.querySelectorAll(".animar");
+
+const observer = new IntersectionObserver((entries)=>{
+
+  entries.forEach(entry=>{
+
+    if(entry.isIntersecting){
+
+      entry.target.classList.add("ativo");
+
+    }
+
   });
 
-  document.querySelectorAll(".en").forEach(el => {
-    el.style.display = (idioma === "en") ? "inline" : "none";
-  });
-  
-  const nome = document.getElementById("nome");
-  const email = document.getElementById("email");
-  const msg = document.getElementById("mensagem");
+});
 
-  if (nome) {
-    nome.placeholder = (idioma === "pt")
-      ? "Escreva seu nome aqui"
-      : "Enter your name here";
-  }
+elementos.forEach(el=>{
 
-  if (email) {
-    email.placeholder = (idioma === "pt")
-      ? "Digite seu email"
-      : "Enter your email";
-  }
+  observer.observe(el);
 
-  if (msg) {
-    msg.placeholder = (idioma === "pt")
-      ? "Escreva sua mensagem..."
-      : "Write your message...";
-  }
+});
 
-}
 </script>
+
 </body>
 </html>
