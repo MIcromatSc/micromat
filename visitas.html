@@ -130,6 +130,56 @@ footer {
 
 .footer-links a:hover {
   color: #a5d6a7;
+  
+}.carrossel2{
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    overflow: hidden;
+}
+
+.slide2{
+    width: 100%;
+    display: none;
+    border-radius: 15px;
+}
+
+.slide2.ativo2{
+    display: block;
+}
+
+.prev2,
+.next2{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(0,0,0,0.5);
+    color: white;
+
+    font-size: 30px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 100;
+}
+
+.prev2{
+    left: 15px;
+}
+
+.next2{
+    right: 15px;
 }
 </style>
 </head>
@@ -200,11 +250,14 @@ Through experimental activities, students explore mathematical concepts in an ap
 </span>
 </p>
   
-  <div class="carrossel">
+  <div class="carrossel2">
   <img src="imagens/sequencia.jpeg" class="slide">
      <img src="imagens/sequencia1.jpeg" class="slide">
      <img src="imagens/sequencia2.jpeg" class="slide">
      <img src="imagens/sequencia3.jpeg" class="slide">
+    
+     <button class="prev2" onclick="mudarSlide2(-1)">❮</button>
+  <button class="next2" onclick="mudarSlide2(1)">❯</button>
     </div>
   
 </section>
@@ -257,6 +310,33 @@ function trocarIdioma() {
   });
 }
 </script>
+<script>
+let slideAtual2 = 0;
 
+const slides2 = document.querySelectorAll(".slide2");
+
+function mostrarSlide2(index){
+
+    slides2.forEach(slide => {
+        slide.classList.remove("ativo2");
+    });
+
+    if(index >= slides2.length){
+        slideAtual2 = 0;
+    }
+    else if(index < 0){
+        slideAtual2 = slides2.length - 1;
+    }
+    else{
+        slideAtual2 = index;
+    }
+
+    slides2[slideAtual2].classList.add("ativo2");
+}
+
+function mudarSlide2(direcao){
+    mostrarSlide2(slideAtual2 + direcao);
+}
+</script>
 </body>
 </html>
