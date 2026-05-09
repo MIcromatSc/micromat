@@ -158,9 +158,8 @@ h2::after{
 }
 
 h3{
-  color:#145a1f;
-  margin-bottom:25px;
-  font-size:1.8em;
+  color:#1b5e20;
+  margin-top:40px;
 }
 
 /* PARÁGRAFOS */
@@ -171,18 +170,23 @@ p{
 }
 
 /* CARDS */
-
 .card{
   background:white;
-  padding:35px;
-  margin:35px 0;
-  border-radius:28px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
-  transition:0.4s;
-  position:relative;
-  overflow:hidden;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  margin:25px 0;
 }
-
+  .exp-text{
+  font-size:1em;
+  color:#444;
+  line-height:1.8;
+  text-align:justify;
+}
+  .card li{
+  margin-bottom:16px;
+  line-height:1.7;
+}
 .card::before{
   content:"";
   position:absolute;
@@ -193,7 +197,12 @@ p{
   top:-60px;
   right:-60px;
 }
-
+section{
+  padding:50px 25px;
+  max-width:950px;
+  margin:auto;
+  line-height:1.7;
+}
 .card:hover{
   transform:translateY(-6px);
   box-shadow:0 18px 40px rgba(0,0,0,0.12);
