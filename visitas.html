@@ -80,11 +80,12 @@ h2 {
   color: #1b5e20;
 }
 
-/* CARROSSEL */
+/* PRIMEIRO CARROSSEL */
 .carrossel {
   position: relative;
   max-width: 600px;
   margin: 30px auto;
+  overflow: hidden;
 }
 
 .slide {
@@ -96,15 +97,7 @@ h2 {
 .slide.ativo {
   display: block;
 }
-.carrossel2{
-    position: relative;
-    width: 100%;
-    max-width: 900px;
 
-    margin: 80px auto; /* espaço em cima e embaixo */
-
-    overflow: hidden;
-}
 .carrossel button {
   position: absolute;
   top: 50%;
@@ -112,73 +105,62 @@ h2 {
   background: rgba(0,0,0,0.5);
   color: white;
   border: none;
-  padding: 10px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   border-radius: 50%;
+  font-size: 28px;
 }
 
 .prev { left: 10px; }
 .next { right: 10px; }
 
-.carrossel2{
-    position: relative;
-    width: 100%;
-    max-width: 900px;
-    margin: 40px auto;
-    overflow: hidden;
+/* SEGUNDO CARROSSEL */
+.carrossel2 {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 80px auto;
+  overflow: hidden;
 }
 
-.slide2{
-    width: 100%;
-    display: none;
-    border-radius: 15px;
+.slide2 {
+  width: 100%;
+  display: none;
+  border-radius: 15px;
 }
 
-.slide2.ativo2{
-    display: block;
+.slide2.ativo2 {
+  display: block;
 }
 
 .prev2,
-.next2{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-
-    width: 50px;
-    height: 50px;
-
-    border: none;
-    border-radius: 50%;
-
-    background: rgba(0,0,0,0.5);
-    color: white;
-
-    font-size: 30px;
-    cursor: pointer;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    z-index: 100;
+.next2 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
 }
 
-.prev2{
-    left: 15px;
+.prev2 {
+  left: 15px;
 }
 
-.next2{
-    right: 15px;
-} 
-  .carrossel2{
-    position: relative;
-    width: 100%;
-    max-width: 900px;
-
-    margin: 80px auto; /* espaço em cima e embaixo */
-
-    overflow: hidden;
+.next2 {
+  right: 15px;
 }
+
 /* FOOTER */
 footer {
   background: #1b5e20;
@@ -197,7 +179,7 @@ footer {
 
 .footer-links a:hover {
   color: #a5d6a7;
-  
+}
 </style>
 </head>
 
@@ -246,12 +228,12 @@ The Micromat project brings the integration of mathematics and microbiology dire
 </span>
 </p>
 
-<!-- CARROSSEL -->
+<!-- PRIMEIRO CARROSSEL -->
 <div class="carrossel">
   <img src="imagens/carrossel1.jpeg" class="slide ativo">
   <img src="imagens/carrossel2.jpeg" class="slide">
   <img src="imagens/carrossel3.jpeg" class="slide">
-    <img src="imagens/carrossel4.jpeg" class="slide">
+  <img src="imagens/carrossel4.jpeg" class="slide">
   <img src="imagens/carrossel5.jpeg" class="slide">
 
   <button class="prev" onclick="mudarSlide(-1)">❮</button>
@@ -266,22 +248,24 @@ Por meio de atividades experimentais, os alunos exploram conceitos matemáticos 
 Through experimental activities, students explore mathematical concepts in an applied way, developing scientific thinking and investigative curiosity.
 </span>
 </p>
-  </div>
-  <div class="carrossel2">
-  <img src="imagens/sequencia.jpeg" class="slide">
-     <img src="imagens/sequencia1.jpeg" class="slide">
-     <img src="imagens/sequencia2.jpeg" class="slide">
-     <img src="imagens/sequencia3.jpeg" class="slide">
-    
-     <button class="prev2" onclick="mudarSlide2(-1)">❮</button>
+
+<!-- SEGUNDO CARROSSEL -->
+<div class="carrossel2">
+  <img src="imagens/sequencia.jpeg" class="slide2 ativo2">
+  <img src="imagens/sequencia1.jpeg" class="slide2">
+  <img src="imagens/sequencia2.jpeg" class="slide2">
+  <img src="imagens/sequencia3.jpeg" class="slide2">
+
+  <button class="prev2" onclick="mudarSlide2(-1)">❮</button>
   <button class="next2" onclick="mudarSlide2(1)">❯</button>
-    </div>
-  
+</div>
+
 </section>
 
 <!-- FOOTER -->
 <footer>
 <p>Micromat - Universidade de São Paulo</p>
+
 <div class="footer-links">
 <a href="index.html">Início</a>
 <a href="exp0.html">Experimento 0</a>
@@ -293,19 +277,19 @@ Through experimental activities, students explore mathematical concepts in an ap
 <a href="contato.html">Contato</a>
 </div>
 
-
-
 </footer>
 
 <!-- SCRIPT -->
 <script>
-// CARROSSEL
+// PRIMEIRO CARROSSEL
 let slideIndex = 0;
 const slides = document.querySelectorAll(".slide");
 
 function mostrarSlide(index) {
   slides.forEach(s => s.classList.remove("ativo"));
+
   slideIndex = (index + slides.length) % slides.length;
+
   slides[slideIndex].classList.add("ativo");
 }
 
@@ -315,6 +299,7 @@ function mudarSlide(n) {
 
 // IDIOMA
 let idioma = "pt";
+
 function trocarIdioma() {
   idioma = (idioma === "pt") ? "en" : "pt";
 
@@ -326,34 +311,35 @@ function trocarIdioma() {
     el.style.display = (idioma === "en") ? "inline" : "none";
   });
 }
-</script>
-<script>
+
+// SEGUNDO CARROSSEL
 let slideAtual2 = 0;
 
 const slides2 = document.querySelectorAll(".slide2");
 
-function mostrarSlide2(index){
+function mostrarSlide2(index) {
 
-    slides2.forEach(slide => {
-        slide.classList.remove("ativo2");
-    });
+  slides2.forEach(slide => {
+    slide.classList.remove("ativo2");
+  });
 
-    if(index >= slides2.length){
-        slideAtual2 = 0;
-    }
-    else if(index < 0){
-        slideAtual2 = slides2.length - 1;
-    }
-    else{
-        slideAtual2 = index;
-    }
+  if(index >= slides2.length) {
+    slideAtual2 = 0;
+  }
+  else if(index < 0) {
+    slideAtual2 = slides2.length - 1;
+  }
+  else {
+    slideAtual2 = index;
+  }
 
-    slides2[slideAtual2].classList.add("ativo2");
+  slides2[slideAtual2].classList.add("ativo2");
 }
 
-function mudarSlide2(direcao){
-    mostrarSlide2(slideAtual2 + direcao);
+function mudarSlide2(direcao) {
+  mostrarSlide2(slideAtual2 + direcao);
 }
 </script>
+
 </body>
 </html>
