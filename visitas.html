@@ -1,206 +1,410 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 <meta charset="UTF-8">
 <title>MicroMat - Visitas</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f1f8f4;
-  color: #333;
+
+/* RESET */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#f4fbf6;
+  color:#333;
+  overflow-x:hidden;
 }
 
 /* HEADER */
-header {
-  background: linear-gradient(135deg, #1b5e20, #66bb6a);
-  color: white;
-  padding: 60px 20px;
-  text-align: center;
-  position: relative;
+
+header{
+  background:linear-gradient(135deg,#145a1f,#66bb6a);
+  color:white;
+  padding:100px 20px 80px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
 }
 
-header a {
-  text-decoration: none;
-  color: inherit;
+header::before{
+  content:"";
+  position:absolute;
+  width:600px;
+  height:600px;
+  background:rgba(255,255,255,0.05);
+  border-radius:50%;
+  top:-300px;
+  right:-150px;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 28px;
+header::after{
+  content:"";
+  position:absolute;
+  width:400px;
+  height:400px;
+  background:rgba(255,255,255,0.04);
+  border-radius:50%;
+  bottom:-200px;
+  left:-120px;
 }
 
-header h1:hover {
-  opacity: 0.8;
+header a{
+  text-decoration:none;
+  color:inherit;
 }
 
-header p {
-  font-size: 18px;
+header h1{
+  font-size:3em;
+  margin-bottom:20px;
+  position:relative;
+  z-index:2;
+  animation:fadeDown 1s ease;
 }
 
-.idioma-btn {
-  position: absolute;
-  top: 10px;
-  right: 20px;
+header h1:hover{
+  opacity:0.9;
+}
+
+header p{
+  font-size:1.2em;
+  line-height:1.8;
+  max-width:850px;
+  margin:auto;
+  position:relative;
+  z-index:2;
+  animation:fadeUp 1.2s ease;
+}
+
+/* BOTÃO IDIOMA */
+
+.idioma-btn{
+  position:absolute;
+  top:20px;
+  right:20px;
+  border:none;
+  background:white;
+  color:#145a1f;
+  padding:12px 20px;
+  border-radius:40px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+  z-index:10;
+  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+.idioma-btn:hover{
+  transform:scale(1.08);
 }
 
 /* NAV */
-nav {
-  background: #1b5e20;
-  padding: 15px;
-  text-align: center;
+
+nav{
+  background:#145a1f;
+  padding:18px;
+  text-align:center;
+  position:sticky;
+  top:0;
+  z-index:999;
 }
 
-nav a {
-  color: white;
-  margin: 0 10px;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: 0.3s;
+nav a{
+  color:white;
+  margin:0 8px;
+  font-weight:bold;
+  text-decoration:none;
+  padding:10px 15px;
+  border-radius:12px;
+  transition:0.3s;
+  display:inline-block;
 }
 
-nav a:hover {
-  background: #66bb6a;
+nav a:hover{
+  background:#66bb6a;
+  transform:translateY(-2px);
 }
 
 /* CONTEÚDO */
-section {
-  padding: 50px 25px;
-  max-width: 900px;
-  margin: auto;
-  line-height: 1.6;
+
+section{
+  padding:70px 25px;
+  max-width:1100px;
+  margin:auto;
+  line-height:1.9;
 }
 
-h2 {
-  text-align: center;
-  color: #1b5e20;
+/* TITULOS */
+
+h2{
+  text-align:center;
+  color:#145a1f;
+  font-size:2.6em;
+  margin-bottom:45px;
+  position:relative;
+}
+
+h2::after{
+  content:"";
+  width:90px;
+  height:5px;
+  background:#66bb6a;
+  display:block;
+  margin:15px auto 0;
+  border-radius:10px;
+}
+
+/* PARÁGRAFOS */
+
+p{
+  margin-bottom:25px;
+  font-size:1.05em;
 }
 
 /* PRIMEIRO CARROSSEL */
-.carrossel {
-  position: relative;
-  max-width: 600px;
-  margin: 30px auto;
-  overflow: hidden;
+
+.carrossel{
+  position:relative;
+  max-width:700px;
+  margin:50px auto;
+  overflow:hidden;
+  border-radius:25px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
 }
 
-.slide {
-  display: none;
-  width: 100%;
-  border-radius: 10px;
+.slide{
+  display:none;
+  width:100%;
+  border-radius:25px;
+  animation:fade 0.6s ease;
 }
 
-.slide.ativo {
-  display: block;
+.slide.ativo{
+  display:block;
 }
-
-.carrossel button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  border-radius: 50%;
-  font-size: 28px;
-}
-
-.prev { left: 10px; }
-.next { right: 10px; }
 
 /* SEGUNDO CARROSSEL */
-.carrossel2 {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  margin: 80px auto;
-  overflow: hidden;
+
+.carrossel2{
+  position:relative;
+  width:100%;
+  max-width:700px;
+  margin:70px auto;
+  overflow:hidden;
+  border-radius:25px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
 }
 
-.slide2 {
-  width: 100%;
-  display: none;
-  border-radius: 15px;
+.slide2{
+  width:100%;
+  display:none;
+  border-radius:25px;
+  animation:fade 0.6s ease;
 }
 
-.slide2.ativo2 {
-  display: block;
+.slide2.ativo2{
+  display:block;
 }
 
+/* BOTÕES */
+
+.prev,
+.next,
 .prev2,
-.next2 {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
-  border: none;
-  border-radius: 50%;
-  background: rgba(0,0,0,0.5);
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
+.next2{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:58px;
+  height:58px;
+  border:none;
+  border-radius:50%;
+  background:rgba(0,0,0,0.45);
+  color:white;
+  font-size:30px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:100;
+  transition:0.3s;
+  backdrop-filter:blur(5px);
 }
 
-.prev2 {
-  left: 15px;
+.prev:hover,
+.next:hover,
+.prev2:hover,
+.next2:hover{
+  background:#145a1f;
+  transform:translateY(-50%) scale(1.1);
 }
 
-.next2 {
-  right: 15px;
+.prev{
+  left:18px;
+}
+
+.next{
+  right:18px;
+}
+
+.prev2{
+  left:18px;
+}
+
+.next2{
+  right:18px;
 }
 
 /* FOOTER */
-footer {
-  background: #1b5e20;
-  color: white;
-  text-align: center;
-  padding: 30px 20px;
-  margin-top: 40px;
+
+footer{
+  background:#145a1f;
+  color:white;
+  text-align:center;
+  padding:45px 20px;
+  margin-top:70px;
 }
 
-.footer-links a {
-  color: white;
-  margin: 0 10px;
-  text-decoration: none;
-  font-size: 14px;
+.footer-links{
+  margin-top:18px;
 }
 
-.footer-links a:hover {
-  color: #a5d6a7;
+.footer-links a{
+  color:white;
+  margin:0 10px;
+  text-decoration:none;
+  font-size:14px;
+  transition:0.3s;
 }
+
+.footer-links a:hover{
+  color:#a5d6a7;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes fade{
+
+  from{
+    opacity:0;
+    transform:scale(1.03);
+  }
+
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+
+}
+
+@keyframes fadeDown{
+
+  from{
+    opacity:0;
+    transform:translateY(-50px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+@keyframes fadeUp{
+
+  from{
+    opacity:0;
+    transform:translateY(50px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+  header h1{
+    font-size:2em;
+  }
+
+  header p{
+    font-size:1em;
+  }
+
+  nav a{
+    margin:5px;
+    padding:10px 12px;
+    font-size:14px;
+  }
+
+  h2{
+    font-size:2em;
+  }
+
+  .prev,
+  .next,
+  .prev2,
+  .next2{
+    width:45px;
+    height:45px;
+    font-size:24px;
+  }
+
+}
+
 </style>
+
 </head>
 
 <body>
 
 <!-- HEADER -->
+
 <header>
+
 <a href="index.html">
   <h1>Projeto de Educação Matemática: MicroMat</h1>
 </a>
 
 <p>
-<span class="pt">Integração entre matemática e microbiologia por meio de atividades experimentais</span>
-<span class="en" style="display:none;">Integration between mathematics and microbiology through experimental activities</span>
+
+<span class="pt">
+Integração entre matemática e microbiologia por meio de atividades experimentais
+</span>
+
+<span class="en" style="display:none;">
+Integration between mathematics and microbiology through experimental activities
+</span>
+
 </p>
 
-<button class="idioma-btn" onclick="trocarIdioma()">EN/PT</button>
+<button class="idioma-btn" onclick="trocarIdioma()">
+EN/PT
+</button>
+
 </header>
 
 <!-- MENU -->
+
 <nav>
+
 <a href="index.html">Início</a>
 <a href="exp0.html">Exp 0</a>
 <a href="exp1.html">Exp 1</a>
@@ -209,64 +413,107 @@ footer {
 <a href="medicao.html">Medir Área</a>
 <a href="visitas.html">Visitas</a>
 <a href="contato.html">Contato</a>
+
 </nav>
 
 <!-- CONTEÚDO -->
+
 <section>
 
 <h2>
-<span class="pt">Visitas às Escolas</span>
-<span class="en" style="display:none;">School Visits</span>
+
+<span class="pt">
+Visitas às Escolas
+</span>
+
+<span class="en" style="display:none;">
+School Visits
+</span>
+
 </h2>
 
 <p>
+
 <span class="pt">
 O projeto Micromat leva a integração entre matemática e microbiologia diretamente ao ambiente escolar, proporcionando aos estudantes uma experiência prática que aproxima conceitos abstratos da realidade experimental.
 </span>
+
 <span class="en" style="display:none;">
 The Micromat project brings the integration of mathematics and microbiology directly into the school environment, providing students with a practical experience that connects abstract concepts to experimental reality.
 </span>
+
 </p>
 
 <!-- PRIMEIRO CARROSSEL -->
-<div class="carrossel">
-  <img src="imagens/carrossel1.jpeg" class="slide ativo">
-  <img src="imagens/carrossel2.jpeg" class="slide">
-  <img src="imagens/carrossel3.jpeg" class="slide">
-  <img src="imagens/carrossel4.jpeg" class="slide">
-  <img src="imagens/carrossel5.jpeg" class="slide">
 
-  <button class="prev" onclick="mudarSlide(-1)">❮</button>
-  <button class="next" onclick="mudarSlide(1)">❯</button>
+<div class="carrossel">
+
+<img src="imagens/carrossel1.jpeg" class="slide ativo">
+
+<img src="imagens/carrossel2.jpeg" class="slide">
+
+<img src="imagens/carrossel3.jpeg" class="slide">
+
+<img src="imagens/carrossel4.jpeg" class="slide">
+
+<img src="imagens/carrossel5.jpeg" class="slide">
+
+<button class="prev" onclick="mudarSlide(-1)">
+❮
+</button>
+
+<button class="next" onclick="mudarSlide(1)">
+❯
+</button>
+
 </div>
 
 <p>
+
 <span class="pt">
 Por meio de atividades experimentais, os alunos exploram conceitos matemáticos de forma aplicada, desenvolvendo o pensamento científico e a curiosidade investigativa.
 </span>
+
 <span class="en" style="display:none;">
 Through experimental activities, students explore mathematical concepts in an applied way, developing scientific thinking and investigative curiosity.
 </span>
+
 </p>
 
 <!-- SEGUNDO CARROSSEL -->
-<div class="carrossel2">
-  <img src="imagens/sequencia.jpeg" class="slide2 ativo2">
-  <img src="imagens/sequencia1.jpeg" class="slide2">
-  <img src="imagens/sequencia2.jpeg" class="slide2">
-  <img src="imagens/sequencia3.jpeg" class="slide2">
 
-  <button class="prev2" onclick="mudarSlide2(-1)">❮</button>
-  <button class="next2" onclick="mudarSlide2(1)">❯</button>
+<div class="carrossel2">
+
+<img src="imagens/sequencia.jpeg" class="slide2 ativo2">
+
+<img src="imagens/sequencia1.jpeg" class="slide2">
+
+<img src="imagens/sequencia2.jpeg" class="slide2">
+
+<img src="imagens/sequencia3.jpeg" class="slide2">
+
+<button class="prev2" onclick="mudarSlide2(-1)">
+❮
+</button>
+
+<button class="next2" onclick="mudarSlide2(1)">
+❯
+</button>
+
 </div>
 
 </section>
 
 <!-- FOOTER -->
+
 <footer>
-<p>Micromat - Universidade de São Paulo</p>
+
+<p>
+Micromat - Universidade de São Paulo
+</p>
 
 <div class="footer-links">
+
 <a href="index.html">Início</a>
 <a href="exp0.html">Experimento 0</a>
 <a href="exp1.html">Experimento 1</a>
@@ -275,70 +522,118 @@ Through experimental activities, students explore mathematical concepts in an ap
 <a href="medicao.html">Medir Área</a>
 <a href="visitas.html">Visitas</a>
 <a href="contato.html">Contato</a>
+
 </div>
 
 </footer>
 
 <!-- SCRIPT -->
+
 <script>
-// PRIMEIRO CARROSSEL
+
+/* PRIMEIRO CARROSSEL */
+
 let slideIndex = 0;
+
 const slides = document.querySelectorAll(".slide");
 
-function mostrarSlide(index) {
-  slides.forEach(s => s.classList.remove("ativo"));
+function mostrarSlide(index){
+
+  slides.forEach(s => {
+
+    s.classList.remove("ativo");
+
+  });
 
   slideIndex = (index + slides.length) % slides.length;
 
   slides[slideIndex].classList.add("ativo");
+
 }
 
-function mudarSlide(n) {
+function mudarSlide(n){
+
   mostrarSlide(slideIndex + n);
+
 }
 
-// IDIOMA
+/* AUTO PLAY */
+
+setInterval(() => {
+
+  mudarSlide(1);
+
+},4500);
+
+/* IDIOMA */
+
 let idioma = "pt";
 
-function trocarIdioma() {
-  idioma = (idioma === "pt") ? "en" : "pt";
+function trocarIdioma(){
+
+  idioma = idioma === "pt" ? "en" : "pt";
 
   document.querySelectorAll(".pt").forEach(el => {
-    el.style.display = (idioma === "pt") ? "inline" : "none";
+
+    el.style.display = idioma === "pt" ? "inline" : "none";
+
   });
 
   document.querySelectorAll(".en").forEach(el => {
-    el.style.display = (idioma === "en") ? "inline" : "none";
+
+    el.style.display = idioma === "en" ? "inline" : "none";
+
   });
+
 }
 
-// SEGUNDO CARROSSEL
+/* SEGUNDO CARROSSEL */
+
 let slideAtual2 = 0;
 
 const slides2 = document.querySelectorAll(".slide2");
 
-function mostrarSlide2(index) {
+function mostrarSlide2(index){
 
   slides2.forEach(slide => {
+
     slide.classList.remove("ativo2");
+
   });
 
-  if(index >= slides2.length) {
+  if(index >= slides2.length){
+
     slideAtual2 = 0;
   }
-  else if(index < 0) {
+
+  else if(index < 0){
+
     slideAtual2 = slides2.length - 1;
   }
-  else {
+
+  else{
+
     slideAtual2 = index;
   }
 
   slides2[slideAtual2].classList.add("ativo2");
+
 }
 
-function mudarSlide2(direcao) {
+function mudarSlide2(direcao){
+
   mostrarSlide2(slideAtual2 + direcao);
+
 }
+
+/* AUTO PLAY SEGUNDO */
+
+setInterval(() => {
+
+  mudarSlide2(1);
+
+},5000);
+
 </script>
 
 </body>
