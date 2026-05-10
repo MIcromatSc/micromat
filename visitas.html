@@ -203,13 +203,15 @@ h3{
   box-shadow:0 10px 24px rgba(0,0,0,0.15);
 }
 
-.slide{
+.slide,
+.slide2{
   width:100%;
   display:none;
   animation:fade 0.6s ease;
 }
 
-.slide.ativo{
+.slide.ativo,
+.slide2.ativo2{
   display:block;
 }
 
@@ -608,15 +610,14 @@ function mostrarSlide2(index){
 
     slide.classList.remove("ativo2");
 
-    slide.style.display = "none";
-
+    
   });
 
   slideAtual2 = (index + slides2.length) % slides2.length;
 
   slides2[slideAtual2].classList.add("ativo2");
 
-  slides2[slideAtual2].style.display = "block";
+  
 
 }
 
