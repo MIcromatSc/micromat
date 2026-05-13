@@ -194,26 +194,45 @@ h3{
 
 /* CARROSSEL */
 
-.carrossel{
+  .carrossel{
   position:relative;
   max-width:800px;
   margin:auto;
   overflow:hidden;
   border-radius:22px;
   box-shadow:0 10px 24px rgba(0,0,0,0.15);
+  background:white;
 }
+
+/* IMAGENS */
 
 .slide,
 .slide2{
   width:100%;
   display:none;
-  animation:fade 0.6s ease;
+  opacity:0;
+  transition:opacity 0.8s ease, transform 0.8s ease;
+  transform:scale(1.02);
 }
+
+.slide img,
+.slide2 img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* SLIDE ATIVO */
 
 .slide.ativo,
 .slide2.ativo2{
   display:block;
+  opacity:1;
+  transform:scale(1);
 }
+
+/* BOTÕES */
 
 .prev,
 .next{
@@ -232,6 +251,8 @@ h3{
   align-items:center;
   justify-content:center;
   transition:0.3s;
+  backdrop-filter:blur(4px);
+  z-index:10;
 }
 
 .prev:hover,
@@ -248,6 +269,23 @@ h3{
   right:15px;
 }
 
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+  .carrossel{
+    border-radius:18px;
+  }
+
+  .prev,
+  .next{
+    width:42px;
+    height:42px;
+    font-size:22px;
+  }
+
+}
+  
 /* FOOTER */
 
 footer{
