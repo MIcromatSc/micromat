@@ -282,31 +282,36 @@ footer{
 
 }
 .formula-area{
-  width: fit-content;
-  margin: 35px auto;
-  padding: 22px 40px;
-  background: linear-gradient(135deg,#e8f5e9,#ffffff);
-  border-radius: 22px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-  text-align: center;
-  border: 2px solid #66bb6a;
-}
-.formula-text{
-  display:block;
-  font-size:2.3em;
+  width:fit-content;
+  margin:35px auto;
+  padding:22px 40px;
+  background:linear-gradient(135deg,#e8f5e9,#ffffff);
+  border-radius:22px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.08);
+  border:2px solid #66bb6a;
+  font-size:2.2em;
   color:#1b5e20;
   font-weight:bold;
-  padding-bottom:10px;
-  border-bottom:3px solid #1b5e20;
 }
 
-.formula-divisor{
-  display:block;
-  font-size:1.8em;
-  color:#1b5e20;
-  font-weight:bold;
-  margin-top:8px;
+.fracao{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  vertical-align:middle;
 }
+
+.topo{
+  border-bottom:3px solid #1b5e20;
+  padding:0 10px 6px;
+}
+
+.base{
+  padding-top:6px;
+  font-size:0.85em;
+}
+
+
 </style>
 </head>
 
@@ -447,12 +452,13 @@ After determining the real colony diameter, use the circle area formula to calcu
 
 <div class="formula-area">
 
-  <span class="formula-text">
-    A = π · D<sup>2</sup>
+  <span class="formula-prefix">
+    A = π ·
   </span>
 
-  <span class="formula-divisor">
-    4
+  <span class="fracao">
+    <span class="topo">D<sup>2</sup></span>
+    <span class="base">4</span>
   </span>
 
 </div>
