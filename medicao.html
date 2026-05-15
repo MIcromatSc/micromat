@@ -281,7 +281,32 @@ footer{
   }
 
 }
+.formula-area{
+  width: fit-content;
+  margin: 35px auto;
+  padding: 22px 40px;
+  background: linear-gradient(135deg,#e8f5e9,#ffffff);
+  border-radius: 22px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  text-align: center;
+  border: 2px solid #66bb6a;
+}
+.formula-text{
+  display:block;
+  font-size:2.3em;
+  color:#1b5e20;
+  font-weight:bold;
+  padding-bottom:10px;
+  border-bottom:3px solid #1b5e20;
+}
 
+.formula-divisor{
+  display:block;
+  font-size:1.8em;
+  color:#1b5e20;
+  font-weight:bold;
+  margin-top:8px;
+}
 </style>
 </head>
 
@@ -420,12 +445,17 @@ After determining the real colony diameter, use the circle area formula to calcu
 
 </p>
 
-<div style="text-align:center; font-size:2em; margin:25px 0; color:#1b5e20; font-weight:bold;">
+<div class="formula-area">
 
-A = π · D² / 4
+  <span class="formula-text">
+    A = π · D<sup>2</sup>
+  </span>
+
+  <span class="formula-divisor">
+    4
+  </span>
 
 </div>
-
 <p>
 
 <span class="pt">
